@@ -1,0 +1,19 @@
+# Resume build output
+resume/*.aux
+resume/*.log
+resume/*.out
+resume/*.pdf
+
+# Portfolio scaffolding and local tooling
+portfolio/node_modules/
+portfolio/.next/
+portfolio/.vinext/
+portfolio/dist/
+portfolio/.wrangler/
+portfolio/.npm-cache/
+portfolio/.env*
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
