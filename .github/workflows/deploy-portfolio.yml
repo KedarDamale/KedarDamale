@@ -45,6 +45,10 @@ jobs:
           else
             echo "resume_changed=false" >> "$GITHUB_OUTPUT"
           fi
+      - name: Synchronize with the latest main branch
+        run: |
+          git fetch origin main
+          git rebase origin/main
       - name: Compile LaTeX resume
         if: steps.changes.outputs.resume_changed == 'true'
         uses: xu-cheng/latex-action@v3
@@ -81,7 +85,12 @@ jobs:
             else
               git commit -m "chore: refresh portfolio resume link"
             fi
-            git push
+            git push || {
+              if ! git pull --rebase origin main || ! git push; then
+                git rebase --abort || true
+                echo "::warning::The generated resume could not be committed because main changed during this run. Publishing the current build anyway."
+              fi
+            }
           fi
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
