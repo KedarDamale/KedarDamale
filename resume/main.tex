@@ -1,29 +1,40 @@
 \documentclass[10pt,a4paper]{article}
 
-\usepackage[margin=1.65cm]{geometry}
+\usepackage[margin=1.25cm, top=1.05cm, bottom=1.1cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage{helvet}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
-\usepackage{parskip}
 \usepackage{xcolor}
+\usepackage{tabularx}
 
+\renewcommand{\familydefault}{\sfdefault}
 \pagestyle{empty}
-\setlist[itemize]{leftmargin=1.2em, nosep}
-\definecolor{accent}{HTML}{23395B}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=1.45em, label=\textbullet, itemsep=0.14em, topsep=0.18em, parsep=0pt, partopsep=0pt}
+\definecolor{accent}{HTML}{344467}
+\definecolor{text}{HTML}{242424}
+\color{text}
 
-\newcommand{\sectiontitle}[1]{\vspace{0.6em}\noindent{\large\bfseries\color{accent}#1}\par\vspace{0.25em}\hrule\vspace{0.45em}}
-\newcommand{\resumeentry}[3]{\noindent\textbf{#1}\hfill #2\\\textit{#3}\vspace{0.15em}\par}
+\newcommand{\sectiontitle}[1]{%
+  \vspace{0.48em}\noindent{\color{accent}\large\bfseries\textbullet\ #1}\par
+  \vspace{0.10em}{\color{accent}\hrule height 0.45pt}\vspace{0.24em}}
+\newcommand{\detail}[2]{\textbf{#1}\,: #2}
+\newcommand{\entryline}[2]{%
+  \noindent\begin{tabularx}{\textwidth}{@{}X r@{}}\textbf{#1} & \textbf{#2}\end{tabularx}\vspace{-0.18em}\par}
+\newcommand{\orgline}[2]{%
+  \noindent\begin{tabularx}{\textwidth}{@{}X r@{}}#1 & #2\end{tabularx}\vspace{-0.10em}\par}
 
 \begin{document}
 
 \begin{center}
-  {\LARGE\bfseries Kedar Damale}\\[0.25em]
-  Machine Learning Engineer\\[0.4em]
-  \href{mailto:damalekedar@gmail.com}{damalekedar@gmail.com} \quad|
-  \href{https://github.com/KedarDamale}{github.com/KedarDamale} \quad|
-  \href{https://www.linkedin.com/in/kedar-damale-57252a324/}{LinkedIn}
+  {\fontsize{27}{29}\selectfont\bfseries\color{accent} KEDAR DAMALE}\\[-0.06em]
+  {\large Ratnagiri, MH, India \textbullet\ +91 7058533020 \textbullet\ \href{mailto:damalekedar@gmail.com}{damalekedar@gmail.com}}\\[-0.12em]
+  {\large \textbullet\ \href{https://kedardamale.github.io/KedarDamale/}{Portfolio} \textbullet\ \href{https://github.com/KedarDamale}{GitHub} \textbullet\ \href{https://www.kaggle.com/kedarpdamale}{Kaggle} \textbullet\ \href{https://www.linkedin.com/in/kedar-damale-57252a324/}{LinkedIn}}
 \end{center}
+\vspace{-0.42em}
 
 \input{content/summary}
 \input{content/skills}
