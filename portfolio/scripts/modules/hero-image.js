@@ -20,16 +20,62 @@ export async function cleanHeroPortrait() {
     context.drawImage(portrait, 0, 0);
 
     const pixels = context.getImageData(0, 0, canvas.width, canvas.height);
-    for (let index = 0; index < pixels.data.length; index += 4) {
+    const pixelCount = canvas.width * canvas.height;
+    const background = new Uint8Array(pixelCount);
+    const queue = new Int32Array(pixelCount);
+    let queueStart = 0;
+    let queueEnd = 0;
+
+    for (let pixel = 0; pixel < pixelCount; pixel += 1) {
+      const index = pixel * 4;
       const red = pixels.data[index];
       const green = pixels.data[index + 1];
       const blue = pixels.data[index + 2];
       const brightness = (red + green + blue) / 3;
       const colorSpread = Math.max(red, green, blue) - Math.min(red, green, blue);
 
-      // The source uses neutral light/dark checkerboard squares. Remove only
-      // those neutral, bright pixels and preserve the coloured skin and suit.
-      if (brightness > 118 && colorSpread < 16) pixels.data[index + 3] = 0;
+      // Candidate pixels are the neutral checkerboard squares. We only remove
+      // candidates connected to an image edge, never pixels inside the face.
+      if (brightness > 118 && colorSpread < 16) background[pixel] = 1;
+    }
+
+    const markEdgePixel = (pixel) => {
+      if (background[pixel] === 1) {
+        background[pixel] = 2;
+        queue[queueEnd] = pixel;
+        queueEnd += 1;
+      }
+    };
+
+    for (let x = 0; x < canvas.width; x += 1) {
+      markEdgePixel(x);
+      markEdgePixel((canvas.height - 1) * canvas.width + x);
+    }
+    for (let y = 1; y < canvas.height - 1; y += 1) {
+      markEdgePixel(y * canvas.width);
+      markEdgePixel(y * canvas.width + canvas.width - 1);
+    }
+
+    const markNeighbour = (pixel) => {
+      if (background[pixel] === 1) {
+        background[pixel] = 2;
+        queue[queueEnd] = pixel;
+        queueEnd += 1;
+      }
+    };
+
+    while (queueStart < queueEnd) {
+      const pixel = queue[queueStart];
+      queueStart += 1;
+      const x = pixel % canvas.width;
+      if (pixel >= canvas.width) markNeighbour(pixel - canvas.width);
+      if (pixel < pixelCount - canvas.width) markNeighbour(pixel + canvas.width);
+      if (x > 0) markNeighbour(pixel - 1);
+      if (x < canvas.width - 1) markNeighbour(pixel + 1);
+    }
+
+    for (let pixel = 0; pixel < pixelCount; pixel += 1) {
+      if (background[pixel] === 2) pixels.data[pixel * 4 + 3] = 0;
     }
 
     context.putImageData(pixels, 0, 0);
