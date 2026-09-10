@@ -10,7 +10,6 @@ compiled_pdf="$1"
 version="$2"
 project_dir="$(cd "$(dirname "$0")/.." && pwd)"
 portfolio_dir="$project_dir/portfolio"
-portfolio_index="$portfolio_dir/index.html"
 
 if [[ ! -f "$compiled_pdf" ]]; then
   echo "Compiled PDF not found: $compiled_pdf" >&2
@@ -26,7 +25,9 @@ resume_name="resume-${version}.pdf"
 cp "$compiled_pdf" "$portfolio_dir/$resume_name"
 
 # Keep every website download link pointed at the PDF produced by this build.
-# Matching only the href also covers links whose download attribute is on the next line.
-sed -E -i "s/href=\"resume(-[A-Za-z0-9._-]+)?\\.pdf\"/href=\"$resume_name\"/g" "$portfolio_index"
+# Pages are split into reusable partials, so update every HTML file in the portfolio.
+while IFS= read -r html_file; do
+  sed -E -i "s/href=\"resume(-[A-Za-z0-9._-]+)?\\.pdf\"/href=\"$resume_name\"/g" "$html_file"
+done < <(find "$portfolio_dir" -type f -name '*.html')
 
 echo "Published portfolio/$resume_name"

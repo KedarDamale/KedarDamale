@@ -65,7 +65,9 @@ jobs:
         run: |
           latest_resume="$(find portfolio -maxdepth 1 -type f -name 'resume-*.pdf' -printf '%f\n' | sort | tail -n 1)"
           if [[ -n "$latest_resume" ]]; then
-            sed -E -i "s/href=\"resume(-[A-Za-z0-9._-]+)?\\.pdf\"/href=\"$latest_resume\"/g" portfolio/index.html
+            while IFS= read -r html_file; do
+              sed -E -i "s/href=\"resume(-[A-Za-z0-9._-]+)?\\.pdf\"/href=\"$latest_resume\"/g" "$html_file"
+            done < <(find portfolio -type f -name '*.html')
           fi
       - name: Commit portfolio resume updates
         env:
@@ -73,7 +75,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add portfolio/index.html
+          git add portfolio
           if [[ "$RESUME_CHANGED" == "true" ]]; then
             git add "portfolio/$RESUME_FILE"
           fi

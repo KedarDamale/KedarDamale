@@ -1,0 +1,28 @@
+:root {
+  --canvas: #07101f;
+  --paper: #0b172a;
+  --ink: #f2f7ff;
+  --muted: #a1b4cc;
+  --line: #20334d;
+  --signal: #2878ff;
+  --signal-soft: #85b8ff;
+  --night: #050b16;
+  --light: #f2f7ff;
+  --grid-line: rgba(133, 184, 255, .12);
+  --font-display: 'Space Grotesk', Arial, sans-serif;
+  --font-body: 'Manrope', Arial, sans-serif;
+  --font-mono: 'DM Mono', monospace;
+  --shell: min(1320px, calc(100% - 56px));
+}
+
+[data-theme='light'] {
+  --canvas: #f5f8fd;
+  --paper: #ffffff;
+  --ink: #0a1830;
+  --muted: #60718b;
+  --line: #d8e2f0;
+  --signal: #1768ee;
+  --signal-soft: #0d3f93;
+  --night: #09172d;
+  --grid-line: rgba(31, 94, 188, .12);
+}
