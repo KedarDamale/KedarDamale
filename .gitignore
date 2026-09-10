@@ -3,7 +3,7 @@ resume/*.aux
 resume/*.log
 resume/*.out
 resume/*.pdf
-
+   
 # Portfolio scaffolding and local tooling
 portfolio/node_modules/
 portfolio/.next/
