@@ -3,6 +3,11 @@ export function initNavigation() {
   const nav = document.querySelector('.site-nav');
   const navLinks = [...document.querySelectorAll('.site-nav a[href^="#"]')];
 
+  const header = document.querySelector('.site-header');
+  const onScroll = () => header?.classList.toggle('is-scrolled', window.scrollY > 80);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
   menuButton?.addEventListener('click', () => {
     const isOpen = nav.classList.toggle('is-open');
     menuButton.setAttribute('aria-expanded', String(isOpen));
