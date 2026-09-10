@@ -1,7 +1,6 @@
 import { initNavigation } from './modules/navigation.js';
 import { initMotion } from './modules/motion.js';
 import { initTheme } from './modules/theme.js';
-import { cleanHeroPortrait } from './modules/hero-image.js';
 
 const componentSlots = [...document.querySelectorAll('[data-component]')];
 
@@ -18,7 +17,6 @@ try {
   await loadComponents();
   initTheme();
   initNavigation();
-  await cleanHeroPortrait();
   initMotion();
 } catch (error) {
   console.error(error);
