@@ -1,19 +1,18 @@
-name: Deploy portfolio
+name: Build and deploy portfolio
 
 on:
   push:
     branches: [main]
-    paths:
-      - 'portfolio/index.html'
-      - 'portfolio/styles.css'
-      - 'portfolio/script.js'
-      - 'portfolio/resume.pdf'
-      - 'portfolio/og.png'
-      - '.github/workflows/deploy-portfolio.yml'
   workflow_dispatch:
+    inputs:
+      rebuild_resume:
+        description: Rebuild the resume even when its source is unchanged
+        required: false
+        default: false
+        type: boolean
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -29,6 +28,47 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Detect resume changes
+        id: changes
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          PREVIOUS_SHA: ${{ github.event.before }}
+          CURRENT_SHA: ${{ github.sha }}
+          FORCE_REBUILD: ${{ inputs.rebuild_resume }}
+        run: |
+          if [[ "$EVENT_NAME" == "workflow_dispatch" && "$FORCE_REBUILD" == "true" ]]; then
+            echo "resume_changed=true" >> "$GITHUB_OUTPUT"
+          elif [[ "$EVENT_NAME" == "push" ]] && ! git diff --quiet "$PREVIOUS_SHA" "$CURRENT_SHA" -- resume/; then
+            echo "resume_changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "resume_changed=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Compile LaTeX resume
+        if: steps.changes.outputs.resume_changed == 'true'
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          working_directory: resume
+      - name: Publish the versioned portfolio resume
+        if: steps.changes.outputs.resume_changed == 'true'
+        run: |
+          version="$(date -u +%Y%m%dT%H%M%SZ)-run${{ github.run_number }}"
+          bash scripts/publish-resume.sh resume/main.pdf "$version"
+          echo "RESUME_FILE=resume-$version.pdf" >> "$GITHUB_ENV"
+      - name: Commit the generated resume
+        if: steps.changes.outputs.resume_changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "portfolio/$RESUME_FILE" portfolio/index.html
+          if git diff --cached --quiet; then
+            echo "Portfolio resume is already current"
+          else
+            git commit -m "chore: publish $RESUME_FILE"
+            git push
+          fi
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
