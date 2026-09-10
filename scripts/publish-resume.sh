@@ -26,6 +26,7 @@ resume_name="resume-${version}.pdf"
 cp "$compiled_pdf" "$portfolio_dir/$resume_name"
 
 # Keep every website download link pointed at the PDF produced by this build.
-sed -E -i "s/href=\"resume(-[A-Za-z0-9._-]+)?\\.pdf\" download/href=\"$resume_name\" download/g" "$portfolio_index"
+# Matching only the href also covers links whose download attribute is on the next line.
+sed -E -i "s/href=\"resume(-[A-Za-z0-9._-]+)?\\.pdf\"/href=\"$resume_name\"/g" "$portfolio_index"
 
 echo "Published portfolio/$resume_name"
