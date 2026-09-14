@@ -12,11 +12,21 @@ export function initNavigation() {
     const isOpen = nav.classList.toggle('is-open');
     menuButton.setAttribute('aria-expanded', String(isOpen));
   });
+  if (menuButton && nav) {
+    menuButton.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('is-open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+    });
 
   navLinks.forEach((link) => link.addEventListener('click', () => {
     nav.classList.remove('is-open');
     menuButton?.setAttribute('aria-expanded', 'false');
   }));
+    navLinks.forEach((link) => link.addEventListener('click', () => {
+      nav.classList.remove('is-open');
+      menuButton.setAttribute('aria-expanded', 'false');
+    }));
+  }
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -24,6 +34,15 @@ export function initNavigation() {
       navLinks.forEach((link) => link.classList.toggle('is-active', link.getAttribute('href') === `#${entry.target.id}`));
     });
   }, { rootMargin: '-40% 0px -50% 0px' });
+  if (navLinks.length > 0) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach((link) => link.classList.toggle('is-active', link.getAttribute('href') === `#${entry.target.id}`));
+      });
+    }, { rootMargin: '-40% 0px -50% 0px' });
 
   document.querySelectorAll('main section[id]').forEach((section) => observer.observe(section));
+    document.querySelectorAll('main section[id]').forEach((section) => observer.observe(section));
+  }
 }

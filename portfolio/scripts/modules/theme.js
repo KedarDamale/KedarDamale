@@ -12,6 +12,9 @@ export function initTheme() {
     toggle?.setAttribute('aria-pressed', String(isDark));
     toggle?.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
     if (toggle) toggle.querySelector('[aria-hidden="true"]').textContent = isDark ? '◐' : '☀';
+    const label = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+    toggle?.setAttribute('aria-label', label);
+    toggle?.setAttribute('title', label);
   };
 
   updateToggle();
