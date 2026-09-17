@@ -1,5 +1,5 @@
 RESUME_DIR := resume
-RESUME_VERSION ?= $(shell date -u +%Y%m%dT%H%M%SZ)
+RESUME_VERSION ?= $(shell date -u +%Y%m%d)
 LATEX := pdflatex
 LATEX_FLAGS := -interaction=nonstopmode -halt-on-error
 

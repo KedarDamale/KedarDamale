@@ -11,4 +11,4 @@ assets/       Portrait and visual assets used by the page
 
 `index.html` is only the page shell. It loads the components and CDN libraries: Tailwind CSS for utility support, and GSAP with ScrollTrigger for motion.
 
-When the resume is compiled, `scripts/publish-resume.sh` updates every HTML component that links to a resume PDF. Do not manually change the header or footer resume filename.
+Resume PDFs are generated and published manually as `resume-YYYYMMDD.pdf`. After publishing, manually update the resume filename in both `components/site-header.html` and `components/site-footer.html` before committing. GitHub Actions only deploys the portfolio and does not modify resume files or links.

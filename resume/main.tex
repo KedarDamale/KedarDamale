@@ -3,8 +3,7 @@
 \usepackage[margin=1.25cm, top=1.05cm, bottom=1.1cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{helvet}
-\usepackage{enumitem}
+\usepackage{lmodern}
 \usepackage[hidelinks]{hyperref}
 \usepackage{xcolor}
 \usepackage{tabularx}
@@ -13,28 +12,35 @@
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
-\setlist[itemize]{leftmargin=1.45em, label=\textbullet, itemsep=0.14em, topsep=0.18em, parsep=0pt, partopsep=0pt}
+% Keep compact resume bullets without requiring the optional enumitem package.
+\makeatletter
+\setlength{\leftmargini}{1.45em}
+\renewcommand{\labelitemi}{\textbullet}
+\def\@listi{\leftmargin\leftmargini
+  \topsep 0.16em \parsep 0pt \itemsep 0.12em \partopsep 0pt}
+\let\@listI\@listi
+\makeatother
 \definecolor{accent}{HTML}{344467}
 \definecolor{text}{HTML}{242424}
 \color{text}
 
 \newcommand{\sectiontitle}[1]{%
-  \vspace{0.48em}\noindent{\color{accent}\large\bfseries\textbullet\ #1}\par
-  \vspace{0.10em}{\color{accent}\hrule height 0.45pt}\vspace{0.24em}}
+  \par\vspace{0.46em}\noindent{\color{accent}\large\bfseries #1}\par
+  \vspace{0.08em}{\color{accent}\hrule height 0.45pt}\vspace{0.22em}}
 \newcommand{\detail}[2]{\textbf{#1}\,: #2}
 \newcommand{\entryline}[2]{%
-  \noindent\begin{tabularx}{\textwidth}{@{}X r@{}}\textbf{#1} & \textbf{#2}\end{tabularx}\vspace{-0.18em}\par}
+  \noindent\begin{tabularx}{\textwidth}{@{}X@{\hspace{1em}}r@{}}\textbf{#1} & \textbf{#2}\end{tabularx}\vspace{-0.16em}\par}
 \newcommand{\orgline}[2]{%
-  \noindent\begin{tabularx}{\textwidth}{@{}X r@{}}#1 & #2\end{tabularx}\vspace{-0.10em}\par}
+  \noindent\begin{tabularx}{\textwidth}{@{}X@{\hspace{1em}}r@{}}\textit{#1} & \textit{#2}\end{tabularx}\vspace{-0.08em}\par}
 
 \begin{document}
 
 \begin{center}
-  {\fontsize{27}{29}\selectfont\bfseries\color{accent} KEDAR DAMALE}\\[-0.06em]
-  {\large Thane, MH, India \textbullet\ +91 7058533020 \textbullet\ \href{mailto:damalekedar@gmail.com}{damalekedar@gmail.com}}\\[-0.12em]
-  {\large \textbullet\ \href{https://kedardamale.github.io/KedarDamale/}{Portfolio} \textbullet\ \href{https://github.com/KedarDamale}{GitHub} \textbullet\ \href{https://www.kaggle.com/kedarpdamale}{Kaggle} \textbullet\ \href{https://www.linkedin.com/in/kedar-damale-57252a324/}{LinkedIn}}
+  {\fontsize{26}{28}\selectfont\bfseries\color{accent} KEDAR DAMALE}\\[0.04em]
+  {\normalsize Thane, MH, India \enspace\textbullet\enspace +91 7058533020 \enspace\textbullet\enspace \href{mailto:damalekedar@gmail.com}{damalekedar@gmail.com}}\\[0.12em]
+  {\normalsize \href{https://kedardamale.github.io/KedarDamale/}{Portfolio} \enspace\textbullet\enspace \href{https://github.com/KedarDamale}{GitHub} \enspace\textbullet\enspace \href{https://www.kaggle.com/kedarpdamale}{Kaggle} \enspace\textbullet\enspace \href{https://www.linkedin.com/in/kedar-damale-57252a324/}{LinkedIn}}
 \end{center}
-\vspace{-0.42em}
+\vspace{-0.28em}
 
 \input{content/summary}
 \input{content/skills}

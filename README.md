@@ -12,6 +12,14 @@
 
 Machine Learning Engineer building practical AI systems: from operational-data automation to agentic analytics, IoT intelligence, and computer vision.
 
+## GitHub activity since July 2026
+
+<a href="https://github.com/KedarDamale?tab=overview&amp;from=2026-07-01">
+  <img src="https://github.com/users/KedarDamale/contributions?from=2026-07-01" alt="Kedar Damale's GitHub contribution activity since July 2026" />
+</a>
+
+Private contributions are included as GitHub's anonymous contribution counts; private repository names, commits, and other details remain private.
+
 ## What I work with
 
 `Python` `SQL` `FastAPI` `React` `PostgreSQL` `scikit-learn` `Pandas` `Generative AI` `Computer Vision` `IoT`
@@ -43,10 +51,10 @@ Machine Learning Engineer building practical AI systems: from operational-data a
 ```text
 resume/       Modular LaTeX resume source and job-focused variants
 portfolio/    Dependency-free portfolio for GitHub Pages
-.github/      Resume build and portfolio deployment workflows
+.github/      Portfolio deployment workflow
 scripts/      Small local build helpers
 ```
 
 ## Resume versions
 
-The resume is modular: shared content lives in `resume/content/`, while `resume/variants/` provides role-focused entry points. Run `make resume` (or `./scripts/build-resume.sh`) to compile the source. Every build creates a timestamped PDF such as `portfolio/resume-20260910T103000Z.pdf` and updates every portfolio download link to that exact file. The GitHub workflow generates a new version only when `resume/` changes; portfolio-only pushes deploy without producing an extra PDF. Commit the generated PDF and `portfolio/index.html`; Git history then keeps each submitted version recoverable. Tag submitted versions when useful (for example, `resume-v1.0` or `company-role-2026-09`).
+The resume is modular: shared content lives in `resume/content/`, while `resume/variants/` provides role-focused entry points. Generate and publish it manually with `make resume` (or `./scripts/build-resume.sh`), or run `bash scripts/publish-resume.sh resume/main.pdf YYYYMMDD` after compiling. Published files use the exact name `portfolio/resume-YYYYMMDD.pdf`. Update both portfolio component links manually to that filename before committing. GitHub Actions only deploys the static portfolio; it does not compile, publish, or rewrite resume links.
