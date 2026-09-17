@@ -136,6 +136,17 @@ Iterate
 
 I care less about using AI for its own sake and more about whether the resulting system is **useful, measurable, and deployable**.
 
+## 🏆 Achievements
+
+<div align="center">
+  <a href="https://github.com/KedarDamale?tab=achievements" aria-label="View Kedar Damale's GitHub achievements">
+    <img src="https://github.githubassets.com/images/modules/profile/achievements/pull-shark-default.png" width="92" alt="Pull Shark achievement" />
+    <img src="https://github.githubassets.com/images/modules/profile/achievements/quickdraw-default.png" width="92" alt="Quickdraw achievement" />
+    <img src="https://github.githubassets.com/images/modules/profile/achievements/pair-extraordinaire-default.png" width="92" alt="Pair Extraordinaire achievement" />
+    <img src="https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png" width="92" alt="YOLO achievement" />
+  </a>
+</div>
+
 ## 📊 Live GitHub activity
 
 <div align="center">
