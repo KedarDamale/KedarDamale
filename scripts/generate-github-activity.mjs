@@ -10,7 +10,7 @@ if (!username || !token) {
 }
 
 const now = new Date();
-const start = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() - 4, 1));
+const start = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() - 3, 1));
 const end = new Date(Date.UTC(
   now.getUTCFullYear(),
   now.getUTCMonth(),
