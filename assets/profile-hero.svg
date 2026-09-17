@@ -1,0 +1,25 @@
+<svg width="1200" height="280" viewBox="0 0 1200 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="280"><stop offset="0%" stop-color="#020617"/><stop offset="45%" stop-color="#0F172A"/><stop offset="100%" stop-color="#020617"/></linearGradient>
+    <linearGradient id="accent" x1="260" y1="0" x2="930" y2="0">
+      <stop offset="0%" stop-color="#38BDF8"><animate attributeName="stop-color" values="#38BDF8;#818CF8;#22D3EE;#38BDF8" dur="7s" repeatCount="indefinite"/></stop>
+      <stop offset="50%" stop-color="#818CF8"><animate attributeName="stop-color" values="#818CF8;#22D3EE;#38BDF8;#818CF8" dur="7s" repeatCount="indefinite"/></stop>
+      <stop offset="100%" stop-color="#22D3EE"><animate attributeName="stop-color" values="#22D3EE;#38BDF8;#818CF8;#22D3EE" dur="7s" repeatCount="indefinite"/></stop>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M 32 0 L 0 0 0 32" fill="none" stroke="#38BDF8" stroke-width="0.45" opacity="0.12"/></pattern>
+    <filter id="glow"><feGaussianBlur stdDeviation="9" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="softGlow"><feGaussianBlur stdDeviation="35"/></filter>
+  </defs>
+  <rect width="1200" height="280" rx="22" fill="url(#bg)"/>
+  <rect width="1200" height="280" rx="22" fill="url(#grid)"/>
+  <circle cx="160" cy="60" r="90" fill="#38BDF8" opacity="0.08" filter="url(#softGlow)"><animate attributeName="cx" values="160;230;160" dur="9s" repeatCount="indefinite"/></circle>
+  <circle cx="1050" cy="215" r="110" fill="#818CF8" opacity="0.08" filter="url(#softGlow)"><animate attributeName="cx" values="1050;970;1050" dur="11s" repeatCount="indefinite"/></circle>
+  <ellipse cx="600" cy="140" rx="510" ry="102" stroke="url(#accent)" stroke-width="1" stroke-dasharray="4 12" opacity="0.18"><animate attributeName="stroke-dashoffset" values="0;64" dur="7s" repeatCount="indefinite"/></ellipse>
+  <circle cx="93" cy="139" r="4" fill="#38BDF8" filter="url(#glow)"><animate attributeName="opacity" values="0.3;1;0.3" dur="2.5s" repeatCount="indefinite"/></circle>
+  <circle cx="1106" cy="141" r="4" fill="#818CF8" filter="url(#glow)"><animate attributeName="opacity" values="1;0.3;1" dur="2.5s" repeatCount="indefinite"/></circle>
+  <text x="600" y="75" text-anchor="middle" fill="#64748B" font-family="JetBrains Mono, Consolas, monospace" font-size="15">~/kedar/engineering</text>
+  <text x="600" y="139" text-anchor="middle" fill="url(#accent)" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="49" font-weight="700" letter-spacing="1">KEDAR DAMALE</text>
+  <text x="600" y="180" text-anchor="middle" fill="#E2E8F0" font-family="JetBrains Mono, Consolas, monospace" font-size="18">MACHINE LEARNING ENGINEER</text>
+  <text x="600" y="219" text-anchor="middle" fill="#94A3B8" font-family="JetBrains Mono, Consolas, monospace" font-size="13" letter-spacing="1.2">APPLIED AI  •  GENAI  •  COMPUTER VISION  •  INTELLIGENT AUTOMATION</text>
+  <rect x="846" y="164" width="9" height="20" rx="1" fill="#38BDF8"><animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></rect>
+</svg>

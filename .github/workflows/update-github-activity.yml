@@ -1,6 +1,12 @@
 name: Update GitHub activity graph
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'README.md'
+      - 'scripts/generate-github-activity.mjs'
+      - '.github/workflows/update-github-activity.yml'
   schedule:
     - cron: '17 2 * * *'
   workflow_dispatch:
