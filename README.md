@@ -12,13 +12,13 @@
 
 Machine Learning Engineer building practical AI systems: from operational-data automation to agentic analytics, IoT intelligence, and computer vision.
 
-## GitHub activity since July 2026
+## GitHub activity — last five months
 
-<a href="https://github.com/KedarDamale?tab=overview&amp;from=2026-07-01">
-  <img src="https://github.com/users/KedarDamale/contributions?from=2026-07-01" alt="Kedar Damale's GitHub contribution activity since July 2026" />
+<a href="https://github.com/KedarDamale?tab=overview">
+  <img src="./assets/github-activity.svg" alt="Kedar Damale's GitHub contribution activity for the last five months" width="100%" />
 </a>
 
-Private contributions are included as GitHub's anonymous contribution counts; private repository names, commits, and other details remain private.
+This graph is regenerated daily and always covers the current month plus the previous four months. It includes private contribution counts when the `PROFILE_ACTIVITY_TOKEN` repository secret is configured with the `read:user` scope; repository names and other private details are never displayed.
 
 ## What I work with
 

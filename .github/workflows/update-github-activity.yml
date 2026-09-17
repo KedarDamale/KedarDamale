@@ -1,0 +1,39 @@
+name: Update GitHub activity graph
+
+on:
+  schedule:
+    - cron: '17 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-graph:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Generate the rolling five-month graph
+        env:
+          GITHUB_USERNAME: KedarDamale
+          # Set PROFILE_ACTIVITY_TOKEN to a personal access token with the
+          # "read:user" scope to include private contribution counts.
+          PROFILE_ACTIVITY_TOKEN: ${{ secrets.PROFILE_ACTIVITY_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/generate-github-activity.mjs
+
+      - name: Commit updated graph when it changed
+        run: |
+          if git diff --quiet -- assets/github-activity.svg; then
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/github-activity.svg
+          git commit -m 'chore: update GitHub activity graph'
+          git push

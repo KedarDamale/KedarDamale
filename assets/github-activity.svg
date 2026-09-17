@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="156" viewBox="0 0 400 156" role="img" aria-labelledby="title description">
+  <title id="title">GitHub activity graph</title>
+  <desc id="description">This graph will be generated automatically by GitHub Actions.</desc>
+  <style>
+    .text { fill: #57606a; font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    @media (prefers-color-scheme: dark) { .text { fill: #8b949e; } }
+  </style>
+  <text class="text" x="16" y="40">Your five-month activity graph will appear here</text>
+  <text class="text" x="16" y="66">after the Update GitHub activity graph workflow runs.</text>
+</svg>
