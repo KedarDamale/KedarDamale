@@ -1,6 +1,6 @@
 RESUME_DIR := resume
 RESUME_VERSION ?= $(shell date -u +%Y%m%d)
-LATEX := pdflatex
+LATEX := lualatex
 LATEX_FLAGS := -interaction=nonstopmode -halt-on-error
 
 .PHONY: resume resume-clean

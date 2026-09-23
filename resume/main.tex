@@ -1,14 +1,18 @@
 \documentclass[10pt,a4paper]{article}
 
-\usepackage[margin=1.15cm, top=0.55cm, bottom=0.4cm]{geometry}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{lmodern}
+\usepackage[margin=1cm, top=0.0cm, bottom=0.4cm]{geometry}
+\usepackage{fontspec}
 \usepackage[hidelinks]{hyperref}
-\usepackage{xcolor}
 \usepackage{tabularx}
 
-\renewcommand{\familydefault}{\sfdefault}
+\setmainfont{Carlito}[
+  Path = fonts/,
+  Extension = .ttf,
+  UprightFont = *-Regular,
+  BoldFont = *-Bold,
+  ItalicFont = *-Italic,
+  BoldItalicFont = *-BoldItalic
+]
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
@@ -20,26 +24,24 @@
   \topsep 0.05em \parsep 0pt \itemsep 0.03em \partopsep 0pt}
 \let\@listI\@listi
 \makeatother
-\definecolor{accent}{HTML}{344467}
-\definecolor{text}{HTML}{242424}
-\color{text}
-
 \newcommand{\sectiontitle}[1]{%
-  \par\vspace{0.22em}\noindent{\color{accent}\large\bfseries #1}\par
-  \vspace{0.04em}{\color{accent}\hrule height 0.45pt}\vspace{0.1em}}
+  \par\vspace{0.22em}\noindent{\large\bfseries #1}\par
+  \vspace{0.04em}\hrule height 0.9pt\vspace{0.1em}}
 \newcommand{\detail}[2]{\textbf{#1}\,: #2}
 \newcommand{\entryline}[2]{%
   \noindent\begin{tabularx}{\textwidth}{@{}X@{\hspace{1em}}r@{}}\textbf{#1} & \textbf{#2}\end{tabularx}\vspace{-0.16em}\par}
 \newcommand{\orgline}[2]{%
   \noindent\begin{tabularx}{\textwidth}{@{}X@{\hspace{1em}}r@{}}\textit{#1} & \textit{#2}\end{tabularx}\vspace{-0.08em}\par}
 \newcommand{\achievement}[2]{\item \textbf{#1} --- #2}
+\newcommand{\myhref}[2]{\href{#1}{\underline{#2}}}
 
 \begin{document}
 
+\vspace*{-8pt}
 \begin{center}
-  {\fontsize{26}{28}\selectfont\bfseries\color{accent} KEDAR DAMALE}\\[0.04em]
-  {\normalsize Thane, MH, India \enspace\textbullet\enspace +91 7058533020 \enspace\textbullet\enspace \href{mailto:damalekedar@gmail.com}{damalekedar@gmail.com}}\\[0.12em]
-  {\normalsize \href{https://kedardamale.github.io/KedarDamale/}{Portfolio} \enspace\textbullet\enspace \href{https://github.com/KedarDamale}{GitHub} \enspace\textbullet\enspace \href{https://www.kaggle.com/kedarpdamale}{Kaggle} \enspace\textbullet\enspace \href{https://www.linkedin.com/in/kedar-damale-57252a324/}{LinkedIn}}
+  {\fontsize{26}{28}\selectfont\bfseries KEDAR DAMALE}\\[-0.15em]
+  {\normalsize Thane, MH, India \enspace\textbullet\enspace +91 7058533020 \enspace\textbullet\enspace \myhref{mailto:damalekedar@gmail.com}{damalekedar@gmail.com}}\\[-0.15em]
+  {\normalsize \myhref{https://kedardamale.github.io/KedarDamale/}{Portfolio} \enspace\textbullet\enspace \myhref{https://github.com/KedarDamale}{GitHub} \enspace\textbullet\enspace \myhref{https://www.kaggle.com/kedarpdamale}{Kaggle} \enspace\textbullet\enspace \myhref{https://www.linkedin.com/in/kedar-damale-57252a324/}{LinkedIn}}
 \end{center}
 \vspace{-0.28em}
 
