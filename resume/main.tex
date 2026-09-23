@@ -3,6 +3,7 @@
 \usepackage[margin=1cm, top=0.0cm, bottom=0.4cm]{geometry}
 \usepackage{fontspec}
 \usepackage[hidelinks]{hyperref}
+\usepackage{ragged2e}
 \usepackage{tabularx}
 
 \setmainfont{Carlito}[
@@ -26,7 +27,7 @@
 \makeatother
 \newcommand{\sectiontitle}[1]{%
   \par\vspace{0.12em}\noindent{\large\bfseries #1}\par
-  \vspace{0.18em}\hrule height 0.9pt\vspace{0.1em}}
+  \vspace{0.18em}\hrule height 0.9pt\vspace{0.4em}}
 \newcommand{\detail}[2]{\textbf{#1}\,: #2}
 \newcommand{\entryline}[2]{%
   \noindent\begin{tabularx}{\textwidth}{@{}X@{\hspace{1em}}r@{}}\textbf{#1} & \textbf{#2}\end{tabularx}\vspace{-0.16em}\par}
@@ -39,7 +40,7 @@
   \begin{center}
     {\fontsize{26}{28}\selectfont\bfseries \resumename}\\[-0.15em]
     {\normalsize \resumelocation \hspace{0.4em}|\hspace{0.4em} \resumephone \hspace{0.4em}|\hspace{0.4em} \myhref{mailto:\resumeemail}{\resumeemail}}\\[-0.15em]
-    {\normalsize \myhref{\resumeportfoliourl}{\resumeportfoliolabel} \hspace{0.4em}|\hspace{0.4em} \myhref{\resumegithuburl}{\resumegithublabel} \hspace{0.4em}|\hspace{0.4em} \myhref{\resumekaggleurl}{\resumekagglelabel} \hspace{0.4em}|\hspace{0.4em} \myhref{\resumelinkedinurl}{\resumelinkedinlabel}}
+    {\normalsize \myhref{\resumeportfoliourl}{\resumeportfoliolabel} \hspace{0.4em}|\hspace{0.4em} \myhref{\resumegithuburl}{\resumegithublabel} \hspace{0.4em}|\hspace{0.4em} \myhref{\resumelinkedinurl}{\resumelinkedinlabel}}
   \end{center}}
 
 \begin{document}
