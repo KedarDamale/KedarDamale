@@ -1,6 +1,6 @@
 \documentclass[10pt,a4paper]{article}
 
-\usepackage[margin=1.25cm, top=1.05cm, bottom=1.1cm]{geometry}
+\usepackage[margin=1.15cm, top=0.55cm, bottom=0.4cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
@@ -17,7 +17,7 @@
 \setlength{\leftmargini}{1.45em}
 \renewcommand{\labelitemi}{\textbullet}
 \def\@listi{\leftmargin\leftmargini
-  \topsep 0.16em \parsep 0pt \itemsep 0.12em \partopsep 0pt}
+  \topsep 0.05em \parsep 0pt \itemsep 0.03em \partopsep 0pt}
 \let\@listI\@listi
 \makeatother
 \definecolor{accent}{HTML}{344467}
@@ -25,13 +25,14 @@
 \color{text}
 
 \newcommand{\sectiontitle}[1]{%
-  \par\vspace{0.46em}\noindent{\color{accent}\large\bfseries #1}\par
-  \vspace{0.08em}{\color{accent}\hrule height 0.45pt}\vspace{0.22em}}
+  \par\vspace{0.22em}\noindent{\color{accent}\large\bfseries #1}\par
+  \vspace{0.04em}{\color{accent}\hrule height 0.45pt}\vspace{0.1em}}
 \newcommand{\detail}[2]{\textbf{#1}\,: #2}
 \newcommand{\entryline}[2]{%
   \noindent\begin{tabularx}{\textwidth}{@{}X@{\hspace{1em}}r@{}}\textbf{#1} & \textbf{#2}\end{tabularx}\vspace{-0.16em}\par}
 \newcommand{\orgline}[2]{%
   \noindent\begin{tabularx}{\textwidth}{@{}X@{\hspace{1em}}r@{}}\textit{#1} & \textit{#2}\end{tabularx}\vspace{-0.08em}\par}
+\newcommand{\achievement}[2]{\item \textbf{#1} --- #2}
 
 \begin{document}
 
@@ -46,5 +47,7 @@
 \input{content/skills}
 \input{content/experience}
 \input{content/projects}
+\input{content/education}
+\input{content/achievements}
 
 \end{document}
