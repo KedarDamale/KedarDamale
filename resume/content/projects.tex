@@ -2,23 +2,23 @@
 
 \entryline{1. Chessablanka -- Chess Position Analyzer $|$ \myhref{https://github.com/KedarDamale/Chessablanka}{GitHub}}{Apr 2025 -- Jan 2026}
 \begin{itemize}
-  \item Analysing a chess position from a photograph normally requires expert board transcription and evaluation.
-  \item Built an end-to-end CV pipeline for board detection and grid mapping with a custom YOLOv8 model trained on 700+ images, augmented to 1,700 via Roboflow.
-  \item Achieved 98.57\% detection accuracy on 500+ test images and sent positions to Stockfish for instant evaluation and best-move analysis.
+  \item Analysing a chess position from a photograph traditionally requires manually transcribing the board before an engine can evaluate it, making the process slow and error-prone.
+  \item Built an end-to-end computer-vision pipeline that detects the board and maps its grid using a custom YOLOv8 model trained on 700+ images and augmented to 1,700 with Roboflow.
+  \item Achieved 98.57\% detection accuracy across 500+ test images and connected recognized positions to Stockfish for immediate evaluation and best-move analysis.
 \end{itemize}
 
 \entryline{2. NeuroTRIBE -- Cortical Response Analysis for ADHD Research $|$ \myhref{https://github.com/KedarDamale/NeuroTribe}{GitHub}}{Aug 2026 -- Present}
 \begin{itemize}
-  \item No existing tool objectively tests whether ADHD alters stimulus-evoked cortical responses against a baseline.
-  \item Built a TRIBE v2 pipeline over Healthy Brain Network movie-fMRI data to compare confirmed-ADHD participants with a matched cohort.
-  \item Enabled autonomous Docker-Compose orchestration for objective analysis while treating legally gated inputs as non-blocking.
+  \item Testing whether ADHD is associated with differences in stimulus-evoked cortical responses requires a reproducible comparison against an appropriately matched baseline.
+  \item Built a TRIBE v2 analysis pipeline over Healthy Brain Network movie-fMRI data to compare participants with confirmed ADHD against a matched cohort.
+  \item Added Docker Compose orchestration to make cohort-level exploratory analysis repeatable while keeping legally gated inputs outside the workflow and non-blocking.
 \end{itemize}
 
 \entryline{3. Cattle Monitoring using DBSCAN and ESP32 $|$ \myhref{https://github.com/KedarDamale/ESP32-DBSCAN-Cattle-Monitoring-System}{GitHub}}{Oct 2025 -- Nov 2025}
 \begin{itemize}
-  \item Farmers lacked a way to track free-grazing cattle without performing manual rounds.
-  \item Led a team building a distributed system of one ESP32 master and N child nodes, streaming GPS/RSSI data to a Flask/MongoDB backend.
-  \item Applied DBSCAN to automatically identify grazing zones on a live Next.js tracking dashboard.
+  \item Farmers monitoring free-grazing cattle had to rely on manual rounds, making it hard to see herd locations and recurring grazing patterns in real time.
+  \item Led a team building a distributed tracking system with one ESP32 master and multiple child nodes that send GPS and RSSI readings to a Flask and MongoDB backend.
+  \item Applied DBSCAN to identify grazing zones and displayed the resulting locations on a live Next.js dashboard, giving farmers a clearer view of herd movement.
 \end{itemize}
 
 % StudyONE is retained for alternate resume versions but hidden from this version.
@@ -29,4 +29,3 @@
   \item Manually converting lectures into notes was slow, so integrated Rev.ai and Google Cloud Speech-to-Text into an AI notes pipeline and deployed the app to production on Render.
 \end{itemize}
 \fi
-

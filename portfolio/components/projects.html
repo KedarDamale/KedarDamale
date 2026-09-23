@@ -13,9 +13,9 @@
           <h3>Chessablanka</h3>
           <p class="project-deck">A camera-ready route from a board photograph to an engine-analyzed chess position.</p>
           <ul class="case-points case-points-dark">
-            <li>Reading a position from a photo meant solving board detection, grid mapping, and piece recognition together.</li>
-            <li>Built an end-to-end YOLOv8 pipeline with a custom dataset and connected detected positions to Stockfish.</li>
-            <li>Reached 98.57% detection accuracy across 500+ test images and returned best-move analysis.</li>
+            <li>Analysing a chess position from a photograph traditionally requires manually transcribing the board before an engine can evaluate it, making the process slow and error-prone.</li>
+            <li>Built an end-to-end computer-vision pipeline that detects the board and maps its grid using a custom YOLOv8 model trained on 700+ images and augmented to 1,700 with Roboflow.</li>
+            <li>Achieved 98.57% detection accuracy across 500+ test images and connected recognized positions to Stockfish for immediate evaluation and best-move analysis.</li>
           </ul>
           <div class="project-footer"><div class="project-tags"><span>YOLOv8</span><span>OpenCV</span><span>Stockfish</span></div><a class="text-link text-link-dark" href="https://github.com/KedarDamale/Chessablanka" target="_blank" rel="noopener noreferrer">Explore repository <span aria-hidden="true">↗</span></a></div>
         </div>
@@ -27,9 +27,9 @@
           <h3>NeuroTRIBE</h3>
           <p class="project-deck">Reproducible cortical-response analysis for an ADHD research question.</p>
           <ul class="case-points case-points-dark">
-            <li>Explored whether movie-evoked cortical response patterns differ for participants with confirmed ADHD and a matched comparison group.</li>
-            <li>Built a TRIBE v2 workflow over Healthy Brain Network movie-fMRI data, orchestrated with Docker Compose.</li>
-            <li>Made cohort-level exploratory analysis repeatable, without bundling legally gated inputs or implying clinical diagnosis.</li>
+            <li>Testing whether ADHD is associated with differences in stimulus-evoked cortical responses requires a reproducible comparison against an appropriately matched baseline.</li>
+            <li>Built a TRIBE v2 analysis pipeline over Healthy Brain Network movie-fMRI data to compare participants with confirmed ADHD against a matched cohort.</li>
+            <li>Added Docker Compose orchestration to make cohort-level exploratory analysis repeatable while keeping legally gated inputs outside the workflow and non-blocking.</li>
           </ul>
           <div class="project-footer"><div class="project-tags"><span>Python</span><span>Neuroimaging</span><span>Docker</span></div><a class="text-link text-link-dark" href="https://github.com/KedarDamale/NeuroTribe" target="_blank" rel="noopener noreferrer">Explore repository <span aria-hidden="true">↗</span></a></div>
         </div>
@@ -41,9 +41,9 @@
           <h3>Cattle Monitoring</h3>
           <p class="project-deck">A field-to-dashboard system for understanding free-grazing cattle movement.</p>
           <ul class="case-points case-points-dark">
-            <li>Free-grazing herds are difficult to monitor through manual rounds alone.</li>
-            <li>Led a team building ESP32 master-and-node telemetry with GPS/RSSI, a Flask and MongoDB backend, and a live dashboard.</li>
-            <li>Used DBSCAN clustering to surface grazing zones and make movement easier to review in one place.</li>
+            <li>Farmers monitoring free-grazing cattle had to rely on manual rounds, making it hard to see herd locations and recurring grazing patterns in real time.</li>
+            <li>Led a team building a distributed tracking system with one ESP32 master and multiple child nodes that send GPS and RSSI readings to a Flask and MongoDB backend.</li>
+            <li>Applied DBSCAN to identify grazing zones and displayed the resulting locations on a live Next.js dashboard, giving farmers a clearer view of herd movement.</li>
           </ul>
           <div class="project-footer"><div class="project-tags"><span>ESP32</span><span>DBSCAN</span><span>Flask</span></div><a class="text-link text-link-dark" href="https://github.com/KedarDamale/ESP32-DBSCAN-Cattle-Monitoring-System" target="_blank" rel="noopener noreferrer">Explore repository <span aria-hidden="true">↗</span></a></div>
         </div>
