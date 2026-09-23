@@ -25,8 +25,8 @@
 \let\@listI\@listi
 \makeatother
 \newcommand{\sectiontitle}[1]{%
-  \par\vspace{0.22em}\noindent{\large\bfseries #1}\par
-  \vspace{0.04em}\hrule height 0.9pt\vspace{0.1em}}
+  \par\vspace{0.12em}\noindent{\large\bfseries #1}\par
+  \vspace{0.18em}\hrule height 0.9pt\vspace{0.1em}}
 \newcommand{\detail}[2]{\textbf{#1}\,: #2}
 \newcommand{\entryline}[2]{%
   \noindent\begin{tabularx}{\textwidth}{@{}X@{\hspace{1em}}r@{}}\textbf{#1} & \textbf{#2}\end{tabularx}\vspace{-0.16em}\par}
@@ -34,18 +34,19 @@
   \noindent\begin{tabularx}{\textwidth}{@{}X@{\hspace{1em}}r@{}}\textit{#1} & \textit{#2}\end{tabularx}\vspace{-0.08em}\par}
 \newcommand{\achievement}[2]{\item \textbf{#1} --- #2}
 \newcommand{\myhref}[2]{\href{#1}{#2}}
+\input{content/contact-info}
 \newcommand{\resumeheader}{%
   \begin{center}
-    {\fontsize{26}{28}\selectfont\bfseries KEDAR DAMALE}\\[-0.15em]
-    {\normalsize Thane, MH, India \hspace{0.4em}|\hspace{0.4em} +91 7058533020 \hspace{0.4em}|\hspace{0.4em} \myhref{mailto:damalekedar@gmail.com}{damalekedar@gmail.com}}\\[-0.15em]
-    {\normalsize \myhref{https://kedardamale.github.io/KedarDamale/}{Portfolio} \hspace{0.4em}|\hspace{0.4em} \myhref{https://github.com/KedarDamale}{GitHub} \hspace{0.4em}|\hspace{0.4em} \myhref{https://www.kaggle.com/kedarpdamale}{Kaggle} \hspace{0.4em}|\hspace{0.4em} \myhref{https://www.linkedin.com/in/kedar-damale-57252a324/}{LinkedIn}}
+    {\fontsize{26}{28}\selectfont\bfseries \resumename}\\[-0.15em]
+    {\normalsize \resumelocation \hspace{0.4em}|\hspace{0.4em} \resumephone \hspace{0.4em}|\hspace{0.4em} \myhref{mailto:\resumeemail}{\resumeemail}}\\[-0.15em]
+    {\normalsize \myhref{\resumeportfoliourl}{\resumeportfoliolabel} \hspace{0.4em}|\hspace{0.4em} \myhref{\resumegithuburl}{\resumegithublabel} \hspace{0.4em}|\hspace{0.4em} \myhref{\resumekaggleurl}{\resumekagglelabel} \hspace{0.4em}|\hspace{0.4em} \myhref{\resumelinkedinurl}{\resumelinkedinlabel}}
   \end{center}}
 
 \begin{document}
 
 \vspace*{-8pt}
 \resumeheader
-\vspace{-0.28em}
+\vspace{-0.7em}
 
 \input{content/summary}
 \input{content/skills}
