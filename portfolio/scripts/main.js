@@ -1,6 +1,7 @@
 import { initNavigation } from './modules/navigation.js';
 import { initMotion } from './modules/motion.js';
 import { initTheme } from './modules/theme.js';
+import { initCatalogue } from './modules/catalogue.js';
 
 const componentSlots = [...document.querySelectorAll('[data-component]')];
 
@@ -17,8 +18,11 @@ try {
   await loadComponents();
   initTheme();
   initNavigation();
+  initCatalogue();
   initMotion();
+  const year = document.querySelector('[data-current-year]');
+  if (year) year.textContent = String(new Date().getFullYear());
 } catch (error) {
-  console.error(error);
+  console.error('Portfolio setup failed:', error);
   document.body.classList.add('components-failed');
 }

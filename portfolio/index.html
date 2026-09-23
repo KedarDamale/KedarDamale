@@ -1,34 +1,43 @@
 <!doctype html>
 <html lang="en" data-theme="dark">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Kedar Damale — Machine Learning Engineer building practical AI systems." />
-  <meta property="og:title" content="Kedar Damale — Machine Learning Engineer" />
-  <meta property="og:description" content="Practical systems for data, machine learning, and generative AI." />
-  <meta property="og:image" content="https://kedardamale.github.io/KedarDamale/og.png" />
+  <meta name="theme-color" content="#0b0d12" />
+  <meta name="description" content="Kedar Damale is an applied data scientist building practical AI and machine-learning systems across finance, pharma, and research." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Kedar Damale — Applied Data Scientist" />
+  <meta property="og:description" content="From complex data to useful, production-minded AI systems." />
+  <meta property="og:image" content="https://kedardamale.github.io/KedarDamale/assets/data-landscape.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <title>Kedar Damale</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = { theme: { extend: { colors: { signal: '#2878ff', ink: '#0a1830', canvas: '#f5f8fd' } } } };
-  </script>
+  <title>Kedar Damale — Applied Data Scientist</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles/tokens.css" />
   <link rel="stylesheet" href="styles/base.css" />
   <link rel="stylesheet" href="styles/layout.css" />
   <link rel="stylesheet" href="styles/sections.css" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Kedar Damale",
+      "jobTitle": "Applied Data Scientist",
+      "url": "https://kedardamale.github.io/KedarDamale/",
+      "sameAs": [
+        "https://github.com/KedarDamale",
+        "https://www.linkedin.com/in/kedar-damale-57252a324/"
+      ]
+    }
+  </script>
 </head>
-
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="page-grain" aria-hidden="true"></div>
   <div data-component="site-header"></div>
-  <main id="top">
+  <main id="main-content">
     <div data-component="hero"></div>
     <div data-component="about"></div>
     <div data-component="experience"></div>
@@ -36,10 +45,6 @@
     <div data-component="contact"></div>
   </main>
   <div data-component="site-footer"></div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script type="module" src="scripts/main.js"></script>
 </body>
-
 </html>

@@ -1,15 +1,66 @@
-<section id="projects" class="projects-section">
+<section id="projects" class="projects-section light-section">
   <div class="shell">
-    <div class="section-title section-title-light" data-reveal><p class="eyebrow">Featured projects</p><span>FIELD NOTES</span></div>
-    <div class="project-list">
-      <article class="project-card project-cattle" data-reveal>
-        <div class="project-art project-map" aria-hidden="true"><span class="map-route"></span><i></i><i></i><i></i></div>
-        <div class="project-body"><p class="project-label">01 / IoT + ML</p><h3>Cattle Monitoring</h3><p>ESP32 nodes stream GPS and RSSI data into a FastAPI backend and React dashboard. DBSCAN clustering identifies grazing zones and supports daily milk-yield analysis.</p><a href="https://github.com/KedarDamale/ioe-project" target="_blank" rel="noreferrer">View project <span aria-hidden="true">↗</span></a></div>
+    <div class="section-heading" data-reveal>
+      <p class="eyebrow"><span class="section-index">03</span> Selected work</p>
+      <span class="section-aside">THREE PROBLEMS, BUILT END TO END</span>
+    </div>
+    <p class="projects-lede" data-reveal>Research, vision, and intelligent systems—made concrete.</p>
+    <div class="project-cases">
+      <article class="project-case" data-reveal>
+        <div class="project-visual visual-chess" role="img" aria-label="Editorial image of a chess position on a dark board"><span class="visual-index">CASE 01 <i></i> COMPUTER VISION</span></div>
+        <div class="project-copy">
+          <div class="project-title-row"><p class="project-kicker">01 / 03&nbsp; · &nbsp;COMPUTER VISION</p><span class="project-year">2025—26</span></div>
+          <h3>Chessablanka</h3>
+          <p class="project-deck">A camera-ready route from a board photograph to an engine-analyzed chess position.</p>
+          <ul class="case-points case-points-dark">
+            <li>Reading a position from a photo meant solving board detection, grid mapping, and piece recognition together.</li>
+            <li>Built an end-to-end YOLOv8 pipeline with a custom dataset and connected detected positions to Stockfish.</li>
+            <li>Reached 98.57% detection accuracy across 500+ test images and returned best-move analysis.</li>
+          </ul>
+          <div class="project-footer"><div class="project-tags"><span>YOLOv8</span><span>OpenCV</span><span>Stockfish</span></div><a class="text-link text-link-dark" href="https://github.com/KedarDamale/Chessablanka" target="_blank" rel="noopener noreferrer">Explore repository <span aria-hidden="true">↗</span></a></div>
+        </div>
       </article>
-      <article class="project-card project-chess" data-reveal>
-        <div class="project-art chess-art" aria-hidden="true"><span>♞</span><span>♛</span><span>♜</span><span>♟</span></div>
-        <div class="project-body"><p class="project-label">02 / Computer vision</p><h3>Chessablanka</h3><p>An over-the-board chess position analyzer using a custom YOLOv8 model, trained on 1,700 augmented samples and reaching 98.57% detection accuracy.</p><a href="https://github.com/KedarDamale/Chessablanka" target="_blank" rel="noreferrer">View project <span aria-hidden="true">↗</span></a></div>
+      <article class="project-case project-case-reverse" data-reveal>
+        <div class="project-visual visual-neuro" role="img" aria-label="Abstract scientific visualization of cortical response waveforms"><span class="visual-index">CASE 02 <i></i> MEDICAL RESEARCH</span></div>
+        <div class="project-copy">
+          <div class="project-title-row"><p class="project-kicker">02 / 03&nbsp; · &nbsp;MEDICAL RESEARCH</p><span class="project-year">2026—</span></div>
+          <h3>NeuroTRIBE</h3>
+          <p class="project-deck">Reproducible cortical-response analysis for an ADHD research question.</p>
+          <ul class="case-points case-points-dark">
+            <li>Explored whether movie-evoked cortical response patterns differ for participants with confirmed ADHD and a matched comparison group.</li>
+            <li>Built a TRIBE v2 workflow over Healthy Brain Network movie-fMRI data, orchestrated with Docker Compose.</li>
+            <li>Made cohort-level exploratory analysis repeatable, without bundling legally gated inputs or implying clinical diagnosis.</li>
+          </ul>
+          <div class="project-footer"><div class="project-tags"><span>Python</span><span>Neuroimaging</span><span>Docker</span></div><a class="text-link text-link-dark" href="https://github.com/KedarDamale/NeuroTribe" target="_blank" rel="noopener noreferrer">Explore repository <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </article>
+      <article class="project-case" data-reveal>
+        <div class="project-visual visual-cattle" role="img" aria-label="Cattle grazing across a field with subtle location-tracking contours"><span class="visual-index">CASE 03 <i></i> IOT + GEOSPATIAL ML</span></div>
+        <div class="project-copy">
+          <div class="project-title-row"><p class="project-kicker">03 / 03&nbsp; · &nbsp;IOT + GEOSPATIAL ML</p><span class="project-year">2025</span></div>
+          <h3>Cattle Monitoring</h3>
+          <p class="project-deck">A field-to-dashboard system for understanding free-grazing cattle movement.</p>
+          <ul class="case-points case-points-dark">
+            <li>Free-grazing herds are difficult to monitor through manual rounds alone.</li>
+            <li>Led a team building ESP32 master-and-node telemetry with GPS/RSSI, a Flask and MongoDB backend, and a live dashboard.</li>
+            <li>Used DBSCAN clustering to surface grazing zones and make movement easier to review in one place.</li>
+          </ul>
+          <div class="project-footer"><div class="project-tags"><span>ESP32</span><span>DBSCAN</span><span>Flask</span></div><a class="text-link text-link-dark" href="https://github.com/KedarDamale/ESP32-DBSCAN-Cattle-Monitoring-System" target="_blank" rel="noopener noreferrer">Explore repository <span aria-hidden="true">↗</span></a></div>
+        </div>
       </article>
     </div>
+    <section class="repository-section" aria-labelledby="repository-heading">
+      <div class="repository-heading" data-reveal>
+        <div><p class="eyebrow"><span class="section-index">04</span> The repository index</p><h3 id="repository-heading">More things I’ve built.</h3></div>
+        <p class="repository-note">A curated catalogue of public repositories with substantive code. Private work is intentionally not listed here.</p>
+      </div>
+      <div class="repository-controls" data-reveal>
+        <label class="repo-search-wrap"><span class="sr-only">Search repositories</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><input type="search" id="repo-search" placeholder="Find a project or technology" autocomplete="off" /></label>
+        <div class="repo-filters" data-repo-filters aria-label="Filter repositories"></div>
+      </div>
+      <p class="repo-status" data-repo-status aria-live="polite">Loading the curated repository index…</p>
+      <div class="repository-grid" data-repo-grid></div>
+      <p class="repo-empty" data-repo-empty hidden>No repositories match that search. Try a different phrase.</p>
+    </section>
   </div>
 </section>
