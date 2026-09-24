@@ -6,10 +6,10 @@
 
 I build end-to-end AI/ML systems for fintech, financial automation, pharma, and medical research, and take them from experiments to production.
 
-<a href="https://kedardamale.github.io/KedarDamale/"><img src="https://img.shields.io/badge/Portfolio-0F172A?style=for-the-badge&logo=githubpages&logoColor=white" alt="Portfolio" /></a>
-<a href="https://www.linkedin.com/in/kedar-damale-57252a324/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-<a href="https://kedardamale.github.io/KedarDamale/resume-20260924.pdf"><img src="https://img.shields.io/badge/Resume-PDF-EA4335?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="Resume" /></a>
-<a href="mailto:damalekedar@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
+<a href="https://kedardamale.github.io/KedarDamale/" target="_blank"><img src="https://img.shields.io/badge/Portfolio-0F172A?style=for-the-badge&logo=githubpages&logoColor=white" alt="Portfolio" /></a>
+<a href="https://www.linkedin.com/in/kedar-damale-57252a324/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+<a href="https://kedardamale.github.io/KedarDamale/resume-20260924.pdf" target="_blank"><img src="https://img.shields.io/badge/Resume-PDF-EA4335?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="Resume" /></a>
+<a href="mailto:damalekedar@gmail.com" target="_blank"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
 
 </div>
 
