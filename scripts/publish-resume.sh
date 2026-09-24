@@ -23,5 +23,6 @@ fi
 
 resume_name="resume-${version}.pdf"
 cp "$compiled_pdf" "$portfolio_dir/$resume_name"
+cp "$compiled_pdf" "$portfolio_dir/main.pdf"
 
-echo "Published portfolio/$resume_name"
+echo "Published portfolio/$resume_name and refreshed portfolio/main.pdf"

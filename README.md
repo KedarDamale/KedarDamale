@@ -16,7 +16,7 @@ From data pipelines and predictive models to RAG, agentic systems, computer visi
 <a href="https://www.linkedin.com/in/kedar-damale-57252a324/">
   <img src="https://img.shields.io/badge/LinkedIn-2563EB?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
 </a>
-<a href="https://kedardamale.github.io/KedarDamale/resume-20260924.pdf">
+<a href="https://kedardamale.github.io/KedarDamale/main.pdf">
   <img src="https://img.shields.io/badge/Resume-0F172A?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Resume" />
 </a>
 <a href="mailto:damalekedar@gmail.com">
@@ -27,19 +27,17 @@ From data pipelines and predictive models to RAG, agentic systems, computer visi
 
 ## Local ATS Resume Review
 
-Review the LaTeX resume against a job description with a strict, evidence-based score out of 100. The console prints the provider and model before each review, then shows an elapsed-time indicator while it runs.
+`make resume` compiles `resume/main.tex`, saves a dated PDF snapshot in `portfolio/resume-YYYYMMDD.pdf`, and refreshes the stable `portfolio/main.pdf` copy. `make ats` uses that stable PDF by default and asks for a target role, company context, optional job description, provider, model, and reasoning effort.
 
 ```sh
 make ats
-make ats ATS_JOB=job-description.txt
-make ats ATS_JOB=job-description.txt ATS_PROVIDER=codex
 ```
 
-The default resume is `resume/main.tex`. You can point `ATS_RESUME` at a `.tex`, `.pdf`, `.docx`, `.txt`, or `.md` resume. PDF extraction uses `pdftotext`.
+Paste company context and the job description, finishing each with a line containing only `.`. Enter `none` on the first line when you do not have company context or a job description. The review scans substantive public GitHub project READMEs through `gh`, compares current evidence against the target, scores the resume out of 100, and estimates the impact of truthful edits and future skill/project work. GitHub scanning needs an authenticated `gh` CLI.
 
-With `ATS_PROVIDER=auto` (the default), the reviewer uses OpenRouter Auto at its highest quality tier when `OPENROUTER_API_KEY` is available. Otherwise it uses the first installed provider in this order: Claude Code, Codex CLI, then GitHub Copilot CLI. A provider-specific model can be set with `--model` or `ATS_OPENROUTER_MODEL`, `ATS_CLAUDE_MODEL`, `ATS_CODEX_MODEL`, or `ATS_COPILOT_MODEL`.
+The interactive flow lists installed providers and offers provider-specific model and effort options. Codex includes GPT-6 Astra/Sol/Luna and GPT-5.6 Sol/Terra/Luna, plus a custom model ID. For scripted runs, use `python3 scripts/ats.py --resume portfolio/main.pdf --role "Data Scientist" --job-description job.txt --provider codex --model gpt-5.6-terra --effort high`.
 
-For OpenRouter, export `OPENROUTER_API_KEY` in the shell before running the command. OpenRouter Auto is the default route; ATS requests its `max` quality tier and prints the concrete model selected when the response arrives. Standard pricing for that model applies. Use `ATS_OPENROUTER_MODEL` to pin a model ID.
+To use OpenRouter explicitly, set `OPENROUTER_API_KEY` and run with `--provider openrouter`. Its default model is `openrouter/auto`; ATS requests the `max` quality tier and prints the concrete model selected when the response arrives. Standard pricing for that model applies. Use `ATS_OPENROUTER_MODEL` to pin a model ID.
 
 ### Connect it to an MCP client
 
@@ -422,7 +420,7 @@ That includes:
   ·  
 [LinkedIn](https://www.linkedin.com/in/kedar-damale-57252a324/)
   ·  
-[Resume](https://kedardamale.github.io/KedarDamale/resume-20260924.pdf)
+[Resume](https://kedardamale.github.io/KedarDamale/main.pdf)
   ·  
 [Email](mailto:damalekedar@gmail.com)
 

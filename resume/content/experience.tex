@@ -2,24 +2,23 @@
 
 \entryline{ML and GenAI Engineer}{Jan 2026 -- Present}
 \orgline{Globalspace Technologies Ltd.}{Navi Mumbai, MH, India}
-\textit{\textbf{1.} Budget Automation \& Incentive Calculator}
+\textit{Budget Automation and Incentive Calculator}
 \begin{itemize}
-  \item The existing budget automation workflow maintained a separate xgboost model for each employee, which became difficult to manage beyond roughly 20--30 employees and could not scale to hierarchies of thousands.Incentive calculator already has a lot of solution whihc require admin some technical aqumen to actually create policies
-  \item Designed budget automation and review solution which allocates each employee in hierarchy from top to bottom with respective target based on previous performance, also maintains a timer for raising revision requests for each employee and after timer expires revises target based on capacity and handles conflict by trying to match revision requests if not exact match , reveions has to be approved via manager
-   , created incentive calculaotr with DAG based execution with a custom ai agent whihc transforms policy pdfs into executable function at runtime and can calculate incentives per employee with detailed explanation of how incentive was calculated
-  \item Replaced the per-MR structure with one scalable model, making incentive planning workable across large teams and allowing business users to adjust policies without specialist schema or admin support. currently project is in pipline and is under review by big pharma like himalaya zydus etc
+  \item Replaced an XGBoost model per employee—which became difficult to manage beyond 20--30 people—with a unified hierarchy model designed to scale to thousands of medical representatives (MRs). The solution is under review by large pharmaceutical companies, including Himalaya and Zydus.
+  \item Built a top-down budgeting workflow that sets targets using prior performance and capacity, supports time-bound revision requests, reconciles conflicting requests where possible, and routes proposed changes to managers for approval.
+  \item Developed a DAG-based incentive calculator with a custom AI agent that converts policy PDFs into executable functions at runtime and explains each employee's result, enabling business users to update policies without specialist admin support.
 \end{itemize}
-\textit{\textbf{2.} PatGPT}
+\textit{PatGPT}
 \begin{itemize}
-  \item Previous solution was 100 percent RAG based whihc was good only for puny quesries but real world analytical questions required reasoning and recommend actions etc
-  \item Built PatGPT v2 from ground up as an agentic planning assistant for forecasting, simulation, prediction, and historical analysis, with human review checkpoints and answers grounded in supporting evidence.
-  \item Delivered a production-ready workflow with streamed responses, safe retry handling, and checksum-verified data promotion and rollback, supporting more reliable analysis and release operations.Project is being used by zydus currenlyt
+  \item The earlier workflow relied entirely on retrieval-augmented generation (RAG). It handled simple lookups but could not answer multi-step commercial questions or recommend actions across more than 3 million pharmaceutical sales and tender records.
+  \item Rebuilt PatGPT as an agentic planning assistant for forecasting, simulation, prediction, and historical analysis, with human-review checkpoints and evidence-grounded answers.
+  \item Added streamed responses, safe retry handling, and checksum-verified data promotion and rollback. The system is now used at Zydus.
 \end{itemize}
 \noindent\dotfill\par
 \entryline{Freelance Automation Developer}{May 2025 -- Jan 2026}
 \orgline{Propelligence Advisors Pvt. Ltd.}{Thane, MH, India}
 \begin{itemize}
-  \item Reconciling books and gstr2b and gstr2a takes about five to six days per company in a fiscal year as there are no intellgent solution available and those what are avaialble work on regex and hard matching whihc fail when invoice format and date dont match even though entries are logically matching
-  \item Engineered an automated reconciliation pipeline using RapidFuzz fuzzy matching, Polars processing, and constant-memory report generation to handle large files efficiently and format achange date tolerance and value toldernace etc .\
-  \item Reduced reconciliation time by more than 99.9\%, same task which took 5-6 days now can be done in 12 seconds with 100 percent precision i.e. no false positives and contributed it into audit automation suite (Granska) adopted by two CA firms and about 20 auditors.
+  \item Manual reconciliation of purchase-register invoices against GSTR-2B records took five to six days per cycle; inconsistent vendor, invoice, and date formats made exact-match tools unreliable.
+  \item Engineered a large-file reconciliation pipeline using RapidFuzz with an 80\%+ match threshold and date/value tolerances, Polars processing, and constant-memory report generation.
+  \item Processed 10,000+ invoices in 12 seconds, down from five to six days per reconciliation cycle—over 99.9\% less time—with 100\% precision (no false positives). Integrated the module into Granska, an audit suite adopted by two CA firms and about 20 auditors.
 \end{itemize}

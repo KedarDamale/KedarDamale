@@ -23,7 +23,7 @@ def setup_instructions() -> str:
     return f"""# Connect the ATS MCP server
 
 The ATS server runs locally over MCP stdio. It exposes `ats_review_resume` and `ats_setup`.
-The default model route is OpenRouter Auto at its highest quality tier when `OPENROUTER_API_KEY` is set; otherwise it uses an installed Claude Code, Codex, or GitHub Copilot CLI in that order. Set `ATS_PROVIDER` and `ATS_*_MODEL` to choose a specific backend/model. The server prints the chosen provider and model to stderr when a review starts; OpenRouter also prints the concrete model it resolved after the response.
+Console use (`make ats`) asks for the target role, company context, optional job description, provider, model, and reasoning effort. MCP calls can pass `target_role`, `company_context`, `provider`, `model`, and `effort` directly. Public GitHub repositories with substantive README content are included when `gh` is authenticated.
 
 ## Codex CLI
 
@@ -65,11 +65,11 @@ Antigravity CLI/IDE: open the MCP manager (`/mcp` in the CLI), reload the server
 
 ## OpenRouter model routing
 
-Set `OPENROUTER_API_KEY` in the environment inherited by the MCP server. The default model is `openrouter/auto`; set `ATS_OPENROUTER_MODEL` to pin an OpenRouter model ID. OpenRouter receives the resume and job description for analysis.
+Set `ATS_PROVIDER=openrouter` and `OPENROUTER_API_KEY` in the environment inherited by the MCP server. The default model is `openrouter/auto`; set `ATS_OPENROUTER_MODEL` to pin an OpenRouter model ID. OpenRouter receives the resume and job description for analysis.
 
 ## Direct console use
 
-From the repository root, run `make ats` or `python3 scripts/ats.py --resume resume/main.tex --job-description job.txt`. The console shows the provider, selected model, and a live elapsed-time indicator while the review runs.
+From the repository root, run `make ats` for the guided interview or `python3 scripts/ats.py --resume portfolio/main.pdf --role 'Data Scientist' --job-description job.txt --provider codex --model gpt-5.6-terra --effort high` for a direct run. The console shows the provider, selected model, and a live elapsed-time indicator while the review runs.
 """
 
 
@@ -77,15 +77,18 @@ def tool_definitions() -> list[dict[str, Any]]:
     return [
         {
             "name": "ats_review_resume",
-            "title": "Score resume against job description",
-            "description": "Scrutinize an ATS resume, score it out of 100, and flag evidenced strengths, gaps, parsing issues, and truthful improvements. Uses the best configured provider/model. Resume paths are read-only; default is this repository's resume/main.tex.",
+            "title": "Send resume and job description to a model",
+            "description": "Score a resume against a target role and optional job description, using resume evidence and substantive public GitHub project READMEs to recommend truthful improvements and estimate score impact. Resume paths are read-only; default is the latest portfolio/main.pdf.",
             "inputSchema": {
                 "type": "object",
                 "properties": {
                     "resume_path": {"type": "string", "description": "Optional path to a .tex, .pdf, .docx, .txt, or .md resume."},
+                    "target_role": {"type": "string", "description": "Role being targeted."},
+                    "company_context": {"type": "string", "description": "Optional company, product, culture, or team context."},
                     "job_description": {"type": "string", "description": "Full job description text. Leave empty for a general ATS readiness review."},
-                    "provider": {"type": "string", "enum": list(PROVIDERS), "description": "Use auto (default), openrouter, claude, codex, or copilot."},
-                    "model": {"type": "string", "description": "Optional model ID override."},
+                    "provider": {"type": "string", "enum": list(PROVIDERS), "description": "Use auto (default), openrouter, claude, codex, agy, or copilot."},
+                    "model": {"type": "string", "description": "Optional model ID to try; overrides the provider's configured default."},
+                    "effort": {"type": "string", "enum": ["low", "medium", "high", "xhigh", "max"], "description": "Optional reasoning effort; availability depends on the provider and model."},
                 },
                 "additionalProperties": False,
             },
@@ -116,7 +119,7 @@ def handle(message: dict[str, Any]) -> dict[str, Any] | None:
             "protocolVersion": params.get("protocolVersion", "2024-11-05"),
             "capabilities": {"tools": {"listChanged": False}, "resources": {"listChanged": False}},
             "serverInfo": {"name": "resume-ats", "version": "1.0.0"},
-            "instructions": "Use ats_review_resume for a detailed model-routed ATS review. Use ats_setup for local MCP setup instructions.",
+            "instructions": "Use ats_review_resume to send the resume and job description to the selected model. Use ats_setup for local MCP setup instructions.",
         }}
     if method == "ping":
         return {"jsonrpc": "2.0", "id": request_id, "result": {}}
@@ -149,17 +152,21 @@ def handle(message: dict[str, Any]) -> dict[str, Any] | None:
             model = arguments.get("model")
             actual_provider, actual_model = resolve_provider(provider, model)
             route = actual_model + (" (max quality tier)" if actual_provider == "openrouter" and actual_model == "openrouter/auto" else "")
-            print(f"ATS MCP review · provider: {actual_provider} · model: {route}", file=sys.stderr, flush=True)
+            effort = arguments.get("effort")
+            print(f"ATS MCP review · provider: {actual_provider} · model: {route} · effort: {effort or 'provider default'}", file=sys.stderr, flush=True)
             report = run_review(
                 arguments.get("resume_path", DEFAULT_RESUME),
                 str(arguments.get("job_description", "")),
                 provider,
                 model,
                 quiet=True,
+                target_role=str(arguments.get("target_role", "")),
+                company_context=str(arguments.get("company_context", "")),
+                effort=str(effort) if effort else None,
             )
             return {"jsonrpc": "2.0", "id": request_id, "result": result_text(report)}
         except Exception as exc:
-            return {"jsonrpc": "2.0", "id": request_id, "result": result_text(f"ATS review failed: {exc}", True)}
+            return {"jsonrpc": "2.0", "id": request_id, "result": result_text(f"Model request failed: {exc}", True)}
     return {"jsonrpc": "2.0", "id": request_id, "error": {"code": -32601, "message": f"Method not found: {method}"}}
 
 

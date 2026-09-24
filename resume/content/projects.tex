@@ -2,30 +2,30 @@
 
 \entryline{1. Chessablanka -- Chess Position Analyzer $|$ \myhref{https://github.com/KedarDamale/Chessablanka}{GitHub}}{Apr 2025 -- Jan 2026}
 \begin{itemize}
-  \item Analysing a chess position from a photograph traditionally requires manually transcribing the board before an engine can evaluate it, making the process slow and error-prone.
-  \item Built an end-to-end computer-vision pipeline that detects the board and maps its grid using a custom YOLOv8 model trained on 700+ images and augmented to 1,700 with Roboflow.
-  \item Achieved 98.57\% detection accuracy across 500+ test images and connected recognized positions to Stockfish for immediate evaluation and best-move analysis.
+  \item Converting a chessboard photo into a position an engine can analyze usually requires manual transcription, making the process slow and error-prone.
+  \item Built an end-to-end computer-vision pipeline with OpenCV to detect the board and map its grid. Trained a custom YOLOv8 model on a Roboflow-augmented dataset expanded from 700+ to 1,700 images.
+  \item Achieved 98.57\% detection accuracy on 500+ test images and integrated Stockfish for immediate position evaluation and best-move analysis.
 \end{itemize}
 
 \entryline{2. NeuroTRIBE -- Cortical Response Analysis for ADHD Research $|$ \myhref{https://github.com/KedarDamale/NeuroTribe}{GitHub}}{Aug 2026 -- Present}
 \begin{itemize}
-  \item Testing whether ADHD is associated with differences in stimulus-evoked cortical responses requires a reproducible comparison against an appropriately matched baseline.
-  \item Built a TRIBE v2 analysis pipeline over Healthy Brain Network movie-fMRI data to compare participants with confirmed ADHD against a matched cohort.
-  \item Added Docker Compose orchestration to make cohort-level exploratory analysis repeatable while keeping legally gated inputs outside the workflow and non-blocking.
+  \item A reproducible analysis was needed to test whether ADHD is associated with differences in stimulus-evoked cortical responses.
+  \item Built a TRIBE v2 analysis pipeline using Healthy Brain Network movie-fMRI data to compare participants with confirmed ADHD against a matched cohort.
+  \item Added Docker Compose orchestration for repeatable cohort-level exploration and kept legally restricted inputs outside the workflow so their access requirements do not block setup.
 \end{itemize}
 
-\entryline{3. Cattle Monitoring using DBSCAN and ESP32 $|$ \myhref{https://github.com/KedarDamale/ESP32-DBSCAN-Cattle-Monitoring-System}{GitHub}}{Oct 2025 -- Nov 2025}
+\entryline{3. Cattle Monitoring Using DBSCAN and ESP32 $|$ \myhref{https://github.com/KedarDamale/ESP32-DBSCAN-Cattle-Monitoring-System}{GitHub}}{Oct 2025 -- Nov 2025}
 \begin{itemize}
-  \item Farmers monitoring free-grazing cattle had to rely on manual rounds, making it hard to see herd locations and recurring grazing patterns in real time.
-  \item Led a team building a distributed tracking system with one ESP32 master and multiple child nodes that send GPS and RSSI readings to a Flask and MongoDB backend.
-  \item Applied DBSCAN to identify grazing zones and displayed the resulting locations on a live Next.js dashboard, giving farmers a clearer view of herd movement.
+  \item Farmers monitoring free-grazing cattle relied on manual rounds, making it difficult to track herd locations and recurring grazing patterns.
+  \item Led a team that built a distributed tracking system: one ESP32 master and multiple child nodes sent GPS and RSSI readings to a Flask and MongoDB backend.
+  \item Applied DBSCAN to identify grazing zones and mapped them on a live Next.js dashboard, giving farmers a clearer view of herd movement.
 \end{itemize}
 
 % StudyONE is retained for alternate resume versions but hidden from this version.
 \iffalse
 \entryline{StudyONE -- Student Productivity \& Collaboration Platform $|$ \myhref{https://github.com/KedarDamale/StudyONE}{GitHub}}{Aug 2024 -- Oct 2024}
 \begin{itemize}
-  \item Students relied on scattered tools for notes and collaboration, so built a full-stack MERN platform with JWT auth, a personalized dashboard, and a real-time collaborative whiteboard.
-  \item Manually converting lectures into notes was slow, so integrated Rev.ai and Google Cloud Speech-to-Text into an AI notes pipeline and deployed the app to production on Render.
+  \item Built a full-stack MERN platform with JWT authentication, a personalized dashboard, and a real-time collaborative whiteboard to bring student notes and collaboration into one place.
+  \item Integrated Rev.ai and Google Cloud Speech-to-Text into an AI note-generation pipeline and deployed the application to Render.
 \end{itemize}
 \fi

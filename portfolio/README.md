@@ -21,4 +21,4 @@ The allowlist is deliberate: repositories containing only a README, license, or 
 
 ## Publishing
 
-The GitHub Pages workflow publishes this directory. Keep the résumé links in `components/site-header.html` and `components/site-footer.html` aligned with the current PDF in this folder when a new résumé is published. The profile and Open Graph image paths assume the repository’s GitHub Pages URL.
+The GitHub Pages workflow publishes this directory. `make resume` refreshes `main.pdf` for the stable links in `components/site-header.html` and `components/site-footer.html`, and also writes a dated PDF snapshot. The profile and Open Graph image paths assume the repository’s GitHub Pages URL.
