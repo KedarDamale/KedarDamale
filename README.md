@@ -25,6 +25,34 @@ From data pipelines and predictive models to RAG, agentic systems, computer visi
 
 </div>
 
+## Local ATS Resume Review
+
+Review the LaTeX resume against a job description with a strict, evidence-based score out of 100. The console prints the provider and model before each review, then shows an elapsed-time indicator while it runs.
+
+```sh
+make ats
+make ats ATS_JOB=job-description.txt
+make ats ATS_JOB=job-description.txt ATS_PROVIDER=codex
+```
+
+The default resume is `resume/main.tex`. You can point `ATS_RESUME` at a `.tex`, `.pdf`, `.docx`, `.txt`, or `.md` resume. PDF extraction uses `pdftotext`.
+
+With `ATS_PROVIDER=auto` (the default), the reviewer uses OpenRouter Auto at its highest quality tier when `OPENROUTER_API_KEY` is available. Otherwise it uses the first installed provider in this order: Claude Code, Codex CLI, then GitHub Copilot CLI. A provider-specific model can be set with `--model` or `ATS_OPENROUTER_MODEL`, `ATS_CLAUDE_MODEL`, `ATS_CODEX_MODEL`, or `ATS_COPILOT_MODEL`.
+
+For OpenRouter, export `OPENROUTER_API_KEY` in the shell before running the command. OpenRouter Auto is the default route; ATS requests its `max` quality tier and prints the concrete model selected when the response arrives. Standard pricing for that model applies. Use `ATS_OPENROUTER_MODEL` to pin a model ID.
+
+### Connect it to an MCP client
+
+The local MCP server exposes `ats_review_resume` and `ats_setup`. Run `make ats-setup` for commands and configuration snippets for Codex, Claude Code, GitHub Copilot CLI, and Antigravity. For example:
+
+```sh
+codex mcp add ats -- python3 "$PWD/scripts/ats_mcp.py"
+claude mcp add --transport stdio ats -- python3 "$PWD/scripts/ats_mcp.py"
+copilot mcp add ats -- python3 "$PWD/scripts/ats_mcp.py"
+```
+
+Antigravity can use the same stdio server from its MCP manager or its `mcp_config.json`. Set `OPENROUTER_API_KEY` in the MCP host's environment to route MCP reviews through OpenRouter Auto. The MCP server also has an `ats_setup` tool and an `ats://setup` resource with these instructions.
+
 ---
 
 ## About
