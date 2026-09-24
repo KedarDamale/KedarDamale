@@ -86,7 +86,7 @@ const gap = 4;
 const left = 32;
 const top = 34;
 const width = left + weeks * (cell + gap) + 8;
-const height = top + 7 * (cell + gap) + 24;
+const height = top + 7 * (cell + gap) + 4;
 const squares = [];
 
 for (let week = 0; week < weeks; week += 1) {
@@ -125,7 +125,6 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${
   <text class="label" x="0" y="${top + 5 * (cell + gap) + cell - 2}">Fri</text>
   ${monthLabels.join('\n  ')}
   ${squares.join('\n  ')}
-  <text class="label" x="${left}" y="${height - 5}">${calendar.totalContributions} contributions in this period</text>
 </svg>\n`;
 
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
