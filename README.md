@@ -2,88 +2,410 @@
 
 # Kedar Damale
 
-**Applied Data Scientist and GenAI Engineer**
+### Applied Data Scientist · ML Engineer · GenAI Engineer
 
-I build end-to-end AI/ML systems for fintech, financial automation, pharma, and medical research, and take them from experiments to production.
+I build production-focused machine learning and GenAI systems for financial automation, analytics, pharmaceutical intelligence, and research.
 
-<a href="https://kedardamale.github.io/KedarDamale/" target="_blank"><img src="https://img.shields.io/badge/Portfolio-0F172A?style=for-the-badge&logo=githubpages&logoColor=white" alt="Portfolio" /></a>
-<a href="https://www.linkedin.com/in/kedar-damale-57252a324/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-<a href="https://kedardamale.github.io/KedarDamale/resume-20260924.pdf" target="_blank"><img src="https://img.shields.io/badge/Resume-PDF-EA4335?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="Resume" /></a>
-<a href="mailto:damalekedar@gmail.com" target="_blank"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
+From data pipelines and predictive models to RAG, agentic systems, computer vision, and production deployment.
+
+<br/>
+
+<a href="https://kedardamale.github.io/KedarDamale/">
+  <img src="https://img.shields.io/badge/Portfolio-0F172A?style=for-the-badge&logo=githubpages&logoColor=white" alt="Portfolio" />
+</a>
+<a href="https://www.linkedin.com/in/kedar-damale-57252a324/">
+  <img src="https://img.shields.io/badge/LinkedIn-2563EB?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+</a>
+<a href="https://kedardamale.github.io/KedarDamale/resume-20260924.pdf">
+  <img src="https://img.shields.io/badge/Resume-0F172A?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Resume" />
+</a>
+<a href="mailto:damalekedar@gmail.com">
+  <img src="https://img.shields.io/badge/Email-2563EB?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+</a>
 
 </div>
 
+---
+
 ## About
 
-- 💼 **ML and GenAI Engineer** at Globalspace Technologies (Jan 2026 – present)
-- 🎓 IT Engineering graduate, Mumbai University (8.5 CGPA) · Qualified **GATE DA 2026**
-- 🧠 Nearly 1.5 years building ML, GenAI, multi-agent systems, data pipelines, and production deployments
+I am an ML and GenAI Engineer focused on building AI systems that move beyond prototypes and operate on real business data.
 
-## Experience
+My work spans financial automation, large-scale analytical systems, agentic AI, machine learning, computer vision, data engineering, and production deployment.
 
-*A path from automating financial workflows to building AI systems for decisions at scale.*
+|                   |                                                                                 |
+| ----------------- | ------------------------------------------------------------------------------- |
+| **Current Role**  | ML & GenAI Engineer at Globalspace Technologies Ltd.                            |
+| **Experience**    | 1+ years across ML, GenAI, automation, data systems, and production engineering |
+| **Education**     | Information Technology Engineering, University of Mumbai                        |
+| **Academic**      | 8.5 CGPA · GATE DA 2026 Qualified                                               |
+| **Primary Focus** | Applied ML · GenAI · Agentic Systems · Financial Automation · Analytics         |
 
-**ML & GenAI Engineer · Globalspace Technologies Ltd.** · *Jan 2026–Present*
+---
 
-├── **Granska** — AI-enabled audit review and analysis  
-├── **GSTL PatGPT (Zydus)** — Agentic planning across 3M+ pharmaceutical sales and tender records, supporting forecasting, simulations, and historical analysis with evidence-grounded answers and human review checkpoints  
-├── **GSTL AI CSO** — AI-assisted strategy support  
-└── **GSTL Budget Automation** — Unified hierarchy model and dynamic scoring engine designed to scale incentive calculations to thousands of employees
+## Selected Impact
 
-↓
+<table>
+<tr>
+<td align="center" width="25%">
+<h3>3M+</h3>
+Pharmaceutical sales and tender records used by an agentic analytical system
+</td>
+<td align="center" width="25%">
+<h3>10,000+</h3>
+Invoices processed through automated financial reconciliation
+</td>
+<td align="center" width="25%">
+<h3>&gt;99.9%</h3>
+Reduction in reconciliation processing time versus the previous manual workflow
+</td>
+<td align="center" width="25%">
+<h3>98.57%</h3>
+Chess-piece detection accuracy across 500+ test images
+</td>
+</tr>
+</table>
 
-**Freelance Automation Developer · Propelligence Advisors** · *May 2025–Jan 2026*
+---
 
-└── Automated PR-to-GSTR-2B reconciliation for 10,000+ invoices using RapidFuzz and Polars, cutting a 5–6 day manual process by **more than 99.9%**. The solution became part of an audit suite used by two CA firms and approximately 20 auditors.
+# Employment Journey
 
-## Personal Projects
+My career so far has followed one consistent direction:
 
-| Project | What it does | Stack |
-|---|---|---|
-| [**NeuroTRIBE**](https://github.com/KedarDamale/NeuroTribe) | Cortical-response analysis on HBN movie-fMRI data, comparing ADHD participants against a matched cohort | TRIBE v2 · Docker Compose |
-| [**Chessablanka**](https://github.com/KedarDamale/Chessablanka) | Reads a chess position from a photo and evaluates it with Stockfish. **98.57%** detection accuracy on 500+ test images | YOLOv8 · Roboflow · Stockfish |
-| [**Cattle Monitoring**](https://github.com/KedarDamale/ESP32-DBSCAN-Cattle-Monitoring-System) | Distributed ESP32 GPS/RSSI tracking with DBSCAN grazing-zone detection on a live dashboard | ESP32 · Flask · MongoDB · Next.js |
-| [**Automated Reconciliation**](https://github.com/KedarDamale/automated_reconcillation) | Fuzzy-matches purchase records against tax records and generates review-ready reconciliation reports | Python · Polars · Fuzzy matching |
-| [**Automated UI Flow Maker**](https://github.com/KedarDamale/Automated-UI-flow-maker) | Experiment in expressing interface interactions as repeatable, code-backed UI flows | Python · UI automation |
-| [**StudyONE Drawing Board**](https://github.com/KedarDamale/StudyONE-DrawingBoard) | Drawing-board companion for collaborative learning and visual explanations | TypeScript |
-| [**MarksMania**](https://github.com/KedarDamale/MarksMania) | JavaScript learning and assessment application | JavaScript · Web application |
-| [**GroceryShopONE**](https://github.com/KedarDamale/GroceryShopONE) | Flask application for managing a shop and its operational records | Python · Flask |
-| [**Music Downloader**](https://github.com/KedarDamale/Music-Downloader) | Python utility for downloading audio from supported sources | Python |
-| [**Cricket Match Summarizer**](https://github.com/KedarDamale/Cricket-Match-Summarizer) | Scrapes ball-by-ball cricket commentary, parses match events, and applies rule-based analysis to identify possible team strategies | Python · NLP · Web scraping |
+**automating repetitive workflows → building intelligent decision systems → engineering production AI**
 
+```mermaid
+flowchart LR
 
-# Company projects
-## Company Projects
+    START((Start))
 
-- **Granska** — AI-enabled review and analysis project.
-- **GSTL PatGPT — Zydus** — Agentic planning assistant over 3M+ pharma sales and tender records for forecasting, simulation, and historical analysis, with human review checkpoints and evidence-grounded answers.
-- **GSTL AI CSO** — AI-assisted strategy support project.
-- **GSTL Budget Automation** — Unified hierarchy model and dynamic scoring engine for incentive calculations at scale.
+    P["STOP 01<br/><br/><b>Propelligence Advisors</b><br/>Freelance Automation Developer<br/><br/>May 2025 — Jan 2026"]
 
-## Tech stack
+    G["STOP 02<br/><br/><b>Globalspace Technologies Ltd.</b><br/>ML & GenAI Engineer<br/><br/>Jan 2026 — Present"]
 
-<p>
-<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
-<img src="https://img.shields.io/badge/SQL-336791?style=flat-square&logo=postgresql&logoColor=white" alt="SQL" />
-<img src="https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white" alt="Pandas" />
-<img src="https://img.shields.io/badge/Polars-CD792C?style=flat-square&logo=polars&logoColor=white" alt="Polars" />
-<img src="https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white" alt="scikit-learn" />
-<img src="https://img.shields.io/badge/XGBoost-189FDD?style=flat-square" alt="XGBoost" />
-<img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch" />
-<img src="https://img.shields.io/badge/YOLOv8-111F68?style=flat-square" alt="YOLOv8" />
-<img src="https://img.shields.io/badge/LangChain-1C3C3C?st| [**StudyONE**](https://github.com/KedarDamale/StudyONE) | Full-stack study platform combining student productivity and collaboration tools | MERN · Speech-to-text · Collaboration |
-yle=flat-square&logo=langchain&logoColor=white" alt="LangChain" />
-<img src="https://img.shields.io/badge/LangGraph-1C3C3C?style=flat-square&logo=langgraph&logoColor=white" alt="LangGraph" />
-<img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI" />
-<img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
-<img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white" alt="AWS" />
-<img src="https://img.shields.io/badge/MLflow-0194E2?style=flat-square&logo=mlflow&logoColor=white" alt="MLflow" />
-</p>
+    NOW((Present))
 
-**GenAI:** multi-agent systems, RAG, human-in-the-loop, MCP
+    START -->|"Financial Automation"| P
+    P -->|"ML + GenAI Systems"| G
+    G --> NOW
 
-## Current Personal Project Contributions
+    classDef endpoint fill:#0F172A,stroke:#0F172A,color:#FFFFFF,stroke-width:2px;
+    classDef stop fill:#F8FAFC,stroke:#2563EB,color:#0F172A,stroke-width:2px;
+
+    class START,NOW endpoint;
+    class P,G stop;
+```
+
+---
+
+## Stop 02 — Globalspace Technologies Ltd.
+
+**ML & GenAI Engineer**
+**January 2026 — Present**
+
+Building AI, ML, analytics, and automation systems across pharmaceutical intelligence, financial workflows, auditing, and enterprise decision support.
+
+### GSTL PatGPT — Zydus
+
+Agentic analytical system operating across **3M+ pharmaceutical sales and tender records**.
+
+Built to support:
+
+* historical analysis
+* forecasting workflows
+* simulation
+* multi-step analytical planning
+* evidence-grounded answers
+* human review checkpoints
+* analytical tool orchestration
+
+The system translates complex analytical questions into structured execution plans and coordinates the required data and reasoning tools.
+
+### Granska
+
+AI-enabled auditing and financial review platform focused on reducing manual work across accounting and audit workflows.
+
+Areas include:
+
+* automated reconciliation
+* financial-data ingestion
+* review workflows
+* anomaly detection
+* analytical tooling
+* audit automation
+* structured financial analysis
+
+### GSTL AI CSO
+
+AI-assisted strategic decision-support system designed to help transform business data into structured analysis and decision context.
+
+### GSTL Budget Automation
+
+Designed a unified organizational hierarchy model and dynamic scoring system for incentive and budget calculations.
+
+The architecture was designed to scale calculations across **thousands of employees** while keeping scoring rules configurable and maintainable.
+
+---
+
+## Stop 01 — Propelligence Advisors
+
+**Freelance Automation Developer**
+**May 2025 — January 2026**
+
+This was where my work moved from software experimentation into solving real operational problems.
+
+### Automated PR-to-GSTR-2B Reconciliation
+
+Built an automated reconciliation system for matching purchase-register records with GSTR-2B tax records.
+
+The system processed **10,000+ invoices** using:
+
+* Polars
+* RapidFuzz
+* normalization pipelines
+* fuzzy entity matching
+* rule-based reconciliation
+* automated report generation
+
+A workflow that previously required approximately **5–6 days of manual work** could be processed automatically, reducing processing time by more than **99.9%**.
+
+The solution later became part of an audit workflow used by **two CA firms and approximately 20 auditors**.
+
+---
+
+# Selected Personal Projects
+
+## NeuroTRIBE
+
+**Computational neuroscience · fMRI · Research infrastructure**
+
+[View Repository](https://github.com/KedarDamale/NeuroTribe)
+
+Cortical-response analysis on Healthy Brain Network movie-fMRI data, comparing participants with ADHD against a matched cohort.
+
+Built around reproducible analytical workflows and containerized research infrastructure.
+
+`TRIBE v2` `fMRI` `Python` `Docker Compose`
+
+---
+
+## Chessablanka
+
+**Computer Vision · Chess · Object Detection**
+
+[View Repository](https://github.com/KedarDamale/Chessablanka)
+
+Reads a physical chess position from an image, reconstructs the board state, and evaluates the resulting position using Stockfish.
+
+Achieved **98.57% detection accuracy across 500+ test images**.
+
+`YOLOv8` `Roboflow` `OpenCV` `Stockfish` `Python`
+
+---
+
+## ESP32 DBSCAN Cattle Monitoring System
+
+**IoT · Geospatial Analytics · Clustering**
+
+[View Repository](https://github.com/KedarDamale/ESP32-DBSCAN-Cattle-Monitoring-System)
+
+Distributed cattle-monitoring system combining GPS and RSSI measurements from ESP32 devices.
+
+DBSCAN is used to identify grazing zones and spatial behavior, with results displayed through a live monitoring dashboard.
+
+`ESP32` `DBSCAN` `Flask` `MongoDB` `Next.js`
+
+---
+
+## Automated Reconciliation
+
+**FinTech · Financial Automation · Entity Matching**
+
+[View Repository](https://github.com/KedarDamale/automated_reconcillation)
+
+Automated financial reconciliation engine for matching purchase records against tax records and producing review-ready outputs.
+
+`Python` `Polars` `RapidFuzz` `Fuzzy Matching`
+
+---
+
+## StudyONE
+
+**Full-Stack Learning Platform**
+
+[View Repository](https://github.com/KedarDamale/StudyONE)
+
+Full-stack student productivity and collaboration platform combining learning tools, speech-to-text capabilities, and collaborative workflows.
+
+`MERN` `TypeScript` `Speech-to-Text` `Collaboration`
+
+---
+
+## Cricket Match Summarizer
+
+**NLP · Information Extraction · Sports Analytics**
+
+[View Repository](https://github.com/KedarDamale/Cricket-Match-Summarizer)
+
+Processes ball-by-ball cricket commentary, extracts match events, and applies rule-based analytical logic to identify possible team strategies and patterns.
+
+`Python` `NLP` `Web Scraping` `Rule-Based Analytics`
+
+---
+
+<details>
+<summary><b>Additional Projects</b></summary>
+
+<br/>
+
+### Automated UI Flow Maker
+
+[Repository](https://github.com/KedarDamale/Automated-UI-flow-maker)
+
+Experiment in representing interface interactions as repeatable, code-driven UI workflows.
+
+`Python` `UI Automation`
+
+---
+
+### StudyONE Drawing Board
+
+[Repository](https://github.com/KedarDamale/StudyONE-DrawingBoard)
+
+Drawing-board companion for collaborative learning and visual explanations.
+
+`TypeScript`
+
+---
+
+### MarksMania
+
+[Repository](https://github.com/KedarDamale/MarksMania)
+
+JavaScript-based learning and assessment application.
+
+`JavaScript` `Web`
+
+---
+
+### GroceryShopONE
+
+[Repository](https://github.com/KedarDamale/GroceryShopONE)
+
+Flask application for managing shop operations and records.
+
+`Python` `Flask`
+
+---
+
+### Music Downloader
+
+[Repository](https://github.com/KedarDamale/Music-Downloader)
+
+Python utility for downloading audio from supported sources.
+
+`Python`
+
+</details>
+
+---
+
+# Engineering Stack
+
+## Data Science and Machine Learning
+
+`Python`
+`SQL`
+`NumPy`
+`Pandas`
+`Polars`
+`scikit-learn`
+`XGBoost`
+`PyTorch`
+`YOLOv8`
+`OpenCV`
+
+## Generative AI
+
+`LLMs`
+`RAG`
+`Agentic Systems`
+`Multi-Agent Systems`
+`LangChain`
+`LangGraph`
+`MCP`
+`Human-in-the-Loop`
+`Tool Calling`
+`Structured Outputs`
+
+## Backend and Data Systems
+
+`FastAPI`
+`Flask`
+`PostgreSQL`
+`MongoDB`
+`Redis`
+`REST APIs`
+`Data Pipelines`
+
+## MLOps and Infrastructure
+
+`Docker`
+`AWS`
+`MLflow`
+`Git`
+`GitHub`
+`Linux`
+
+## Languages and Web
+
+`Python`
+`SQL`
+`TypeScript`
+`JavaScript`
+`Go`
+`React`
+`Next.js`
+
+---
+
+# What I Like Building
+
+I am particularly interested in systems where machine learning is only one part of the solution.
+
+That includes:
+
+* analytical agents that coordinate multiple tools
+* production RAG systems
+* multi-agent architectures
+* financial and audit automation
+* intelligent data pipelines
+* predictive analytics
+* computer vision systems
+* ML systems connected to real operational workflows
+* human-in-the-loop AI
+* systems that turn large datasets into actionable decisions
+
+---
+
+# Current GitHub Activity
 
 <a href="https://github.com/KedarDamale?tab=overview">
-  <img src="./assets/github-activity.svg" width="100%" alt="Kedar Damale's GitHub contributions for the current and previous four months" />
+  <img src="./assets/github-activity.svg" width="100%" alt="Kedar Damale GitHub contribution activity" />
 </a>
+
+---
+
+<div align="center">
+
+### Building systems that turn data into decisions and repetitive work into automation.
+
+[Portfolio](https://kedardamale.github.io/KedarDamale/)
+  ·  
+[LinkedIn](https://www.linkedin.com/in/kedar-damale-57252a324/)
+  ·  
+[Resume](https://kedardamale.github.io/KedarDamale/resume-20260924.pdf)
+  ·  
+[Email](mailto:damalekedar@gmail.com)
+
+</div>
