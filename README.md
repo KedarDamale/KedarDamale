@@ -62,9 +62,3 @@ I build end-to-end AI/ML systems for fintech, financial automation, pharma, and 
 <a href="https://github.com/KedarDamale?tab=overview">
   <img src="./assets/github-activity.svg" width="100%" alt="Kedar Damale's GitHub contributions for the current and previous four months" />
 </a>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/KedarDamale/KedarDamale/output/github-contribution-grid-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/KedarDamale/KedarDamale/output/github-contribution-grid-snake.svg" />
-  <img alt="Kedar Damale GitHub contribution animation" src="https://raw.githubusercontent.com/KedarDamale/KedarDamale/output/github-contribution-grid-snake.svg" />
-</picture>
