@@ -74,27 +74,17 @@ My career so far has followed one consistent direction:
 
 **automating repetitive workflows → building intelligent decision systems → engineering production AI**
 
-```mermaid
-flowchart LR
+**Start** → **Propelligence Advisors** · Freelance Automation Developer · May 2025–Jan 2026  
+*Financial automation*
 
-    START((Start))
+↓
 
-    P["STOP 01<br/><br/><b>Propelligence Advisors</b><br/>Freelance Automation Developer<br/><br/>May 2025 — Jan 2026"]
+**Globalspace Technologies Ltd.** · ML & GenAI Engineer · Jan 2026–Present  
+*ML + GenAI systems*
 
-    G["STOP 02<br/><br/><b>Globalspace Technologies Ltd.</b><br/>ML & GenAI Engineer<br/><br/>Jan 2026 — Present"]
+↓
 
-    NOW((Present))
-
-    START -->|"Financial Automation"| P
-    P -->|"ML + GenAI Systems"| G
-    G --> NOW
-
-    classDef endpoint fill:#0F172A,stroke:#0F172A,color:#FFFFFF,stroke-width:2px;
-    classDef stop fill:#F8FAFC,stroke:#2563EB,color:#0F172A,stroke-width:2px;
-
-    class START,NOW endpoint;
-    class P,G stop;
-```
+**Present**
 
 ---
 
