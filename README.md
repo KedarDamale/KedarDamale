@@ -23,22 +23,18 @@ I build end-to-end AI/ML systems for fintech, financial automation, pharma, and 
 
 *A path from automating financial workflows to building AI systems for decisions at scale.*
 
-```text
-● **ML & GenAI Engineer** · Globalspace Technologies Ltd.  Jan 2026–Present
-│
-├─ **Granska** — AI-enabled audit review and analysis
-├─ **GSTL PatGPT (Zydus)** — Agentic planning across 3M+ pharmaceutical sales and
-│  tender records, supporting forecasting, simulations, and historical analysis
-│  with evidence-grounded answers and human review checkpoints
-├─ **GSTL AI CSO** — AI-assisted strategy support
-└─ **GSTL Budget Automation** — Unified hierarchy model and dynamic scoring engine
-   designed to scale incentive calculations to thousands of employees
+**ML & GenAI Engineer · Globalspace Technologies Ltd.** · *Jan 2026–Present*
 
-● **Freelance Automation Developer** · Propelligence Advisors  May 2025–Jan 2026
-  Automated PR-to-GSTR-2B reconciliation for 10,000+ invoices using RapidFuzz and
-  Polars, cutting a 5–6 day manual process by **more than 99.9%**. The solution became
-  part of an audit suite used by two CA firms and approximately 20 auditors.
-```
+├── **Granska** — AI-enabled audit review and analysis  
+├── **GSTL PatGPT (Zydus)** — Agentic planning across 3M+ pharmaceutical sales and tender records, supporting forecasting, simulations, and historical analysis with evidence-grounded answers and human review checkpoints  
+├── **GSTL AI CSO** — AI-assisted strategy support  
+└── **GSTL Budget Automation** — Unified hierarchy model and dynamic scoring engine designed to scale incentive calculations to thousands of employees
+
+↓
+
+**Freelance Automation Developer · Propelligence Advisors** · *May 2025–Jan 2026*
+
+└── Automated PR-to-GSTR-2B reconciliation for 10,000+ invoices using RapidFuzz and Polars, cutting a 5–6 day manual process by **more than 99.9%**. The solution became part of an audit suite used by two CA firms and approximately 20 auditors.
 
 ## Personal Projects
 
