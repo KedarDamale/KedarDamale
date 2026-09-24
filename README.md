@@ -2,7 +2,7 @@
 
 # Kedar Damale
 
-**Applied Data Scientist · ML & GenAI Engineer**
+**Applied Data Scientist and GenAI Engineer**
 
 I build end-to-end AI/ML systems for fintech, financial automation, pharma, and medical research, and take them from experiments to production.
 
