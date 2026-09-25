@@ -30,10 +30,10 @@
   \vspace{0.18em}\hrule height 0.9pt\vspace{0.4em}}
 \newcommand{\detail}[2]{\textbf{#1}\,: #2}
 \newcommand{\entryline}[2]{%
-  \noindent\begin{tabularx}{\textwidth}{@{}X@{\hspace{1em}}r@{}}\textbf{#1} & \textbf{#2}\end{tabularx}\vspace{-0.16em}\par}
+  \noindent\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X@{\hspace{1em}}r@{}}\textbf{#1} & \textbf{#2}\end{tabularx}\vspace{-0.16em}\par}
 \newcommand{\orgline}[2]{%
-  \noindent\begin{tabularx}{\textwidth}{@{}X@{\hspace{1em}}r@{}}\textit{#1} & \textit{#2}\end{tabularx}\vspace{-0.08em}\par}
-\newcommand{\achievement}[2]{\item \textbf{#1} --- #2}
+  \noindent\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X@{\hspace{1em}}r@{}}\textit{#1} & \textit{#2}\end{tabularx}\vspace{-0.08em}\par}
+\newcommand{\achievement}[2]{\item \textbf{#1}: #2}
 \newcommand{\myhref}[2]{\href{#1}{#2}}
 \input{content/contact-info}
 \newcommand{\resumeheader}{%
@@ -49,6 +49,11 @@
 \resumeheader
 \vspace{-0.7em}
 
+% Justify resume body copy and bullets while keeping headings and entry lines unchanged.
+\justifying
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\setlength{\emergencystretch}{1.5em}
 \input{content/summary}
 \input{content/skills}
 \input{content/experience}

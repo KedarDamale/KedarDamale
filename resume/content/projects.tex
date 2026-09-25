@@ -1,29 +1,28 @@
 \sectiontitle{PROJECTS}
 
-\entryline{1. Chessablanka -- Chess Position Analyzer $|$ \myhref{https://github.com/KedarDamale/Chessablanka}{GitHub}}{Apr 2025 -- Jan 2026}
+\entryline{1. Chessablanka: Chess Position Analyzer}{\myhref{https://github.com/KedarDamale/Chessablanka}{GitHub Link}}
 \begin{itemize}
-  \item Converting a chessboard photo into a position an engine can analyze usually requires manual transcription, making the process slow and error-prone.
-  \item Built an end-to-end computer-vision pipeline with OpenCV to detect the board and map its grid. Trained a custom YOLOv8 model on a Roboflow-augmented dataset expanded from 700+ to 1,700 images.
-  \item Achieved 98.57\% detection accuracy on 500+ test images and integrated Stockfish for immediate position evaluation and best-move analysis.
+  \item No readily available solution could analyze a chess position directly from a board photo, forcing players, including the college IT chess team, to manually transcribe positions into Stockfish during competition preparation.
+  \item Built an OpenCV computer-vision pipeline to detect chessboards and map their grids, training a custom YOLOv8 model on Roboflow with an augmented dataset expanded from 700+ to 1,700 images.
+  \item Delivered a photo-to-analysis tool used by the IT chess team for college competition preparation, achieving 98.57\% detection accuracy across 500+ test images and integrating Stockfish for position evaluation and best-move analysis.
 \end{itemize}
 
-\entryline{2. NeuroTRIBE -- Cortical Response Analysis for ADHD Research $|$ \myhref{https://github.com/KedarDamale/NeuroTribe}{GitHub}}{Aug 2026 -- Present}
+\entryline{2. NeuroTRIBE: Cortical Response Analysis for ADHD Research}{\myhref{https://github.com/KedarDamale/NeuroTribe}{GitHub Link}}
 \begin{itemize}
-  \item A reproducible analysis was needed to test whether ADHD is associated with differences in stimulus-evoked cortical responses.
-  \item Built a TRIBE v2 analysis pipeline using Healthy Brain Network movie-fMRI data to compare participants with confirmed ADHD against a matched cohort.
-  \item Added Docker Compose orchestration for repeatable cohort-level exploration and kept legally restricted inputs outside the workflow so their access requirements do not block setup.
+  \item Addressed the challenge of reproducibly testing whether ADHD is associated with altered stimulus-evoked cortical responses, where fMRI-to-movie alignment and access-controlled HBN inputs complicate cohort comparisons.
+  \item Built an interactive, Docker Compose-based TRIBE v2/HBN movie-fMRI pipeline aligning observed BOLD signals $y_{v,t}$ with pretrained predictions $\hat{y}_{v,t}$ and comparing confirmed-ADHD with non-ADHD cohorts at vertex, region, and network scales.
+  \item Computed residuals $e_{v,t}=y_{v,t}-\hat{y}_{v,t}$, summarized vertex-wise deviation and correlation, and tested group effects with age-, sex-, site-, and motion-adjusted models plus false-discovery-rate (FDR) correction; rendered findings as 3D cortical maps and reports.
 \end{itemize}
-
-\entryline{3. Cattle Monitoring Using DBSCAN and ESP32 $|$ \myhref{https://github.com/KedarDamale/ESP32-DBSCAN-Cattle-Monitoring-System}{GitHub}}{Oct 2025 -- Nov 2025}
+\entryline{3. Low-Cost Cattle Monitoring with ESP32 and DBSCAN}{\myhref{https://github.com/KedarDamale/ESP32-DBSCAN-Cattle-Monitoring-System}{GitHub Link}}
 \begin{itemize}
-  \item Farmers monitoring free-grazing cattle relied on manual rounds, making it difficult to track herd locations and recurring grazing patterns.
-  \item Led a team that built a distributed tracking system: one ESP32 master and multiple child nodes sent GPS and RSSI readings to a Flask and MongoDB backend.
-  \item Applied DBSCAN to identify grazing zones and mapped them on a live Next.js dashboard, giving farmers a clearer view of herd movement.
+  \item Conventional cattle trackers raise deployment costs by requiring a GPS sensor on every animal, despite cattle naturally moving in groups.
+  \item Led a team building a lower-cost group-tracking system, replacing per-animal GPS with one GPS-equipped ESP32 master and RSSI-based child nodes to infer relative positions; streamed telemetry to Flask/MongoDB and a live Next.js dashboard.
+  \item Applied DBSCAN to RSSI-informed location points, where $N_{\varepsilon}(p)=\{q\mid d(p,q)\le\varepsilon\}$ and a core point satisfies $|N_{\varepsilon}(p)|\ge\mathrm{minPts}$, to cluster grazing zones and reveal herd movement patterns.
 \end{itemize}
 
 % StudyONE is retained for alternate resume versions but hidden from this version.
 \iffalse
-\entryline{StudyONE -- Student Productivity \& Collaboration Platform $|$ \myhref{https://github.com/KedarDamale/StudyONE}{GitHub}}{Aug 2024 -- Oct 2024}
+\entryline{StudyONE: Student Productivity \& Collaboration Platform $|$ \myhref{https://github.com/KedarDamale/StudyONE}{GitHub}}{Aug 2024 - Oct 2024}
 \begin{itemize}
   \item Built a full-stack MERN platform with JWT authentication, a personalized dashboard, and a real-time collaborative whiteboard to bring student notes and collaboration into one place.
   \item Integrated Rev.ai and Google Cloud Speech-to-Text into an AI note-generation pipeline and deployed the application to Render.

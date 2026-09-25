@@ -88,8 +88,10 @@
 .visual-index i { width: 1.6rem; height: 1px; background: var(--signal); }
 .project-copy { min-width: 0; }
 .project-title-row { display: flex; align-items: center; justify-content: space-between; gap: .8rem; }
-.project-kicker, .project-year { color: color-mix(in srgb, var(--paper-ink) 60%, transparent); font: .56rem/1.4 var(--font-mono); letter-spacing: .05em; }
-.project-year { white-space: nowrap; }
+.project-kicker, .project-repo-link { color: color-mix(in srgb, var(--paper-ink) 60%, transparent); font: .56rem/1.4 var(--font-mono); letter-spacing: .05em; }
+.project-repo-link { display: inline-flex; align-items: center; gap: .25rem; white-space: nowrap; text-decoration: none; transition: color .2s ease; }
+.project-repo-link:hover { color: var(--signal-dark); }
+.project-repo-link span { font-size: .85rem; line-height: .8; }
 .project-copy h3 { margin-top: .6rem; font: 600 clamp(2.6rem, 5.2vw, 5rem)/.98 var(--font-display); letter-spacing: -.09em; }
 .project-deck { max-width: 33rem; margin-top: .8rem; color: color-mix(in srgb, var(--paper-ink) 73%, transparent); font: 500 .88rem/1.6 var(--font-body); }
 .case-points-dark { margin-top: 1.25rem; color: color-mix(in srgb, var(--paper-ink) 74%, transparent); font-size: .72rem; }
@@ -97,7 +99,6 @@
 .project-footer { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1.15rem; margin-top: 1.55rem; }
 .project-tags { display: flex; flex-wrap: wrap; gap: .4rem; }
 .project-tags span { padding: .37rem .57rem; font-size: .52rem; }
-.project-footer .text-link { font-size: .58rem; }
 
 .repository-section { margin-top: clamp(5rem, 9vw, 8rem); padding-top: clamp(2.5rem, 5vw, 4rem); border-top: 1px solid var(--line-dark); }
 .repository-heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; }
