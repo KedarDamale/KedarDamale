@@ -8,7 +8,7 @@ on:
       - 'scripts/generate-github-activity.mjs'
       - '.github/workflows/update-github-activity.yml'
   schedule:
-    - cron: '17 2 * * *'
+    - cron: '17 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -33,13 +33,10 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: node scripts/generate-github-activity.mjs
 
-      - name: Commit updated graph when it changed
+      - name: Commit and push the hourly graph refresh
         run: |
-          if git diff --quiet -- assets/github-activity.svg; then
-            exit 0
-          fi
           git config user.name 'Kedar Damale'
           git config user.email 'damalekedar@gmail.com'
           git add assets/github-activity.svg
-          git commit -m 'chore: update GitHub activity graph'
+          git commit --allow-empty -m 'chore: update GitHub activity graph'
           git push
