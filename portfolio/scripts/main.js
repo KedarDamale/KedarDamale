@@ -2,6 +2,7 @@ import { initNavigation } from './modules/navigation.js';
 import { initMotion } from './modules/motion.js';
 import { initTheme } from './modules/theme.js';
 import { initCatalogue } from './modules/catalogue.js';
+import { initResumeLinks } from './modules/resume.js';
 
 const componentSlots = [...document.querySelectorAll('[data-component]')];
 
@@ -16,6 +17,7 @@ async function loadComponents() {
 
 try {
   await loadComponents();
+  void initResumeLinks();
   initTheme();
   initNavigation();
   initCatalogue();

@@ -11,7 +11,7 @@ scripts/      Component loader, navigation, theme, motion, repository catalogue
 assets/       Portraits and generated visual assets
 ```
 
-The site has no build step or framework runtime. Start a local server from the repository root, for example `python3 -m http.server 8000`, then open `http://localhost:8000/portfolio/`. Component partials are fetched at runtime, so opening `index.html` directly as a `file://` URL will not work. To serve the resume locally, symlink `portfolio/output` to `../output` or stage the site as the deployment workflow does.
+The site has no framework runtime. Run `bash scripts/dev.sh` from the repository root, then open `http://localhost:4173/`. This stages the site, résumé PDFs, and filename list in a temporary directory; restart the preview after changes. Component partials are fetched at runtime, so opening `index.html` directly as a `file://` URL will not work.
 
 ## Repository catalogue
 
@@ -21,4 +21,4 @@ The allowlist is deliberate: repositories containing only a README, license, or 
 
 ## Publishing
 
-The GitHub Pages workflow stages this directory and the single `output/resume-YYYYMMDD.pdf` artifact. `make resume` uses the latest Git commit date affecting `resume/`, removes redundant resume PDFs after a successful build, and updates the download links in `components/site-header.html`, `components/site-footer.html`, and the profile README. The profile and Open Graph image paths assume the repository’s GitHub Pages URL.
+The GitHub Pages workflow stages this directory and all `output/resume-YYYYMMDD.pdf` artifacts, then generates `output/resumes.json`. JavaScript reads this list and updates both résumé links to the filename with the latest date. Add a dated PDF to `output/` and deploy to update the download automatically. `make resume` uses the latest Git commit date affecting `resume/`, removes redundant resume PDFs after a successful build, and updates the fallback download links and profile README. The profile and Open Graph image paths assume the repository’s GitHub Pages URL.
