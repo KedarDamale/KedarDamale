@@ -8,7 +8,7 @@ on:
       - 'scripts/generate-github-activity.mjs'
       - '.github/workflows/update-github-activity.yml'
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '*/60 * * * *'
   workflow_dispatch:
 
 permissions:
