@@ -22,7 +22,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
 
       - name: Generate the rolling five-month graph
         env:
@@ -38,8 +38,8 @@ jobs:
           if git diff --quiet -- assets/github-activity.svg; then
             exit 0
           fi
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git config user.name 'Kedar Damale'
+          git config user.email 'damalekedar@gmail.com'
           git add assets/github-activity.svg
           git commit -m 'chore: update GitHub activity graph'
           git push
