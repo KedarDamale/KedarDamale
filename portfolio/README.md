@@ -11,7 +11,7 @@ scripts/      Component loader, navigation, theme, motion, repository catalogue
 assets/       Portraits and generated visual assets
 ```
 
-The site has no build step or framework runtime. Start a local server from this directory, for example `python3 -m http.server 8000`, then open `http://localhost:8000/`. Component partials are fetched at runtime, so opening `index.html` directly as a `file://` URL will not work.
+The site has no build step or framework runtime. Start a local server from the repository root, for example `python3 -m http.server 8000`, then open `http://localhost:8000/portfolio/`. Component partials are fetched at runtime, so opening `index.html` directly as a `file://` URL will not work. To serve the resume locally, symlink `portfolio/output` to `../output` or stage the site as the deployment workflow does.
 
 ## Repository catalogue
 
@@ -21,4 +21,4 @@ The allowlist is deliberate: repositories containing only a README, license, or 
 
 ## Publishing
 
-The GitHub Pages workflow publishes this directory. `make resume` refreshes `main.pdf` for the stable links in `components/site-header.html` and `components/site-footer.html`, and also writes a dated PDF snapshot. The profile and Open Graph image paths assume the repository’s GitHub Pages URL.
+The GitHub Pages workflow stages this directory and the single `output/resume-YYYYMMDD.pdf` artifact. `make resume` uses the latest Git commit date affecting `resume/`, removes redundant resume PDFs after a successful build, and updates the download links in `components/site-header.html`, `components/site-footer.html`, and the profile README. The profile and Open Graph image paths assume the repository’s GitHub Pages URL.
