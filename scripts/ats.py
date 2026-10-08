@@ -23,7 +23,10 @@ from xml.etree import ElementTree
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_RESUME = ROOT / "portfolio" / "main.pdf"
+DEFAULT_RESUME = next(
+    iter(sorted((ROOT / "output").glob("resume-????????.pdf"), reverse=True)),
+    ROOT / "resume" / "main.tex",
+)
 PROVIDERS = ("auto", "openrouter", "claude", "codex", "agy", "copilot")
 AUTO_PROVIDER_ORDER = ("claude", "codex", "agy", "copilot")
 CODEX_MODEL_CHOICES = (
