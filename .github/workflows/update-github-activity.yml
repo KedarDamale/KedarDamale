@@ -8,7 +8,7 @@ on:
       - 'scripts/generate-github-activity.mjs'
       - '.github/workflows/update-github-activity.yml'
   schedule:
-    - cron: '15 * * * *'
+    - cron: '*/15 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -33,7 +33,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: node scripts/generate-github-activity.mjs
 
-      - name: Commit and push the hourly graph refresh
+      - name: Commit and push the graph refresh every 15 minutes
         run: |
           git config user.name 'Kedar Damale'
           git config user.email 'damalekedar@gmail.com'
