@@ -22,6 +22,8 @@ fi
 
 resume_name="resume-${version}.pdf"
 mkdir -p "$project_dir/output"
+# Clear all previous output, including hidden files and nested directories.
+find "$project_dir/output" -mindepth 1 -maxdepth 1 -exec rm -rf -- {} +
 mv "$compiled_pdf" "$project_dir/output/$resume_name"
 
 python3 - "$project_dir" "$resume_name" <<'PY'
@@ -47,8 +49,6 @@ for relative in ("README.md", "portfolio/components/site-header.html", "portfoli
 # Remove superseded resume artifacts only after a successful build.
 legacy = [root / "resume/main.pdf", root / "portfolio/main.pdf"]
 legacy += list((root / "portfolio").glob("resume-*.pdf"))
-legacy += list((root / "output").glob("resume-*.pdf"))
-legacy += list((root / "output/pdf").glob("resume-*.pdf"))
 for path in legacy:
     if path != root / "output" / name:
         path.unlink(missing_ok=True)
