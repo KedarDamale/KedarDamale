@@ -23,11 +23,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
-      - name: Stage portfolio and the single resume PDF
+      - name: Stage portfolio and dated resume PDFs
         run: |
           mkdir -p _site/output
           cp -a portfolio/. _site/
           cp output/resume-????????.pdf _site/output/
+          python3 scripts/list-resumes.py _site/output
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
