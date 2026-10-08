@@ -51,6 +51,37 @@ copilot mcp add ats -- python3 "$PWD/scripts/ats_mcp.py"
 
 Antigravity can use the same stdio server from its MCP manager or its `mcp_config.json`. Set `OPENROUTER_API_KEY` in the MCP host's environment to route MCP reviews through OpenRouter Auto. The MCP server also has an `ats_setup` tool and an `ats://setup` resource with these instructions.
 
+## Live Job Search
+
+Run `make jobs` to search the live internet for active vacancies and print company names, job titles, application links, required experience, dates, company ratings and evidence in three tiers. This search uses no resume or GitHub project content. It requires an authenticated Codex or Claude Code CLI with working web search; `auto` chooses Codex first, then Claude if Codex is not installed.
+
+```sh
+make jobs
+make jobs JOBS_PROVIDER=claude JOBS_MODEL=sonnet JOBS_EFFORT=high
+make jobs JOBS_PROVIDER=codex JOBS_EFFORT=high JOBS_TIMEOUT=900
+python3 scripts/jobs.py --json
+```
+
+Edit `scripts/jobs.py` to set preferences. Defaults preserve Pune as priority 0, Mumbai and India-eligible Remote as priority 1, Data Scientist / ML Engineer / AI Engineer titles, 1.5 years of experience, and a mandatory mean Glassdoor/AmbitionBox overall rating of at least 3.5/5. Both company ratings and their source URLs are required; unavailable ratings exclude the company rather than guessing its quality. Closed/unverified vacancies, incompatible experience, other locations and original posting dates older than 30 days are excluded.
+
+| Tier | Qualification |
+| --- | --- |
+| Must apply | First-priority location, verified experience fit, original posting within 7 days |
+| Should apply | Any preferred location, verified experience fit, original posting within 14 days, excluding Must apply |
+| Put it in stash | Otherwise qualifying active listings up to 30 days old, or unknown posting date / required experience; these gaps are marked for checking |
+
+Each tier sorts by location priority first, then freshness, then company rating. There is no fixed count or padding: zero, two or ten qualifying jobs are shown as found. Distinct employer requisitions remain separate; duplicate URLs and matching requisition IDs are collapsed. Discovery is model-assisted and cannot guarantee exhaustive coverage; the report includes queries, exclusions, blocked-source warnings and provider-reported evidence. Employer pages can change after verification.
+
+### Connect the Jobs MCP server
+
+```sh
+make jobs-setup
+codex mcp add jobs -- make --silent -C "$PWD" jobs-mcp
+claude mcp add --transport stdio jobs -- make --silent -C "$PWD" jobs-mcp
+```
+
+`make jobs-mcp` starts the stdio MCP server. It exposes `jobs_find_active`, `jobs_preferences`, `jobs_setup`, `jobs://setup` and `jobs://preferences`. `jobs_find_active` accepts optional title, experience, location-priority, rating, freshness and timeout overrides; it returns a readable report plus structured tiers. Configure `JOBS_PROVIDER`, `JOBS_MODEL`, `JOBS_EFFORT` and `JOBS_TIMEOUT` in the Makefile for both console and MCP searches. For example, `make jobs-mcp JOBS_MODEL=gpt-5.6-terra JOBS_EFFORT=xhigh`. Start connected clients through the Make command above so they pick up Makefile settings; restart the MCP server after editing them. A server started directly through Python defaults to Codex, `gpt-5.6-terra`, and `xhigh`, and accepts these settings through environment variables. Individual MCP tool calls cannot override the server's provider/model/effort. `make jobs` uses the same search and ranking functions as the MCP tool. Searches run in a temporary workspace, with shell tools disabled for Codex and only WebSearch/WebFetch allowed for Claude; nested job searches are disabled. Progress is printed to stderr every 15 seconds while the provider runs.
+
 ---
 
 ## About

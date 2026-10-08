@@ -10,8 +10,13 @@ ATS_COMPANY_CONTEXT ?=
 ATS_INTERACTIVE ?= 1
 ATS_RESUME ?= $(or $(lastword $(sort $(wildcard output/resume-????????.pdf))),resume/main.tex)
 ATS_JOB ?=
+# Shared console and MCP settings. Edit here or override on the make command.
+JOBS_PROVIDER ?= codex
+JOBS_MODEL ?= gpt-6-luna
+JOBS_EFFORT ?= low
+JOBS_TIMEOUT ?= 600
 
-.PHONY: resume resume-clean ats ats-setup ats-mcp
+.PHONY: resume resume-clean ats ats-setup ats-mcp jobs jobs-setup jobs-mcp
 
 resume:
 	RESUME_VERSION="$(RESUME_VERSION)" RESUME_DIR="$(RESUME_DIR)" LATEX="$(LATEX)" LATEX_FLAGS="$(LATEX_FLAGS)" bash scripts/build-resume.sh
@@ -27,3 +32,12 @@ ats-setup:
 
 ats-mcp:
 	python3 scripts/ats_mcp.py
+
+jobs:
+	python3 scripts/jobs.py --provider "$(JOBS_PROVIDER)" --timeout "$(JOBS_TIMEOUT)" $(if $(JOBS_MODEL),--model "$(JOBS_MODEL)",) $(if $(JOBS_EFFORT),--effort "$(JOBS_EFFORT)",)
+
+jobs-setup:
+	python3 scripts/jobs_mcp.py --setup
+
+jobs-mcp:
+	@JOBS_PROVIDER="$(JOBS_PROVIDER)" JOBS_MODEL="$(JOBS_MODEL)" JOBS_EFFORT="$(JOBS_EFFORT)" JOBS_TIMEOUT="$(JOBS_TIMEOUT)" python3 scripts/jobs_mcp.py
