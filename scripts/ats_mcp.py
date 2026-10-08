@@ -69,7 +69,7 @@ Set `ATS_PROVIDER=openrouter` and `OPENROUTER_API_KEY` in the environment inheri
 
 ## Direct console use
 
-From the repository root, run `make ats` for the guided interview or `python3 scripts/ats.py --resume portfolio/main.pdf --role 'Data Scientist' --job-description job.txt --provider codex --model gpt-5.6-terra --effort high` for a direct run. The console shows the provider, selected model, and a live elapsed-time indicator while the review runs.
+From the repository root, run `make ats` for the guided interview or `python3 scripts/ats.py --role 'Data Scientist' --job-description job.txt --provider codex --model gpt-5.6-terra --effort high` for a direct run. The console shows the provider, selected model, and a live elapsed-time indicator while the review runs.
 """
 
 
@@ -78,7 +78,7 @@ def tool_definitions() -> list[dict[str, Any]]:
         {
             "name": "ats_review_resume",
             "title": "Send resume and job description to a model",
-            "description": "Score a resume against a target role and optional job description, using resume evidence and substantive public GitHub project READMEs to recommend truthful improvements and estimate score impact. Resume paths are read-only; default is the latest portfolio/main.pdf.",
+            "description": "Score a resume against a target role and optional job description, using resume evidence and substantive public GitHub project READMEs to recommend truthful improvements and estimate score impact. Resume paths are read-only; default is the latest output/resume-YYYYMMDD.pdf.",
             "inputSchema": {
                 "type": "object",
                 "properties": {
