@@ -16,7 +16,7 @@ From data pipelines and predictive models to RAG, agentic systems, computer visi
 <a href="https://www.linkedin.com/in/kedar-damale-57252a324/">
   <img src="https://img.shields.io/badge/LinkedIn-2563EB?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
 </a>
-<a href="https://kedardamale.github.io/KedarDamale/output/resume-20260926.pdf">
+<a href="https://kedardamale.github.io/KedarDamale/output/resume-????????.pdf">
   <img src="https://img.shields.io/badge/Resume-0F172A?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Resume" />
 </a>
 <a href="mailto:damalekedar@gmail.com">
@@ -100,12 +100,12 @@ My career so far has followed one consistent direction:
 
 **automating repetitive workflows → building intelligent decision systems → engineering production AI**
 
-**Start** → **Propelligence Advisors** · Freelance Automation Developer · May 2025–Jan 2026  
+**Start** → **Propelligence Advisors** · Freelance Automation Developer · May 2025–Jan 2026
 *Financial automation*
 
 ↓
 
-**Globalspace Technologies Ltd.** · ML & GenAI Engineer · Jan 2026–Present  
+**Globalspace Technologies Ltd.** · ML & GenAI Engineer · Jan 2026–Present
 *ML + GenAI systems*
 
 ↓
