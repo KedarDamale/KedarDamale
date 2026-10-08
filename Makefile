@@ -1,5 +1,5 @@
 RESUME_DIR := resume
-RESUME_VERSION ?= $(shell date -u +%Y%m%d)
+RESUME_VERSION ?= $(shell git log -1 --format=%cs -- resume | tr -d '-')
 LATEX := lualatex
 LATEX_FLAGS := -interaction=nonstopmode -halt-on-error
 ATS_PROVIDER ?= auto
@@ -8,14 +8,13 @@ ATS_EFFORT ?=
 ATS_ROLE ?=
 ATS_COMPANY_CONTEXT ?=
 ATS_INTERACTIVE ?= 1
-ATS_RESUME ?= portfolio/main.pdf
+ATS_RESUME ?= $(or $(lastword $(sort $(wildcard output/resume-????????.pdf))),resume/main.tex)
 ATS_JOB ?=
 
 .PHONY: resume resume-clean ats ats-setup ats-mcp
 
 resume:
-	cd $(RESUME_DIR) && $(LATEX) $(LATEX_FLAGS) main.tex && $(LATEX) $(LATEX_FLAGS) main.tex
-	bash scripts/publish-resume.sh $(RESUME_DIR)/main.pdf $(RESUME_VERSION)
+	RESUME_VERSION="$(RESUME_VERSION)" RESUME_DIR="$(RESUME_DIR)" LATEX="$(LATEX)" LATEX_FLAGS="$(LATEX_FLAGS)" bash scripts/build-resume.sh
 
 resume-clean:
 	cd $(RESUME_DIR) && rm -f main.aux main.log main.out main.pdf
