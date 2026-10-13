@@ -1,0 +1,175 @@
+% Editable keywords for the optional, visually invisible PDF text layer.
+% Set \atskeywordsfalse to omit the layer from the next build.
+% These words remain readable through PDF text extraction, search, or copy/paste.
+% Broad search vocabulary; listing a term here does not establish proficiency.
+% Institution search tags below do not assert affiliation or qualifications.
+% ATS support varies, and hidden text can be ignored by a parser.
+% Write normal LaTeX text (escape special characters such as & as \&).
+\newif\ifatskeywords
+\atskeywordstrue
+\newcommand{\atskeywordtext}{%
+  % Roles and general disciplines.
+  Data Science; DS; Data Scientist; Applied Data Scientist; Decision Scientist;
+  Research Scientist; Applied Scientist; Data Analyst; Business Analyst;
+  Business Intelligence; BI; Analytics Engineer; Data Engineer;
+  Machine Learning; ML; Machine Learning Engineer; ML Engineer;
+  Artificial Intelligence; AI; AI Engineer; AI Research; AI Research Engineer;
+  Deep Learning; DL; Deep Learning Engineer; Generative AI; GenAI;
+  Generative Artificial Intelligence; GenAI Engineer; NLP Engineer;
+  Computer Vision Engineer; MLOps Engineer; LLM Engineer; AI Platform Engineer;
+  Predictive Analytics; Prescriptive Analytics; Descriptive Analytics;
+  Statistical Modeling; Statistical Learning; Data Mining; Pattern Recognition;
+  % Mathematics, statistics, experimentation, and analytical methods.
+  Linear Algebra; Calculus; Probability; Probability Distributions; Statistics;
+  Statistical Analysis; Descriptive Statistics; Inferential Statistics;
+  Bayesian Statistics; Bayesian Inference; Frequentist Inference;
+  Hypothesis Testing; Statistical Significance; Confidence Intervals;
+  P-values; Power Analysis; Effect Size; A/B Testing; AB Testing;
+  Experiment Design; Design of Experiments; DOE; Causal Inference;
+  Causal Modeling; Randomized Controlled Trials; RCT; Regression Analysis;
+  Correlation Analysis; ANOVA; ANCOVA; Chi-Square Test; T-Test;
+  Nonparametric Tests; Bootstrap; Monte Carlo Simulation; Optimization;
+  Gradient Descent; Stochastic Gradient Descent; SGD; Convex Optimization;
+  Operations Research; Linear Programming; Mixed Integer Programming;
+  Exploratory Data Analysis; EDA; Data Profiling; Data Cleaning;
+  Data Wrangling; Data Preprocessing; Missing Value Imputation;
+  Outlier Detection; Anomaly Detection; Normalization; Standardization;
+  Feature Engineering; Feature Selection; Feature Extraction;
+  Dimensionality Reduction; Principal Component Analysis; PCA;
+  t-SNE; UMAP; Multicollinearity; Class Imbalance; SMOTE;
+  % Classical ML, algorithms, and evaluation.
+  Supervised Learning; Unsupervised Learning; Semi-Supervised Learning;
+  Self-Supervised Learning; Reinforcement Learning; RL; Online Learning;
+  Active Learning; Transfer Learning; Multi-Task Learning; Ensemble Learning;
+  Regression; Classification; Clustering; Ranking; Recommendation Systems;
+  Recommender Systems; Collaborative Filtering; Content-Based Filtering;
+  Association Rules; Apriori; Linear Regression; Logistic Regression;
+  Ridge Regression; Lasso Regression; Elastic Net; Decision Trees;
+  Random Forest; Extra Trees; Gradient Boosting; Gradient Boosted Trees;
+  XGBoost; LightGBM; CatBoost; AdaBoost; Support Vector Machines; SVM;
+  Support Vector Regression; SVR; K-Nearest Neighbors; KNN; Naive Bayes;
+  K-Means; K-Means Clustering; Hierarchical Clustering; Gaussian Mixture Models;
+  GMM; DBSCAN; Density-Based Spatial Clustering of Applications with Noise;
+  HDBSCAN; Isolation Forest; One-Class SVM; Autoencoders;
+  Model Training; Model Evaluation; Model Validation; Cross-Validation;
+  K-Fold Cross-Validation; Stratified Cross-Validation; Train-Test Split;
+  Hyperparameter Tuning; Hyperparameter Optimization; Grid Search;
+  Random Search; Bayesian Optimization; Optuna; Hyperopt;
+  Overfitting; Underfitting; Bias-Variance Tradeoff; Regularization;
+  Accuracy; Precision; Recall; F1 Score; Confusion Matrix;
+  ROC-AUC; AUC-ROC; PR-AUC; Log Loss; Calibration;
+  Mean Absolute Error; MAE; Mean Squared Error; MSE;
+  Root Mean Squared Error; RMSE; R-Squared; MAPE; NDCG;
+  Model Interpretability; Explainable AI; XAI; SHAP; LIME;
+  Feature Importance; Partial Dependence Plots; PDP;
+  % Time series and forecasting.
+  Time Series Analysis; Time Series Forecasting; Demand Forecasting;
+  Sales Forecasting; Financial Forecasting; Forecasting; Seasonality;
+  Trend Analysis; ARIMA; SARIMA; SARIMAX; Prophet; Exponential Smoothing;
+  Holt-Winters; Stationarity; Autocorrelation; ACF; PACF;
+  Temporal Cross-Validation; Backtesting; Survival Analysis;
+  % Neural networks, computer vision, and multimodal AI.
+  Neural Networks; Artificial Neural Networks; ANN;
+  Convolutional Neural Networks; CNN; CNNs; Recurrent Neural Networks; RNN;
+  Long Short-Term Memory; LSTM; Gated Recurrent Units; GRU;
+  Transformers; Attention Mechanism; Self-Attention; Multi-Head Attention;
+  Backpropagation; Batch Normalization; Layer Normalization; Dropout;
+  Adam; AdamW; Learning Rate Scheduling; Early Stopping;
+  Fine-Tuning; Fine Tuning; Pretrained Models; Foundation Models;
+  Representation Learning; Contrastive Learning; Metric Learning;
+  Graph Neural Networks; GNN; Generative Adversarial Networks; GAN;
+  Variational Autoencoders; VAE; Diffusion Models; Stable Diffusion;
+  Computer Vision; CV; Image Processing; Image Classification;
+  Object Detection; Object Tracking; Image Segmentation;
+  Semantic Segmentation; Instance Segmentation; Pose Estimation;
+  Optical Character Recognition; OCR; Document AI; Document Understanding;
+  YOLO; YOLOv8; ResNet; EfficientNet; Vision Transformer; ViT; U-Net;
+  OpenCV; Roboflow; Detectron2; Torchvision; Data Augmentation;
+  Multimodal AI; Vision-Language Models; VLM; CLIP;
+  Speech Recognition; Automatic Speech Recognition; ASR;
+  Speech-to-Text; STT; Text-to-Speech; TTS; Audio Processing;
+  % Natural language processing and large language models.
+  Natural Language Processing; NLP; Natural Language Understanding; NLU;
+  Natural Language Generation; NLG; Text Analytics; Text Mining;
+  Tokenization; Stemming; Lemmatization; TF-IDF; Bag of Words;
+  Word Embeddings; Word2Vec; GloVe; FastText; Sentence Embeddings;
+  Named Entity Recognition; NER; Entity Extraction; Information Extraction;
+  Sentiment Analysis; Topic Modeling; Topic Classification; Text Classification;
+  Text Summarization; Question Answering; Semantic Search; Information Retrieval;
+  BERT; RoBERTa; T5; GPT; Llama; Mistral; Qwen; Gemma;
+  Large Language Models; LLM; LLMs; Small Language Models; SLM;
+  Prompt Engineering; Prompt Optimization; In-Context Learning;
+  Few-Shot Learning; Zero-Shot Learning; Chain of Thought;
+  Structured Outputs; JSON Schema; Function Calling; Tool Calling;
+  Retrieval-Augmented Generation; RAG; Agentic RAG; GraphRAG;
+  Hybrid Search; Dense Retrieval; Sparse Retrieval; BM25; Reranking;
+  Cross-Encoders; Chunking; Vector Embeddings; Embedding Models;
+  Vector Search; Vector Databases; FAISS; Chroma; Pinecone;
+  Weaviate; Milvus; Qdrant; pgvector; Elasticsearch; OpenSearch;
+  LangChain; LangGraph; LlamaIndex; Haystack; DSPy;
+  AI Agents; Agentic AI; Agentic Systems; Autonomous Agents;
+  Multi-Agent Systems; Multi-Agent Orchestration; Agent Orchestration;
+  CrewAI; AutoGen; Semantic Kernel; Model Context Protocol; MCP;
+  Human-in-the-Loop; HITL; Human Review; Guardrails; AI Safety;
+  Hallucination Detection; Grounded Generation; LLM Evaluation;
+  RAG Evaluation; RAGAS; Evals; LLM-as-a-Judge;
+  Supervised Fine-Tuning; SFT; Parameter-Efficient Fine-Tuning; PEFT;
+  Low-Rank Adaptation; LoRA; QLoRA; RLHF; RLAIF;
+  Direct Preference Optimization; DPO; Knowledge Distillation;
+  Quantization; Pruning; Model Compression; ONNX; TensorRT;
+  vLLM; Ollama; Hugging Face; Transformers Library; Tokenizers;
+  OpenAI API; Azure OpenAI; Amazon Bedrock; Gemini API; Anthropic API;
+  % Languages, libraries, data engineering, and analytics tooling.
+  Python; R; SQL; PySpark; Scala; Julia; Java; C++; Go;
+  JavaScript; TypeScript; Bash; Linux; NumPy; Pandas; Polars;
+  SciPy; Scikit-learn; sklearn; Statsmodels; PyTorch; TensorFlow;
+  Keras; JAX; Matplotlib; Seaborn; Plotly; Bokeh; Altair;
+  Jupyter; JupyterLab; Notebooks; Streamlit; Gradio; Dash;
+  Power BI; Tableau; Looker; Excel; DAX; Power Query;
+  Data Visualization; Dashboards; Reporting; KPI; Business Metrics;
+  Data Storytelling; Stakeholder Management; Requirements Analysis;
+  Data Pipelines; ETL; ELT; Extract Transform Load; Extract Load Transform;
+  Data Ingestion; Data Transformation; Data Integration; Data Quality;
+  Data Validation; Data Governance; Data Lineage; Data Catalog;
+  Data Warehousing; Data Lakes; Lakehouse; Dimensional Modeling;
+  Star Schema; Snowflake Schema; Batch Processing; Stream Processing;
+  Distributed Computing; Big Data; Apache Spark; Spark SQL;
+  Apache Hadoop; Apache Hive; Apache Kafka; Kafka Streams; Apache Flink;
+  Apache Airflow; Prefect; Dagster; dbt; Delta Lake; Apache Iceberg;
+  Databricks; Snowflake; BigQuery; Redshift; Synapse Analytics;
+  PostgreSQL; MySQL; SQL Server; SQLite; MongoDB; Redis;
+  NoSQL; DuckDB; ClickHouse; Parquet; Apache Arrow; Avro;
+  JSON; CSV; REST APIs; GraphQL; Web Scraping; BeautifulSoup; Scrapy;
+  % Production ML, infrastructure, monitoring, and responsible AI.
+  MLOps; Machine Learning Operations; LLMOps; AIOps; Model Deployment;
+  Model Serving; Real-Time Inference; Batch Inference; Inference Optimization;
+  Model Monitoring; Model Drift; Data Drift; Concept Drift; Retraining;
+  Experiment Tracking; Model Registry; Feature Store; Feast;
+  MLflow; DVC; Weights and Biases; W\&B; Kubeflow; BentoML;
+  FastAPI; Flask; Django; API Development; Microservices;
+  Docker; Docker Compose; Kubernetes; K8s; Helm; Terraform;
+  AWS; Amazon Web Services; Azure; Microsoft Azure; GCP; Google Cloud;
+  Amazon SageMaker; SageMaker; Vertex AI; Azure Machine Learning;
+  S3; EC2; Lambda; ECS; EKS; Cloud Run; Cloud Storage;
+  Git; GitHub; GitLab; Version Control; CI/CD;
+  Continuous Integration; Continuous Delivery; Continuous Deployment;
+  GitHub Actions; Jenkins; Unit Testing; Integration Testing; pytest;
+  Reproducibility; Reproducible Research; GPU; CUDA; cuDNN;
+  Distributed Training; Ray; Dask; Parallel Computing;
+  Latency Optimization; Scalability; Observability; Prometheus; Grafana;
+  Responsible AI; AI Ethics; Fairness; Bias Detection; Privacy;
+  Differential Privacy; Federated Learning; Data Security;
+  Model Risk Management; Model Documentation; Model Cards;
+  % Applications and domain vocabulary.
+  Fraud Detection; Credit Risk; Risk Modeling; Financial Analytics;
+  FinTech; Reconciliation; Entity Matching; Fuzzy Matching; RapidFuzz;
+  Customer Segmentation; Churn Prediction; Customer Lifetime Value;
+  CLV; Marketing Analytics; Product Analytics; Pricing Optimization;
+  Supply Chain Analytics; Inventory Optimization; Pharmaceutical Analytics;
+  Healthcare AI; Medical Imaging; Bioinformatics; Neuroscience;
+  fMRI; BOLD; Statistical Parametric Mapping; False Discovery Rate; FDR;
+  Geospatial Analytics; IoT; Internet of Things; Sensor Fusion;
+  % Requested search tags, separate from education and credentials.
+  Institution search tags (no affiliation claimed): [IIT,NIT,IITT,BITS];
+  IIT; NIT; IITT; BITS; IIIT; IISc; IISER; IIM.%
+}

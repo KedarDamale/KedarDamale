@@ -1,0 +1,24 @@
+% LuaLaTeX PDF text rendering mode 3 emits text without painting its glyphs.
+% A shipout overlay preserves the document's layout and page count.
+% Keep the layer on the last page, below the visible resume body, so text
+% extractors append the keywords instead of mixing them into existing bullets.
+\newsavebox{\atskeywordbox}
+\AddToHook{shipout/foreground}{%
+  \ifatskeywords
+    \ifnum\value{page}=\PreviousTotalPages\relax
+      \sbox{\atskeywordbox}{%
+        \parbox[b]{\dimexpr\paperwidth-2cm\relax}{%
+          \normalfont\fontsize{3}{3.5}\selectfont\raggedright
+          \hyphenpenalty=10000\exhyphenpenalty=10000
+          Additional keywords: \atskeywordtext\par}}%
+      \ifdim\dimexpr\ht\atskeywordbox+\dp\atskeywordbox\relax>8pt
+        % Fit longer catalogs into the same footer without moving body text.
+        \sbox{\atskeywordbox}{%
+          \resizebox*{!}{8pt}{\usebox{\atskeywordbox}}}%
+      \fi
+      \put(\dimexpr1cm\relax,\dimexpr-\paperheight+2pt\relax){%
+        \pdfextension literal direct {q 3 Tr}%
+        \usebox{\atskeywordbox}%
+        \pdfextension literal direct {0 Tr Q}}%
+    \fi
+  \fi}
