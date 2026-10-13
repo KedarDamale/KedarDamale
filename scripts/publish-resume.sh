@@ -33,16 +33,13 @@ from pathlib import Path
 
 root = Path(sys.argv[1])
 name = sys.argv[2]
-# Keep site and profile links pointed at the single published artifact.
-for relative in ("README.md", "portfolio/components/site-header.html", "portfolio/components/site-footer.html"):
+# The profile uses the stable alias produced by the Pages build. Update only
+# the site's fallback links; publishing a resume must not rewrite README.md.
+for relative in ("portfolio/components/site-header.html", "portfolio/components/site-footer.html"):
     path = root / relative
     text = path.read_text()
-    if relative == "README.md":
-        text = re.sub(r"https://kedardamale.github.io/KedarDamale/(?:main\.pdf|output/resume-\d{8}\.pdf)",
-                      f"https://kedardamale.github.io/KedarDamale/output/{name}", text)
-    else:
-        text = re.sub(r'href="(?:main\.pdf|output/resume-\d{8}\.pdf)"',
-                      f'href="output/{name}"', text)
+    text = re.sub(r'href="(?:main\.pdf|output/resume-\d{8}\.pdf)"',
+                  f'href="output/{name}"', text)
     if text != path.read_text():
         path.write_text(text)
 
