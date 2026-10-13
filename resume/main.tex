@@ -1,11 +1,13 @@
 \documentclass[10pt,a4paper]{article}
 
-\usepackage[margin=1cm]{geometry}
+\usepackage[margin=0.5in]{geometry}
 \usepackage{fontspec}
 \usepackage[hidelinks]{hyperref}
 \usepackage{ragged2e}
 \usepackage{tabularx}
 \usepackage{graphicx}
+% Font expansion smooths justified spacing without changing the content.
+\usepackage[protrusion=false]{microtype}
 
 \setmainfont{Carlito}[
   Path = fonts/,
@@ -22,8 +24,8 @@
 \newlength{\sectiongap}
 \newlength{\entrygap}
 \newlength{\subheadinggap}
-\setlength{\sectiongap}{6pt}
-\setlength{\entrygap}{4pt}
+\setlength{\sectiongap}{5pt}
+\setlength{\entrygap}{3pt}
 \setlength{\subheadinggap}{2pt}
 % Keep compact resume bullets without requiring the optional enumitem package.
 \makeatletter
@@ -31,41 +33,57 @@
 \setlength{\labelsep}{5pt}
 \renewcommand{\labelitemi}{\textbullet}
 \def\@listi{\leftmargin\leftmargini
-  \topsep 1pt \parsep 0pt \itemsep 0.5pt \partopsep 0pt}
+  \topsep 1pt \parsep 0pt \itemsep 0.4pt \partopsep 0pt}
 \let\@listI\@listi
 \makeatother
 \newcommand{\sectiontitle}[1]{%
   \par\addvspace{\sectiongap}%
-  \noindent{\fontsize{11}{12}\selectfont\bfseries #1}\par\nobreak
-  \vspace{1.5pt}\hrule height 0.5pt\nobreak\vspace{3pt}}
+  \noindent{\large\bfseries #1}\par\nobreak
+  \vspace{1.8pt}\hrule height 0.5pt\nobreak\vspace{3pt}}
 \newcommand{\detail}[2]{\textbf{#1}: #2}
+\newenvironment{skilllist}{%
+  \begin{list}{}{\setlength{\leftmargin}{0pt}\setlength{\rightmargin}{0pt}%
+    \setlength{\labelwidth}{0pt}\setlength{\labelsep}{0pt}%
+    \setlength{\topsep}{1pt}\setlength{\partopsep}{0pt}%
+    \setlength{\itemsep}{0.4pt}\setlength{\parsep}{0pt}}}{\end{list}}
 \newcommand{\entryline}[2]{%
   \par\noindent\textbf{#1}\hfill\textbf{#2}\par\nobreak}
 \newcommand{\orgline}[2]{%
   \noindent\textit{#1}\hfill\textit{#2}\par\nobreak}
+\newcommand{\jobheader}[4]{%
+  \par\noindent\textbf{#1}\hfill\textit{#3}\par\nobreak
+  \noindent #2\hfill\textit{#4}\par\nobreak}
 \newcommand{\subheading}[1]{%
   \par\addvspace{\subheadinggap}\noindent
-  \hspace*{\leftmargini}\textbf{\textit{#1}}\par\nobreak}
+  \textbf{#1}\par\nobreak}
 \newcommand{\entryspace}{\par\addvspace{\entrygap}}
+\newcommand{\entrydivider}{%
+  \par\addvspace{1pt}\noindent\dotfill\par\nobreak\vspace{1pt}}
 \newcommand{\achievement}[2]{\item \textbf{#1}: #2}
 \newcommand{\myhref}[2]{\href{#1}{#2}}
 \input{content/ats-keywords}
 \input{ats-keyword-layer}
 \input{content/contact-info}
+\newcommand{\contactsep}{\hspace{0.45em}\textbullet\hspace{0.45em}}
 \newcommand{\resumeheader}{%
   {\centering
-    {\fontsize{24}{26}\selectfont\bfseries \resumename\par}\nobreak
+    {\fontsize{26}{28}\selectfont\bfseries \resumename\par}\nobreak
     \vspace{2pt}
-    {\resumelocation\hspace{0.55em}\textperiodcentered\hspace{0.55em}\resumephone\hspace{0.55em}\textperiodcentered\hspace{0.55em}\myhref{mailto:\resumeemail}{\resumeemail}\par}\nobreak
-    \vspace{1pt}
-    {\myhref{\resumeportfoliourl}{\resumeportfoliolabel}\hspace{0.55em}\textperiodcentered\hspace{0.55em}\myhref{\resumegithuburl}{\resumegithublabel}\hspace{0.55em}\textperiodcentered\hspace{0.55em}\myhref{\resumelinkedinurl}{\resumelinkedinlabel}\par}}}
+    {\fontsize{9}{10}\selectfont
+      \resumelocation\contactsep\resumephone\contactsep
+      \myhref{mailto:\resumeemail}{\resumeemail}\contactsep
+      \myhref{\resumeportfoliourl}{\resumeportfoliolabel}\contactsep
+      \myhref{\resumegithuburl}{\resumegithublabel}\contactsep
+      \myhref{\resumelinkedinurl}{\resumelinkedinlabel}\par}}}
 
 \begin{document}
 
-\fontsize{9.8}{11.3}\selectfont
+\fontsize{9.7}{10.82}\selectfont
+% Limit word-space compression so PDF parsers retain word boundaries.
+\fontdimen4\font=0.1pt
 \resumeheader
 
-% Justify resume body copy and bullets while keeping headings and entry lines unchanged.
+% Keep the user's justified body alignment; headings keep explicit alignment.
 \justifying
 \hyphenpenalty=10000
 \exhyphenpenalty=10000
