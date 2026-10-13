@@ -1,66 +1,21 @@
-<section id="projects" class="projects-section light-section">
-  <div class="shell">
-    <div class="section-heading" data-reveal>
-      <p class="eyebrow"><span class="section-index">03</span> Selected work</p>
-      <span class="section-aside">THREE PROBLEMS, BUILT END TO END</span>
-    </div>
-    <p class="projects-lede" data-reveal>Research, vision, and intelligent systems—made concrete.</p>
-    <div class="project-cases">
-      <article class="project-case" data-reveal>
-        <div class="project-visual visual-chess" role="img" aria-label="Editorial image of a chess position on a dark board"><span class="visual-index">CASE 01 <i></i> COMPUTER VISION</span></div>
-        <div class="project-copy">
-          <div class="project-title-row"><p class="project-kicker">01 / 03&nbsp; · &nbsp;COMPUTER VISION</p><a class="project-repo-link" href="https://github.com/KedarDamale/Chessablanka" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div>
-          <h3>Chessablanka</h3>
-          <p class="project-deck">A camera-ready route from a board photograph to an engine-analyzed chess position.</p>
-          <ul class="case-points case-points-dark">
-            <li>Analyzing a chess position from a photo usually means transcribing the board by hand before an engine can evaluate it—a slow, error-prone step.</li>
-            <li>Built an end-to-end computer-vision pipeline to detect the board and map its grid. The custom YOLOv8 model was trained on more than 700 images and expanded to 1,700 through augmentation with Roboflow.</li>
-            <li>Reached 98.57% detection accuracy across more than 500 test images, then connected recognized positions to Stockfish for immediate evaluation and best-move analysis.</li>
-          </ul>
-          <div class="project-footer"><div class="project-tags"><span>YOLOv8</span><span>OpenCV</span><span>Stockfish</span></div></div>
-        </div>
-      </article>
-      <article class="project-case project-case-reverse" data-reveal>
-        <div class="project-visual visual-neuro" role="img" aria-label="Abstract scientific visualization of cortical response waveforms"><span class="visual-index">CASE 02 <i></i> MEDICAL RESEARCH</span></div>
-        <div class="project-copy">
-          <div class="project-title-row"><p class="project-kicker">02 / 03&nbsp; · &nbsp;MEDICAL RESEARCH</p><a class="project-repo-link" href="https://github.com/KedarDamale/NeuroTribe" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div>
-          <h3>NeuroTRIBE</h3>
-          <p class="project-deck">Reproducible cortical-response analysis for an ADHD research question.</p>
-          <ul class="case-points case-points-dark">
-            <li>Studying whether ADHD is associated with differences in stimulus-evoked cortical responses calls for a repeatable comparison with a matched group.</li>
-            <li>Built a TRIBE v2 analysis pipeline using Healthy Brain Network movie-fMRI data to compare participants with confirmed ADHD against a matched cohort.</li>
-            <li>Added Docker Compose orchestration for repeatable cohort-level exploration. Restricted input data stays outside the workflow, so access requirements do not block setup.</li>
-          </ul>
-          <div class="project-footer"><div class="project-tags"><span>Python</span><span>Neuroimaging</span><span>Docker</span></div></div>
-        </div>
-      </article>
-      <article class="project-case" data-reveal>
-        <div class="project-visual visual-cattle" role="img" aria-label="Cattle grazing across a field with subtle location-tracking contours"><span class="visual-index">CASE 03 <i></i> IoT + GEOSPATIAL ML</span></div>
-        <div class="project-copy">
-          <div class="project-title-row"><p class="project-kicker">03 / 03&nbsp; · &nbsp;IoT + GEOSPATIAL ML</p><a class="project-repo-link" href="https://github.com/KedarDamale/ESP32-DBSCAN-Cattle-Monitoring-System" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div>
-          <h3>Cattle Monitoring</h3>
-          <p class="project-deck">A field-to-dashboard system for understanding free-grazing cattle movement.</p>
-          <ul class="case-points case-points-dark">
-            <li>Farmers monitoring free-grazing cattle relied on manual rounds, making it difficult to track herd locations and recurring grazing patterns.</li>
-            <li>Led a team that built a distributed tracking system. One ESP32 master and multiple child nodes send GPS and RSSI readings to a Flask and MongoDB backend.</li>
-            <li>Used DBSCAN to identify grazing zones and displayed them on a live Next.js dashboard, giving farmers a clearer view of herd movement.</li>
-          </ul>
-          <div class="project-footer"><div class="project-tags"><span>ESP32</span><span>DBSCAN</span><span>Flask</span></div></div>
-        </div>
-      </article>
-    </div>
-    <section class="repository-section" aria-labelledby="repository-heading">
-      <div class="repository-heading" data-reveal>
-        <div><p class="eyebrow"><span class="section-index">04</span> Repository index</p><h3 id="repository-heading">More projects.</h3></div>
-        <p class="repository-note">A curated catalogue of public repositories with substantive code. Private work is intentionally not listed here.</p>
-      </div>
-      <div class="repository-controls" data-reveal>
-        <label class="repo-search-wrap"><span class="sr-only">Search repositories</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><input type="search" id="repo-search" placeholder="Find a project or technology" autocomplete="off" /></label>
-        <div class="repo-filters" data-repo-filters aria-label="Filter repositories"></div>
-      </div>
-      <p class="repo-status" data-repo-status aria-live="polite">Loading the curated project index…</p>
-      <div class="repository-grid" data-repo-grid></div>
-      <p class="repo-empty" data-repo-empty hidden>No repositories match that search. Try a different phrase.</p>
-    </section>
-  </div>
+<section id="projects" class="projects-section" aria-labelledby="projects-heading">
+  <h2 id="projects-heading" class="numbered-heading" data-reveal><span class="section-number">03.</span> Some Things I’ve Built</h2>
+  <ul class="featured-projects"><li class="featured-project" data-reveal>
+  <div class="project-content"><p class="project-overline">Featured Project</p><h3 class="project-title"><a href="https://github.com/KedarDamale/Chessablanka" target="_blank" rel="noopener noreferrer">Chessablanka</a></h3><div class="project-description"><p>An end-to-end computer-vision pipeline that reads a physical chessboard from a photo, reconstructs its position, and connects it to Stockfish. Achieved <strong>98.57% detection accuracy</strong> across 500+ test images.</p></div><ul class="project-tech-list"><li>YOLOv8</li><li>Roboflow</li><li>OpenCV</li><li>Stockfish</li></ul><div class="project-links"><a href="https://github.com/KedarDamale/Chessablanka" target="_blank" rel="noopener noreferrer" aria-label="Chessablanka source on GitHub"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#github"/></svg></a><a href="https://github.com/KedarDamale/Chessablanka#readme" target="_blank" rel="noopener noreferrer" aria-label="Read about Chessablanka"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#external"/></svg></a></div></div>
+  <a class="project-image" href="https://github.com/KedarDamale/Chessablanka" target="_blank" rel="noopener noreferrer" aria-label="Explore Chessablanka"><span class="project-art art-chess" role="img" aria-label="Chessboard illustration"></span></a>
+</li>
+<li class="featured-project" data-reveal>
+  <div class="project-content"><p class="project-overline">Featured Project</p><h3 class="project-title"><a href="https://github.com/KedarDamale/NeuroTribe" target="_blank" rel="noopener noreferrer">NeuroTRIBE</a></h3><div class="project-description"><p>A reproducible research pipeline for comparing stimulus-evoked cortical responses in participants with ADHD and a matched cohort. Built around <strong>TRIBE v2</strong>, Healthy Brain Network movie-fMRI data, and containerized cohort analysis.</p></div><ul class="project-tech-list"><li>Python</li><li>fMRI</li><li>TRIBE v2</li><li>Docker</li></ul><div class="project-links"><a href="https://github.com/KedarDamale/NeuroTribe" target="_blank" rel="noopener noreferrer" aria-label="NeuroTRIBE source on GitHub"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#github"/></svg></a><a href="https://github.com/KedarDamale/NeuroTribe#readme" target="_blank" rel="noopener noreferrer" aria-label="Read about NeuroTRIBE"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#external"/></svg></a></div></div>
+  <a class="project-image" href="https://github.com/KedarDamale/NeuroTribe" target="_blank" rel="noopener noreferrer" aria-label="Explore NeuroTRIBE"><span class="project-art art-neuro" role="img" aria-label="Cortical response waveform illustration"></span></a>
+</li>
+<li class="featured-project" data-reveal>
+  <div class="project-content"><p class="project-overline">Featured Project</p><h3 class="project-title"><a href="https://github.com/KedarDamale/ESP32-DBSCAN-Cattle-Monitoring-System" target="_blank" rel="noopener noreferrer">Cattle Monitoring</a></h3><div class="project-description"><p>A distributed herd-monitoring system combining <strong>GPS and RSSI telemetry</strong> from ESP32 devices. DBSCAN identifies grazing zones, with movement and spatial patterns displayed on a live dashboard.</p></div><ul class="project-tech-list"><li>ESP32</li><li>DBSCAN</li><li>Flask</li><li>MongoDB</li><li>Next.js</li></ul><div class="project-links"><a href="https://github.com/KedarDamale/ESP32-DBSCAN-Cattle-Monitoring-System" target="_blank" rel="noopener noreferrer" aria-label="Cattle Monitoring source on GitHub"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#github"/></svg></a><a href="https://github.com/KedarDamale/ESP32-DBSCAN-Cattle-Monitoring-System#readme" target="_blank" rel="noopener noreferrer" aria-label="Read about Cattle Monitoring"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#external"/></svg></a></div></div>
+  <a class="project-image" href="https://github.com/KedarDamale/ESP32-DBSCAN-Cattle-Monitoring-System" target="_blank" rel="noopener noreferrer" aria-label="Explore Cattle Monitoring"><span class="project-art art-cattle" role="img" aria-label="Herd monitoring illustration"></span></a>
+</li></ul>
+</section>
+<section class="noteworthy-section" aria-labelledby="repository-heading" data-reveal>
+  <h2 id="repository-heading">Other Noteworthy Projects</h2>
+  <a class="inline-link archive-link" href="archive.html">view the archive</a>
+  <div class="repository-grid" data-repo-grid data-repo-limit="6"></div>
+  <button class="outline-button more-button" type="button" data-repo-more aria-expanded="false">Show More</button>
 </section>

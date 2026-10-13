@@ -60,105 +60,97 @@ function makeTextElement(tag, className, value) {
   return element;
 }
 
-function makeCard(project, metadata) {
+function makeIcon(name, className = 'icon') {
+  const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  icon.setAttribute('class', className);
+  icon.setAttribute('aria-hidden', 'true');
+  const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+  use.setAttribute('href', `assets/icons.svg#${name}`);
+  icon.append(use);
+  return icon;
+}
+
+function makeCard(project) {
   const card = document.createElement('article');
   card.className = 'repo-card';
   const top = document.createElement('div');
   top.className = 'repo-card-top';
-  top.append(makeTextElement('span', '', project.category));
-  top.append(makeTextElement('span', 'repo-language', metadata?.language || project.language));
+  top.append(makeIcon('folder', 'icon repo-folder'));
+  const source = document.createElement('a');
+  source.className = 'repo-card-link';
+  source.href = `https://github.com/KedarDamale/${encodeURIComponent(project.name)}`;
+  source.target = '_blank';
+  source.rel = 'noopener noreferrer';
+  source.setAttribute('aria-label', `Open ${project.title} source on GitHub`);
+  source.append(makeIcon('github'));
+  top.append(source);
   card.append(top);
-  card.append(makeTextElement('h4', '', project.title));
-  card.append(makeTextElement('p', '', project.description));
-
-  const bottom = document.createElement('div');
-  bottom.className = 'repo-card-bottom';
-  const stats = [];
-  if (metadata && Number.isFinite(metadata.stargazers_count) && metadata.stargazers_count > 0) {
-    stats.push(`★ ${metadata.stargazers_count}`);
-  }
-  if (metadata?.updated_at) {
-    const updated = new Date(metadata.updated_at);
-    if (!Number.isNaN(updated.valueOf())) stats.push(`Updated ${new Intl.DateTimeFormat('en', { month: 'short', year: 'numeric' }).format(updated)}`);
-  }
-  bottom.append(makeTextElement('span', '', stats.join(' · ') || project.stack));
-  const link = makeTextElement('a', 'repo-card-link', 'View repo ↗');
-  link.href = `https://github.com/KedarDamale/${encodeURIComponent(project.name)}`;
-  link.target = '_blank';
-  link.rel = 'noopener noreferrer';
-  link.setAttribute('aria-label', `Open ${project.title} on GitHub`);
-  bottom.append(link);
-  card.append(bottom);
-  card.dataset.search = `${project.title} ${project.name} ${project.category} ${project.description} ${project.stack}`.toLowerCase();
-  card.dataset.category = project.category;
+  const title = document.createElement('h3');
+  const titleLink = makeTextElement('a', 'repo-title-link', project.title);
+  titleLink.href = source.href;
+  titleLink.target = '_blank';
+  titleLink.rel = 'noopener noreferrer';
+  title.append(titleLink);
+  card.append(title, makeTextElement('p', '', project.description));
+  const stack = document.createElement('div');
+  stack.className = 'repo-card-bottom';
+  project.stack.split(' · ').forEach(tech => stack.append(makeTextElement('span', '', tech)));
+  card.append(stack);
   return card;
 }
 
 export function initCatalogue() {
   const grid = document.querySelector('[data-repo-grid]');
+  if (!grid) return;
   const filterRoot = document.querySelector('[data-repo-filters]');
   const searchInput = document.querySelector('#repo-search');
   const status = document.querySelector('[data-repo-status]');
   const emptyMessage = document.querySelector('[data-repo-empty]');
-  if (!grid || !filterRoot || !status) return;
-
+  const moreButton = document.querySelector('[data-repo-more]');
+  const limit = Number(grid.dataset.repoLimit) || Infinity;
+  const featured = new Set(['Chessablanka', 'NeuroTribe', 'ESP32-DBSCAN-Cattle-Monitoring-System']);
+  const projects = moreButton ? repositories.filter(project => !featured.has(project.name)) : repositories;
   let selectedCategory = 'All work';
   let query = '';
-  let metadata = new Map();
+  let expanded = false;
 
-  const filters = categoryOrder.filter((category) => category === 'All work' || repositories.some((project) => project.category === category));
-  filters.forEach((category) => {
+  const filters = categoryOrder.filter(category => category === 'All work' || projects.some(project => project.category === category));
+  filters.forEach(category => {
+    if (!filterRoot) return;
     const button = makeTextElement('button', 'repo-filter', category);
     button.type = 'button';
     button.setAttribute('aria-pressed', String(category === selectedCategory));
     button.addEventListener('click', () => {
       selectedCategory = category;
-      filterRoot.querySelectorAll('.repo-filter').forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+      filterRoot.querySelectorAll('.repo-filter').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
       render();
     });
     filterRoot.append(button);
   });
 
   function render() {
-    grid.replaceChildren();
-    let visibleCount = 0;
-    repositories.forEach((project) => {
-      const card = makeCard(project, metadata.get(project.name));
-      const matchesCategory = selectedCategory === 'All work' || project.category === selectedCategory;
-      const matchesQuery = !query || card.dataset.search.includes(query);
-      card.hidden = !matchesCategory || !matchesQuery;
-      if (!card.hidden) visibleCount += 1;
-      grid.append(card);
+    const matching = projects.filter(project => {
+      const haystack = `${project.title} ${project.name} ${project.category} ${project.description} ${project.stack}`.toLowerCase();
+      return (selectedCategory === 'All work' || project.category === selectedCategory) && (!query || haystack.includes(query));
     });
-    if (emptyMessage) emptyMessage.hidden = visibleCount !== 0;
-    status.dataset.results = String(visibleCount);
-    if (!status.dataset.live) status.textContent = `${visibleCount} code-backed public repositories · curated locally`;
+    const visible = matching.slice(0, expanded ? Infinity : limit);
+    grid.replaceChildren(...visible.map(makeCard));
+    if (emptyMessage) emptyMessage.hidden = visible.length !== 0;
+    if (status) {
+      status.dataset.results = String(visible.length);
+      status.textContent = `${visible.length} ${visible.length === 1 ? 'project' : 'projects'}${query || selectedCategory !== 'All work' ? ' found' : ' in the archive'}`;
+    }
+    if (moreButton) {
+      moreButton.hidden = matching.length <= limit;
+      moreButton.textContent = expanded ? 'Show Less' : 'Show More';
+      moreButton.setAttribute('aria-expanded', String(expanded));
+    }
   }
-
-  searchInput?.addEventListener('input', () => {
-    query = searchInput.value.trim().toLowerCase();
+  searchInput?.addEventListener('input', () => { query = searchInput.value.trim().toLowerCase(); render(); });
+  moreButton?.addEventListener('click', () => {
+    expanded = !expanded;
     render();
+    if (!expanded) moreButton.scrollIntoView({ block: 'center', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
   });
   render();
-
-  const controller = new AbortController();
-  const timeout = window.setTimeout(() => controller.abort(), 6500);
-  fetch('https://api.github.com/users/KedarDamale/repos?type=owner&per_page=100&sort=updated', {
-    headers: { Accept: 'application/vnd.github+json' },
-    signal: controller.signal,
-  }).then((response) => {
-    if (!response.ok) throw new Error(`GitHub returned ${response.status}`);
-    return response.json();
-  }).then((items) => {
-    if (!Array.isArray(items)) throw new Error('GitHub returned an unexpected response');
-    const approvedNames = new Set(repositories.map((project) => project.name));
-    metadata = new Map(items
-      .filter((item) => !item.private && approvedNames.has(item.name))
-      .map((item) => [item.name, item]));
-    status.dataset.live = 'true';
-    status.textContent = `Live GitHub metadata · ${repositories.length} verified public repositories · empty and scaffold-only repositories excluded`;
-    render();
-  }).catch(() => {
-    status.textContent = `Local catalogue ready · ${repositories.length} verified public repositories · GitHub metadata is temporarily unavailable`;
-  }).finally(() => window.clearTimeout(timeout));
 }
