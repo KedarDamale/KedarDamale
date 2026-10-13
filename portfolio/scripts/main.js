@@ -1,8 +1,8 @@
 import { initNavigation } from './modules/navigation.js';
 import { initMotion } from './modules/motion.js';
-import { initTheme } from './modules/theme.js';
 import { initCatalogue } from './modules/catalogue.js';
 import { initResumeLinks } from './modules/resume.js';
+import { initJobs } from './modules/jobs.js';
 
 const componentSlots = [...document.querySelectorAll('[data-component]')];
 
@@ -18,13 +18,16 @@ async function loadComponents() {
 try {
   await loadComponents();
   void initResumeLinks();
-  initTheme();
   initNavigation();
+  initJobs();
   initCatalogue();
   initMotion();
-  const year = document.querySelector('[data-current-year]');
-  if (year) year.textContent = String(new Date().getFullYear());
+  document.body.classList.add('intro-ready');
 } catch (error) {
   console.error('Portfolio setup failed:', error);
   document.body.classList.add('components-failed');
+  const message = document.createElement('p');
+  message.className = 'component-error';
+  message.textContent = 'This portfolio could not load. Please refresh, or contact damalekedar@gmail.com.';
+  document.querySelector('main')?.append(message);
 }
