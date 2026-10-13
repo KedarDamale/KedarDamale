@@ -51,8 +51,6 @@ const repositories = [
   },
 ];
 
-const categoryOrder = ['All work', 'AI & research', 'Computer vision', 'IoT & geospatial', 'Automation', 'Full-stack apps', 'Developer tools'];
-
 function makeTextElement(tag, className, value) {
   const element = document.createElement(tag);
   if (className) element.className = className;
@@ -102,51 +100,21 @@ function makeCard(project) {
 export function initCatalogue() {
   const grid = document.querySelector('[data-repo-grid]');
   if (!grid) return;
-  const filterRoot = document.querySelector('[data-repo-filters]');
-  const searchInput = document.querySelector('#repo-search');
-  const status = document.querySelector('[data-repo-status]');
-  const emptyMessage = document.querySelector('[data-repo-empty]');
   const moreButton = document.querySelector('[data-repo-more]');
   const limit = Number(grid.dataset.repoLimit) || Infinity;
   const featured = new Set(['Chessablanka', 'NeuroTribe', 'ESP32-DBSCAN-Cattle-Monitoring-System']);
-  const projects = moreButton ? repositories.filter(project => !featured.has(project.name)) : repositories;
-  let selectedCategory = 'All work';
-  let query = '';
+  const projects = repositories.filter(project => !featured.has(project.name));
   let expanded = false;
 
-  const filters = categoryOrder.filter(category => category === 'All work' || projects.some(project => project.category === category));
-  filters.forEach(category => {
-    if (!filterRoot) return;
-    const button = makeTextElement('button', 'repo-filter', category);
-    button.type = 'button';
-    button.setAttribute('aria-pressed', String(category === selectedCategory));
-    button.addEventListener('click', () => {
-      selectedCategory = category;
-      filterRoot.querySelectorAll('.repo-filter').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
-      render();
-    });
-    filterRoot.append(button);
-  });
-
   function render() {
-    const matching = projects.filter(project => {
-      const haystack = `${project.title} ${project.name} ${project.category} ${project.description} ${project.stack}`.toLowerCase();
-      return (selectedCategory === 'All work' || project.category === selectedCategory) && (!query || haystack.includes(query));
-    });
-    const visible = matching.slice(0, expanded ? Infinity : limit);
+    const visible = projects.slice(0, expanded ? Infinity : limit);
     grid.replaceChildren(...visible.map(makeCard));
-    if (emptyMessage) emptyMessage.hidden = visible.length !== 0;
-    if (status) {
-      status.dataset.results = String(visible.length);
-      status.textContent = `${visible.length} ${visible.length === 1 ? 'project' : 'projects'}${query || selectedCategory !== 'All work' ? ' found' : ' in the archive'}`;
-    }
     if (moreButton) {
-      moreButton.hidden = matching.length <= limit;
+      moreButton.hidden = projects.length <= limit;
       moreButton.textContent = expanded ? 'Show Less' : 'Show More';
       moreButton.setAttribute('aria-expanded', String(expanded));
     }
   }
-  searchInput?.addEventListener('input', () => { query = searchInput.value.trim().toLowerCase(); render(); });
   moreButton?.addEventListener('click', () => {
     expanded = !expanded;
     render();

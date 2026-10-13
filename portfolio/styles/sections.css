@@ -56,7 +56,6 @@ main > [data-component] > .experience-section { max-width: 700px; }
 .featured-project:nth-child(odd) .project-links { justify-content: flex-end; margin-left: 0; margin-right: -10px; }
 .noteworthy-section { display: flex; flex-direction: column; align-items: center; margin: 0 auto; padding: 100px 0; max-width: 1000px; }
 .noteworthy-section > h2 { font-size: clamp(24px,5vw,32px); text-align: center; }
-.archive-link { font: 14px/1.5 var(--font-mono); }
 .repository-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 15px; width: 100%; margin-top: 50px; }
 .repo-card { position: relative; display: flex; flex-direction: column; align-items: flex-start; padding: 2rem 1.75rem; border-radius: 4px; background: var(--light-navy); box-shadow: 0 10px 30px -15px var(--navy-shadow); transition: var(--transition); }
 .repo-card:hover, .repo-card:focus-within { transform: translateY(-7px); }
@@ -68,20 +67,10 @@ main > [data-component] > .experience-section { max-width: 700px; }
 .repo-card p { font-size: 17px; color: var(--light-slate); margin: 0 0 20px; }
 .repo-card-bottom { display: flex; flex-wrap: wrap; gap: 5px 15px; margin-top: auto; font: 12px/1.75 var(--font-mono); }
 .more-button { margin: 80px auto 0; }
-.repo-status { font: 12px/1.6 var(--font-mono); margin: 25px 0 0; }
-.repo-empty { margin-top: 35px; }
 main > [data-component] > .contact-section { max-width: 600px; margin: 0 auto 100px; text-align: center; }
 .contact-overline { display: block; margin-bottom: 20px; color: var(--green); font: 400 16px/1.3 var(--font-mono); }
 .contact-title { font-size: clamp(40px,5vw,60px); }
 .contact-section .outline-button { margin-top: 50px; }
-main.archive-main { padding-top: 200px; padding-bottom: 100px; max-width: 1300px; }
-.archive-subtitle { margin-top: 20px; color: var(--green); font: 16px/1.5 var(--font-mono); }
-.repository-controls { margin-top: 50px; }
-.repo-search-wrap { display: block; max-width: 500px; }
-.repo-search-wrap input { width: 100%; padding: 14px 16px; border: 1px solid var(--lightest-navy); border-radius: 4px; background: var(--light-navy); color: var(--lightest-slate); font: 14px var(--font-mono); }
-.repo-filters { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
-.repo-filter { border: 1px solid var(--lightest-navy); border-radius: 4px; padding: 9px 12px; color: var(--light-slate); background: transparent; font: 12px var(--font-mono); }
-.repo-filter:hover, .repo-filter[aria-pressed=true] { border-color: var(--green); color: var(--green); background: var(--green-tint); }
 @media(max-width:1080px) { .project-content { grid-column: 1 / 9; } .featured-project:nth-child(odd) .project-content { grid-column: 5 / -1; } .repository-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 @media(max-width:768px) {
  .about-inner { display: block; } .about-picture { margin: 50px auto 0; width: 70%; }
@@ -98,7 +87,6 @@ main.archive-main { padding-top: 200px; padding-bottom: 100px; max-width: 1300px
  .project-art { height: 100%; aspect-ratio: auto; background-size: cover; }
  .noteworthy-section { padding: 80px 0; }
  main > [data-component] > .contact-section { margin-bottom: 50px; }
- main.archive-main { padding-top: 150px; }
 }
 @media(max-width:600px) {
  .jobs-inner { display: block; }
