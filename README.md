@@ -16,7 +16,7 @@ From data pipelines and predictive models to RAG, agentic systems, computer visi
 <a href="https://www.linkedin.com/in/kedar-damale-57252a324/">
   <img src="https://img.shields.io/badge/LinkedIn-2563EB?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
 </a>
-<a href="https://kedardamale.github.io/KedarDamale/output/resume-20261008.pdf">
+<a href="https://kedardamale.github.io/KedarDamale/output/resume-20261013.pdf">
   <img src="https://img.shields.io/badge/Resume-0F172A?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Resume" />
 </a>
 <a href="mailto:damalekedar@gmail.com">
@@ -457,7 +457,7 @@ That includes:
   ·  
 [LinkedIn](https://www.linkedin.com/in/kedar-damale-57252a324/)
   ·  
-[Resume](https://kedardamale.github.io/KedarDamale/output/resume-20261008.pdf)
+[Resume](https://kedardamale.github.io/KedarDamale/output/resume-20261013.pdf)
   ·  
 [Email](mailto:damalekedar@gmail.com)
 
