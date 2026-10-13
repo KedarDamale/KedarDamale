@@ -4,15 +4,13 @@ resume/*.log
 resume/*.out
 resume/*.pdf
 _site/
-   
-# Portfolio scaffolding and local tooling
-portfolio/node_modules/
-portfolio/.next/
-portfolio/.vinext/
-portfolio/dist/
-portfolio/.wrangler/
-portfolio/.npm-cache/
-portfolio/.env*
+
+# Temporary build and development files
+texput.log
+__pycache__/
+*.pyc
+node_modules/
+.env*
 
 # OS and editor files
 .DS_Store
