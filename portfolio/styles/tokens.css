@@ -1,36 +1,18 @@
+/* Adapted from bchiang7/v4. See ../BRITTANY-CHIANG-LICENSE.txt. */
+@font-face { font-family: Calibre; src: url('../assets/fonts/Calibre-Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: Calibre; src: url('../assets/fonts/Calibre-Medium.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+@font-face { font-family: Calibre; src: url('../assets/fonts/Calibre-Semibold.woff2') format('woff2'); font-weight: 600 900; font-display: swap; }
+@font-face { font-family: Calibre; src: url('../assets/fonts/Calibre-RegularItalic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: 'SF Mono'; src: url('../assets/fonts/SFMono-Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'SF Mono'; src: url('../assets/fonts/SFMono-Semibold.woff2') format('woff2'); font-weight: 600; font-display: swap; }
 :root {
   color-scheme: dark;
-  --canvas: #0b0d12;
-  --canvas-raised: #11151c;
-  --paper: #eceae3;
-  --paper-ink: #13171d;
-  --ink: #f2f2ee;
-  --muted: #a7aab2;
-  --line: rgba(227, 232, 242, .16);
-  --line-dark: rgba(19, 23, 29, .18);
-  --signal: #9fc1ff;
-  --signal-strong: #5c8eff;
-  --signal-dark: #315fc0;
-  --amber: #e8bd78;
-  --font-display: 'Space Grotesk', 'Arial', sans-serif;
-  --font-body: 'Manrope', 'Arial', sans-serif;
-  --font-mono: 'DM Mono', 'Courier New', monospace;
-  --shell: min(1320px, calc(100% - 72px));
-  --header-height: 76px;
-}
-
-[data-theme='light'] {
-  color-scheme: light;
-  --canvas: #f1f0ea;
-  --canvas-raised: #e8e6df;
-  --paper: #fffefa;
-  --paper-ink: #15191f;
-  --ink: #15191f;
-  --muted: #5f6670;
-  --line: rgba(21, 25, 31, .16);
-  --line-dark: rgba(21, 25, 31, .18);
-  --signal: #365fae;
-  --signal-strong: #2954a9;
-  --signal-dark: #315fc0;
-  --amber: #94601c;
+  --dark-navy: #020c1b; --navy: #0a192f; --light-navy: #112240; --lightest-navy: #233554;
+  --navy-shadow: rgba(2,12,27,.7); --dark-slate: #495670; --slate: #8892b0;
+  --light-slate: #a8b2d1; --lightest-slate: #ccd6f6; --white: #e6f1ff;
+  --green: #64ffda; --green-tint: rgba(100,255,218,.1);
+  --font-sans: Calibre, Inter, -apple-system, system-ui, sans-serif;
+  --font-mono: 'SF Mono', 'Fira Code', monospace;
+  --border-radius: 4px; --nav-height: 100px; --nav-scroll-height: 70px;
+  --transition: all .25s cubic-bezier(.645,.045,.355,1);
 }
