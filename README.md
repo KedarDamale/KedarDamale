@@ -1,464 +1,90 @@
-<div align="center">
+[![Kedar Damale — Applied Data Scientist and ML & GenAI Engineer. Complex data. Useful systems.](./assets/profile/header.svg)](https://kedardamale.github.io/KedarDamale/)
 
-# Kedar Damale
+<p align="center">
+  <a href="https://kedardamale.github.io/KedarDamale/"><b>Portfolio</b></a> &nbsp; · &nbsp;
+  <a href="https://www.linkedin.com/in/kedar-damale-57252a324/"><b>LinkedIn</b></a> &nbsp; · &nbsp;
+  <a href="https://kedardamale.github.io/KedarDamale/output/resume.pdf"><b>Résumé</b></a> &nbsp; · &nbsp;
+  <a href="mailto:damalekedar@gmail.com"><b>Email</b></a>
+</p>
 
-### Applied Data Scientist · ML Engineer · GenAI Engineer
+I’m Kedar, an **ML & GenAI Engineer at Globalspace Technologies**. I build analytical agents, machine learning systems, and financial automation that connect data to everyday decisions. My work spans pharmaceutical intelligence, audit workflows, computer vision, and research infrastructure.
 
-I build production-focused machine learning and GenAI systems for financial automation, analytics, pharmaceutical intelligence, and research.
+B.E. in Information Technology · University of Mumbai · **8.5 CGPA** · **GATE DA 2026 qualified**.
 
-From data pipelines and predictive models to RAG, agentic systems, computer vision, and production deployment.
+## Selected impact
 
-<br/>
+![3M+ pharma records analyzed; 10K+ invoices reconciled; over 99.9% less reconciliation processing time; 98.57% chess detection accuracy across 500+ test images.](./assets/profile/impact.svg)
 
-<a href="https://kedardamale.github.io/KedarDamale/">
-  <img src="https://img.shields.io/badge/Portfolio-0F172A?style=for-the-badge&logo=githubpages&logoColor=white" alt="Portfolio" />
-</a>
-<a href="https://www.linkedin.com/in/kedar-damale-57252a324/">
-  <img src="https://img.shields.io/badge/LinkedIn-2563EB?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-</a>
-<a href="https://kedardamale.github.io/KedarDamale/output/resume-20261013.pdf">
-  <img src="https://img.shields.io/badge/Resume-0F172A?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Resume" />
-</a>
-<a href="mailto:damalekedar@gmail.com">
-  <img src="https://img.shields.io/badge/Email-2563EB?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-</a>
+## Where I’ve worked
 
-</div>
+![Propelligence Advisors: Automation Developer, May 2025–January 2026. Globalspace Technologies: ML & GenAI Engineer, January 2026–present.](./assets/profile/experience.svg)
 
-## Local ATS Resume Review
+At **Globalspace**, I work on PatGPT’s analytical workflows over 3M+ pharmaceutical sales and tender records, with forecasting, simulations, evidence-grounded answers, and human review. I also build configurable budget and incentive calculations across organizational hierarchies.
 
-### Optional invisible keyword layer
+At **Propelligence**, I automated purchase-register to GSTR-2B reconciliation with Polars and fuzzy matching. The module became part of Granska, used by **two CA firms and approximately 20 auditors**.
 
-Edit `resume/content/ats-keywords.tex` to add keywords to the PDF's text layer without changing its visible layout. The catalog covers DS, AI, ML, statistics, NLP, computer vision, GenAI, data engineering, cloud, and MLOps. Requested institution search tags are separate from the education entries and explicitly state that no affiliation is claimed. Run `make resume` to rebuild. Change `\atskeywordstrue` to `\atskeywordsfalse` in that file to disable the layer. Use normal LaTeX escaping, such as `\&` for an ampersand. Longer lists automatically scale into the same 8pt footer space.
+## Selected projects
 
-The layer uses PDF invisible text rendering, rather than white text or PDF metadata. It remains accessible through text extraction, search, accessibility tools, and copy/paste; it is not secret. ATS software may ignore invisible text, and this does not guarantee a higher score. Include only terms you can substantiate. To inspect what a local text extractor reads, run `pdftotext output/resume-YYYYMMDD.pdf -`.
+<p>
+  <a href="https://github.com/KedarDamale/Chessablanka"><img src="./assets/profile/chessablanka.svg" width="420" alt="Chessablanka — reconstruct a chessboard from a photo with YOLOv8, OpenCV, and Stockfish. 98.57% detection accuracy across 500+ test images." /></a>
+  <a href="https://github.com/KedarDamale/NeuroTribe"><img src="./assets/profile/neurotribe.svg" width="420" alt="NeuroTRIBE — reproducible cortical-response research using movie-fMRI data, Python, TRIBE v2, and Docker." /></a>
+  <a href="https://github.com/KedarDamale/ESP32-DBSCAN-Cattle-Monitoring-System"><img src="./assets/profile/cattle-monitoring.svg" width="420" alt="Cattle Monitoring — GPS and RSSI telemetry, DBSCAN grazing-zone analysis, and a live dashboard." /></a>
+  <a href="https://github.com/KedarDamale/automated_reconcillation"><img src="./assets/profile/reconciliation.svg" width="420" alt="Automated Reconciliation — match purchase and tax records with Python, Polars, and RapidFuzz; 10,000+ invoices processed." /></a>
+</p>
 
-`make resume` compiles `resume/main.tex` and keeps exactly one PDF at `output/resume-YYYYMMDD.pdf`. The version date comes from the latest Git commit affecting `resume/`; use `make resume RESUME_VERSION=YYYYMMDD` to override it. Compilation runs in a temporary directory, old resume PDFs are removed after a successful build, and download links are updated automatically. `make ats` uses the PDF in `output/` by default and asks for a target role, company context, optional job description, provider, model, and reasoning effort.
+[Explore more of my work →](https://github.com/KedarDamale?tab=repositories)
 
-```sh
-make ats
-```
+## Languages & tools
 
-Paste company context and the job description, finishing each with a line containing only `.`. Enter `none` on the first line when you do not have company context or a job description. The review scans substantive public GitHub project READMEs through `gh`, compares current evidence against the target, scores the resume out of 100, and estimates the impact of truthful edits and future skill/project work. GitHub scanning needs an authenticated `gh` CLI.
+**ML & computer vision**
 
-The interactive flow lists installed providers and offers provider-specific model and effort options. Codex includes GPT-6 Astra/Sol/Luna and GPT-5.6 Sol/Terra/Luna, plus a custom model ID. For scripted runs, use `python3 scripts/ats.py --role "Data Scientist" --job-description job.txt --provider codex --model gpt-5.6-terra --effort high`.
+<p>
+  <img src="./assets/profile/tool-python.svg" width="110" alt="Python" />
+  <img src="./assets/profile/tool-pytorch.svg" width="110" alt="PyTorch" />
+  <img src="./assets/profile/tool-numpy.svg" width="110" alt="NumPy" />
+  <img src="./assets/profile/tool-pandas.svg" width="110" alt="pandas" />
+  <img src="./assets/profile/tool-scikitlearn.svg" width="110" alt="scikit-learn" />
+  <img src="./assets/profile/tool-opencv.svg" width="110" alt="OpenCV" />
+</p>
 
-To use OpenRouter explicitly, set `OPENROUTER_API_KEY` and run with `--provider openrouter`. Its default model is `openrouter/auto`; ATS requests the `max` quality tier and prints the concrete model selected when the response arrives. Standard pricing for that model applies. Use `ATS_OPENROUTER_MODEL` to pin a model ID.
+**GenAI & agents**
 
-### Connect it to an MCP client
+<p>
+  <img src="./assets/profile/tool-rag.svg" width="110" alt="RAG" />
+  <img src="./assets/profile/tool-langgraph.svg" width="110" alt="LangGraph" />
+  <img src="./assets/profile/tool-mcp.svg" width="110" alt="MCP" />
+  <img src="./assets/profile/tool-tools.svg" width="110" alt="Tool calling" />
+</p>
 
-The local MCP server exposes `ats_review_resume` and `ats_setup`. Run `make ats-setup` for commands and configuration snippets for Codex, Claude Code, GitHub Copilot CLI, and Antigravity. For example:
+**APIs & data systems**
 
-```sh
-codex mcp add ats -- python3 "$PWD/scripts/ats_mcp.py"
-claude mcp add --transport stdio ats -- python3 "$PWD/scripts/ats_mcp.py"
-copilot mcp add ats -- python3 "$PWD/scripts/ats_mcp.py"
-```
+<p>
+  <img src="./assets/profile/tool-fastapi.svg" width="110" alt="FastAPI" />
+  <img src="./assets/profile/tool-postgresql.svg" width="110" alt="PostgreSQL" />
+  <img src="./assets/profile/tool-mongodb.svg" width="110" alt="MongoDB" />
+  <img src="./assets/profile/tool-redis.svg" width="110" alt="Redis" />
+</p>
 
-Antigravity can use the same stdio server from its MCP manager or its `mcp_config.json`. Set `OPENROUTER_API_KEY` in the MCP host's environment to route MCP reviews through OpenRouter Auto. The MCP server also has an `ats_setup` tool and an `ats://setup` resource with these instructions.
+**Build & ship**
 
-## Live Job Search
+<p>
+  <img src="./assets/profile/tool-docker.svg" width="110" alt="Docker" />
+  <img src="./assets/profile/tool-amazonwebservices.svg" width="110" alt="AWS" />
+  <img src="./assets/profile/tool-git.svg" width="110" alt="Git" />
+  <img src="./assets/profile/tool-linux.svg" width="110" alt="Linux" />
+  <img src="./assets/profile/tool-typescript.svg" width="110" alt="TypeScript" />
+  <img src="./assets/profile/tool-react.svg" width="110" alt="React" />
+</p>
 
-Run `make jobs` to search the live internet for active vacancies and print company names, job titles, application links, required experience, dates, company ratings and evidence in three tiers. This search uses no resume or GitHub project content. It requires an authenticated Codex or Claude Code CLI with working web search; `auto` chooses Codex first, then Claude if Codex is not installed.
+I enjoy problems where the model is one part of a larger system: reliable data pipelines, analytical agents, human review, and tools that make operational work easier.
 
-```sh
-make jobs
-make jobs JOBS_PROVIDER=claude JOBS_MODEL=sonnet JOBS_EFFORT=high
-make jobs JOBS_PROVIDER=codex JOBS_EFFORT=high JOBS_TIMEOUT=900
-python3 scripts/jobs.py --json
-```
+## GitHub stats & activity
 
-Edit `scripts/jobs.py` to set preferences. Defaults preserve Pune as priority 0, Mumbai and India-eligible Remote as priority 1, Data Scientist / ML Engineer / AI Engineer titles, 1.5 years of experience, and a mandatory mean Glassdoor/AmbitionBox overall rating of at least 3.5/5. Both company ratings and their source URLs are required; unavailable ratings exclude the company rather than guessing its quality. Closed/unverified vacancies, incompatible experience, other locations and original posting dates older than 30 days are excluded.
+![GitHub statistics: public repositories, stars on owned projects, and commit, issue, pull-request, and review contributions. Refreshed hourly from GitHub.](./assets/github-stats.svg)
 
-| Tier | Qualification |
-| --- | --- |
-| Must apply | First-priority location, verified experience fit, original posting within 7 days |
-| Should apply | Any preferred location, verified experience fit, original posting within 14 days, excluding Must apply |
-| Put it in stash | Otherwise qualifying active listings up to 30 days old, or unknown posting date / required experience; these gaps are marked for checking |
+[![Kedar Damale’s contribution activity across five calendar months, refreshed hourly.](./assets/github-activity.svg)](https://github.com/KedarDamale?tab=overview)
 
-Each tier sorts by location priority first, then freshness, then company rating. There is no fixed count or padding: zero, two or ten qualifying jobs are shown as found. Distinct employer requisitions remain separate; duplicate URLs and matching requisition IDs are collapsed. Discovery is model-assisted and cannot guarantee exhaustive coverage; the report includes queries, exclusions, blocked-source warnings and provider-reported evidence. Employer pages can change after verification.
-
-### Connect the Jobs MCP server
-
-```sh
-make jobs-setup
-codex mcp add jobs -- make --silent -C "$PWD" jobs-mcp
-claude mcp add --transport stdio jobs -- make --silent -C "$PWD" jobs-mcp
-```
-
-`make jobs-mcp` starts the stdio MCP server. It exposes `jobs_find_active`, `jobs_preferences`, `jobs_setup`, `jobs://setup` and `jobs://preferences`. `jobs_find_active` accepts optional title, experience, location-priority, rating, freshness and timeout overrides; it returns a readable report plus structured tiers. Configure `JOBS_PROVIDER`, `JOBS_MODEL`, `JOBS_EFFORT` and `JOBS_TIMEOUT` in the Makefile for both console and MCP searches. For example, `make jobs-mcp JOBS_MODEL=gpt-5.6-terra JOBS_EFFORT=xhigh`. Start connected clients through the Make command above so they pick up Makefile settings; restart the MCP server after editing them. A server started directly through Python defaults to Codex, `gpt-5.6-terra`, and `xhigh`, and accepts these settings through environment variables. Individual MCP tool calls cannot override the server's provider/model/effort. `make jobs` uses the same search and ranking functions as the MCP tool. Searches run in a temporary workspace, with shell tools disabled for Codex and only WebSearch/WebFetch allowed for Claude; nested job searches are disabled. Progress is printed to stderr every 15 seconds while the provider runs.
-
----
-
-## About
-
-I am an ML and GenAI Engineer focused on building AI systems that move beyond prototypes and operate on real business data.
-
-My work spans financial automation, large-scale analytical systems, agentic AI, machine learning, computer vision, data engineering, and production deployment.
-
-|                   |                                                                                 |
-| ----------------- | ------------------------------------------------------------------------------- |
-| **Current Role**  | ML & GenAI Engineer at Globalspace Technologies Ltd.                            |
-| **Experience**    | 1+ years across ML, GenAI, automation, data systems, and production engineering |
-| **Education**     | Information Technology Engineering, University of Mumbai                        |
-| **Academic**      | 8.5 CGPA · GATE DA 2026 Qualified                                               |
-| **Primary Focus** | Applied ML · GenAI · Agentic Systems · Financial Automation · Analytics         |
-
----
-
-## Selected Impact
-
-<table>
-<tr>
-<td align="center" width="25%">
-<h3>3M+</h3>
-Pharmaceutical sales and tender records used by an agentic analytical system
-</td>
-<td align="center" width="25%">
-<h3>10,000+</h3>
-Invoices processed through automated financial reconciliation
-</td>
-<td align="center" width="25%">
-<h3>&gt;99.9%</h3>
-Reduction in reconciliation processing time versus the previous manual workflow
-</td>
-<td align="center" width="25%">
-<h3>98.57%</h3>
-Chess-piece detection accuracy across 500+ test images
-</td>
-</tr>
-</table>
-
----
-
-# Employment Journey
-
-My career so far has followed one consistent direction:
-
-**automating repetitive workflows → building intelligent decision systems → engineering production AI**
-
-**Start** → **Propelligence Advisors** · Freelance Automation Developer · May 2025–Jan 2026
-*Financial automation*
-
-↓
-
-**Globalspace Technologies Ltd.** · ML & GenAI Engineer · Jan 2026–Present
-*ML + GenAI systems*
-
-↓
-
-**Present**
-
----
-
-## Stop 02 — Globalspace Technologies Ltd.
-
-**ML & GenAI Engineer**
-**January 2026 — Present**
-
-Building AI, ML, analytics, and automation systems across pharmaceutical intelligence, financial workflows, auditing, and enterprise decision support.
-
-### GSTL PatGPT — Zydus
-
-Agentic analytical system operating across **3M+ pharmaceutical sales and tender records**.
-
-Built to support:
-
-* historical analysis
-* forecasting workflows
-* simulation
-* multi-step analytical planning
-* evidence-grounded answers
-* human review checkpoints
-* analytical tool orchestration
-
-The system translates complex analytical questions into structured execution plans and coordinates the required data and reasoning tools.
-
-### Granska
-
-AI-enabled auditing and financial review platform focused on reducing manual work across accounting and audit workflows.
-
-Areas include:
-
-* automated reconciliation
-* financial-data ingestion
-* review workflows
-* anomaly detection
-* analytical tooling
-* audit automation
-* structured financial analysis
-
-### GSTL AI CSO
-
-AI-assisted strategic decision-support system designed to help transform business data into structured analysis and decision context.
-
-### GSTL Budget Automation
-
-Designed a unified organizational hierarchy model and dynamic scoring system for incentive and budget calculations.
-
-The architecture was designed to scale calculations across **thousands of employees** while keeping scoring rules configurable and maintainable.
-
----
-
-## Stop 01 — Propelligence Advisors
-
-**Freelance Automation Developer**
-**May 2025 — January 2026**
-
-This was where my work moved from software experimentation into solving real operational problems.
-
-### Automated PR-to-GSTR-2B Reconciliation
-
-Built an automated reconciliation system for matching purchase-register records with GSTR-2B tax records.
-
-The system processed **10,000+ invoices** using:
-
-* Polars
-* RapidFuzz
-* normalization pipelines
-* fuzzy entity matching
-* rule-based reconciliation
-* automated report generation
-
-A workflow that previously required approximately **5–6 days of manual work** could be processed automatically, reducing processing time by more than **99.9%**.
-
-The solution later became part of an audit workflow used by **two CA firms and approximately 20 auditors**.
-
----
-
-# Selected Personal Projects
-
-## NeuroTRIBE
-
-**Computational neuroscience · fMRI · Research infrastructure**
-
-[View Repository](https://github.com/KedarDamale/NeuroTribe)
-
-Cortical-response analysis on Healthy Brain Network movie-fMRI data, comparing participants with ADHD against a matched cohort.
-
-Built around reproducible analytical workflows and containerized research infrastructure.
-
-`TRIBE v2` `fMRI` `Python` `Docker Compose`
-
----
-
-## Chessablanka
-
-**Computer Vision · Chess · Object Detection**
-
-[View Repository](https://github.com/KedarDamale/Chessablanka)
-
-Reads a physical chess position from an image, reconstructs the board state, and evaluates the resulting position using Stockfish.
-
-Achieved **98.57% detection accuracy across 500+ test images**.
-
-`YOLOv8` `Roboflow` `OpenCV` `Stockfish` `Python`
-
----
-
-## ESP32 DBSCAN Cattle Monitoring System
-
-**IoT · Geospatial Analytics · Clustering**
-
-[View Repository](https://github.com/KedarDamale/ESP32-DBSCAN-Cattle-Monitoring-System)
-
-Distributed cattle-monitoring system combining GPS and RSSI measurements from ESP32 devices.
-
-DBSCAN is used to identify grazing zones and spatial behavior, with results displayed through a live monitoring dashboard.
-
-`ESP32` `DBSCAN` `Flask` `MongoDB` `Next.js`
-
----
-
-## Automated Reconciliation
-
-**FinTech · Financial Automation · Entity Matching**
-
-[View Repository](https://github.com/KedarDamale/automated_reconcillation)
-
-Automated financial reconciliation engine for matching purchase records against tax records and producing review-ready outputs.
-
-`Python` `Polars` `RapidFuzz` `Fuzzy Matching`
-
----
-
-## StudyONE
-
-**Full-Stack Learning Platform**
-
-[View Repository](https://github.com/KedarDamale/StudyONE)
-
-Full-stack student productivity and collaboration platform combining learning tools, speech-to-text capabilities, and collaborative workflows.
-
-`MERN` `TypeScript` `Speech-to-Text` `Collaboration`
-
----
-
-## Cricket Match Summarizer
-
-**NLP · Information Extraction · Sports Analytics**
-
-[View Repository](https://github.com/KedarDamale/Cricket-Match-Summarizer)
-
-Processes ball-by-ball cricket commentary, extracts match events, and applies rule-based analytical logic to identify possible team strategies and patterns.
-
-`Python` `NLP` `Web Scraping` `Rule-Based Analytics`
-
----
-
-<details>
-<summary><b>Additional Projects</b></summary>
-
-<br/>
-
-### Automated UI Flow Maker
-
-[Repository](https://github.com/KedarDamale/Automated-UI-flow-maker)
-
-Experiment in representing interface interactions as repeatable, code-driven UI workflows.
-
-`Python` `UI Automation`
-
----
-
-### StudyONE Drawing Board
-
-[Repository](https://github.com/KedarDamale/StudyONE-DrawingBoard)
-
-Drawing-board companion for collaborative learning and visual explanations.
-
-`TypeScript`
-
----
-
-### MarksMania
-
-[Repository](https://github.com/KedarDamale/MarksMania)
-
-JavaScript-based learning and assessment application.
-
-`JavaScript` `Web`
-
----
-
-### GroceryShopONE
-
-[Repository](https://github.com/KedarDamale/GroceryShopONE)
-
-Flask application for managing shop operations and records.
-
-`Python` `Flask`
-
----
-
-### Music Downloader
-
-[Repository](https://github.com/KedarDamale/Music-Downloader)
-
-Python utility for downloading audio from supported sources.
-
-`Python`
-
-</details>
-
----
-
-# Engineering Stack
-
-## Data Science and Machine Learning
-
-`Python`
-`SQL`
-`NumPy`
-`Pandas`
-`Polars`
-`scikit-learn`
-`XGBoost`
-`PyTorch`
-`YOLOv8`
-`OpenCV`
-
-## Generative AI
-
-`LLMs`
-`RAG`
-`Agentic Systems`
-`Multi-Agent Systems`
-`LangChain`
-`LangGraph`
-`MCP`
-`Human-in-the-Loop`
-`Tool Calling`
-`Structured Outputs`
-
-## Backend and Data Systems
-
-`FastAPI`
-`Flask`
-`PostgreSQL`
-`MongoDB`
-`Redis`
-`REST APIs`
-`Data Pipelines`
-
-## MLOps and Infrastructure
-
-`Docker`
-`AWS`
-`MLflow`
-`Git`
-`GitHub`
-`Linux`
-
-## Languages and Web
-
-`Python`
-`SQL`
-`TypeScript`
-`JavaScript`
-`Go`
-`React`
-`Next.js`
-
----
-
-# What I Like Building
-
-I am particularly interested in systems where machine learning is only one part of the solution.
-
-That includes:
-
-* analytical agents that coordinate multiple tools
-* production RAG systems
-* multi-agent architectures
-* financial and audit automation
-* intelligent data pipelines
-* predictive analytics
-* computer vision systems
-* ML systems connected to real operational workflows
-* human-in-the-loop AI
-* systems that turn large datasets into actionable decisions
-
----
-
-# Current GitHub Activity
-
-<a href="https://github.com/KedarDamale?tab=overview">
-  <img src="./assets/github-activity.svg" width="100%" alt="Kedar Damale GitHub contribution activity" />
-</a>
-
----
-
-<div align="center">
-
-### Building systems that turn data into decisions and repetitive work into automation.
-
-[Portfolio](https://kedardamale.github.io/KedarDamale/)
-  ·  
-[LinkedIn](https://www.linkedin.com/in/kedar-damale-57252a324/)
-  ·  
-[Resume](https://kedardamale.github.io/KedarDamale/output/resume-20261013.pdf)
-  ·  
-[Email](mailto:damalekedar@gmail.com)
-
-</div>
+<p align="center">
+  <b>Have an interesting data or AI problem?</b><br />
+  <a href="mailto:damalekedar@gmail.com">Let’s talk.</a>
+</p>
