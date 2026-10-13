@@ -16,7 +16,10 @@ JOBS_MODEL ?= gpt-6-luna
 JOBS_EFFORT ?= low
 JOBS_TIMEOUT ?= 600
 
-.PHONY: resume resume-clean ats ats-setup ats-mcp jobs jobs-setup jobs-mcp
+.PHONY: resume resume-clean ats ats-setup ats-mcp jobs jobs-setup jobs-mcp profile-assets
+
+profile-assets:
+	node scripts/generate-profile-assets.mjs
 
 resume:
 	RESUME_VERSION="$(RESUME_VERSION)" RESUME_DIR="$(RESUME_DIR)" LATEX="$(LATEX)" LATEX_FLAGS="$(LATEX_FLAGS)" bash scripts/build-resume.sh
