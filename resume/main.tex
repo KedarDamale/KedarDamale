@@ -1,6 +1,6 @@
 \documentclass[10pt,a4paper]{article}
 
-\usepackage[margin=1cm, top=0.0cm, bottom=0.4cm]{geometry}
+\usepackage[margin=1cm]{geometry}
 \usepackage{fontspec}
 \usepackage[hidelinks]{hyperref}
 \usepackage{ragged2e}
@@ -18,45 +18,58 @@
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
+% One spacing hierarchy, in PDF points, for every section and entry.
+\newlength{\sectiongap}
+\newlength{\entrygap}
+\newlength{\subheadinggap}
+\setlength{\sectiongap}{6pt}
+\setlength{\entrygap}{4pt}
+\setlength{\subheadinggap}{2pt}
 % Keep compact resume bullets without requiring the optional enumitem package.
 \makeatletter
-\setlength{\leftmargini}{1.45em}
+\setlength{\leftmargini}{14pt}
+\setlength{\labelsep}{5pt}
 \renewcommand{\labelitemi}{\textbullet}
 \def\@listi{\leftmargin\leftmargini
-  \topsep 0.05em \parsep 0pt \itemsep 0.03em \partopsep 0pt}
+  \topsep 1pt \parsep 0pt \itemsep 0.5pt \partopsep 0pt}
 \let\@listI\@listi
 \makeatother
 \newcommand{\sectiontitle}[1]{%
-  \par\vspace{0.12em}\noindent{\large\bfseries #1}\par
-  \vspace{0.18em}\hrule height 0.9pt\vspace{0.4em}}
-\newcommand{\detail}[2]{\textbf{#1}\,: #2}
+  \par\addvspace{\sectiongap}%
+  \noindent{\fontsize{11}{12}\selectfont\bfseries #1}\par\nobreak
+  \vspace{1.5pt}\hrule height 0.5pt\nobreak\vspace{3pt}}
+\newcommand{\detail}[2]{\textbf{#1}: #2}
 \newcommand{\entryline}[2]{%
-  \noindent\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X@{\hspace{1em}}r@{}}\textbf{#1} & \textbf{#2}\end{tabularx}\vspace{-0.16em}\par}
+  \par\noindent\textbf{#1}\hfill\textbf{#2}\par\nobreak}
 \newcommand{\orgline}[2]{%
-  \noindent\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X@{\hspace{1em}}r@{}}\textit{#1} & \textit{#2}\end{tabularx}\vspace{-0.08em}\par}
+  \noindent\textit{#1}\hfill\textit{#2}\par\nobreak}
+\newcommand{\subheading}[1]{%
+  \par\addvspace{\subheadinggap}\noindent
+  \hspace*{\leftmargini}\textbf{\textit{#1}}\par\nobreak}
+\newcommand{\entryspace}{\par\addvspace{\entrygap}}
 \newcommand{\achievement}[2]{\item \textbf{#1}: #2}
 \newcommand{\myhref}[2]{\href{#1}{#2}}
 \input{content/ats-keywords}
 \input{ats-keyword-layer}
 \input{content/contact-info}
 \newcommand{\resumeheader}{%
-  \begin{center}
-    {\fontsize{26}{28}\selectfont\bfseries \resumename}\\[-0.15em]
-    {\normalsize \resumelocation\hspace{0.55em}\textperiodcentered\hspace{0.55em}\resumephone\hspace{0.55em}\textperiodcentered\hspace{0.55em}\myhref{mailto:\resumeemail}{\resumeemail}}\\[-0.15em]
-    {\normalsize \myhref{\resumeportfoliourl}{\resumeportfoliolabel}\hspace{0.55em}\textperiodcentered\hspace{0.55em}\myhref{\resumegithuburl}{\resumegithublabel}\hspace{0.55em}\textperiodcentered\hspace{0.55em}\myhref{\resumelinkedinurl}{\resumelinkedinlabel}}
-  \end{center}}
+  {\centering
+    {\fontsize{24}{26}\selectfont\bfseries \resumename\par}\nobreak
+    \vspace{2pt}
+    {\resumelocation\hspace{0.55em}\textperiodcentered\hspace{0.55em}\resumephone\hspace{0.55em}\textperiodcentered\hspace{0.55em}\myhref{mailto:\resumeemail}{\resumeemail}\par}\nobreak
+    \vspace{1pt}
+    {\myhref{\resumeportfoliourl}{\resumeportfoliolabel}\hspace{0.55em}\textperiodcentered\hspace{0.55em}\myhref{\resumegithuburl}{\resumegithublabel}\hspace{0.55em}\textperiodcentered\hspace{0.55em}\myhref{\resumelinkedinurl}{\resumelinkedinlabel}\par}}}
 
 \begin{document}
 
-\vspace*{-8pt}
+\fontsize{9.8}{11.3}\selectfont
 \resumeheader
-\vspace{-0.7em}
 
 % Justify resume body copy and bullets while keeping headings and entry lines unchanged.
 \justifying
 \hyphenpenalty=10000
 \exhyphenpenalty=10000
-\setlength{\emergencystretch}{1.5em}
+\setlength{\emergencystretch}{3em}
 \input{content/summary}
 \input{content/skills}
 \input{content/experience}
