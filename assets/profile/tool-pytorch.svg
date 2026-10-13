@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="106" viewBox="0 0 130 106" role="img" aria-labelledby="title description">
+<title id="title">PyTorch</title><desc id="description">PyTorch — part of Kedar Damale&apos;s engineering stack.</desc>
+<rect x="1" y="1" width="128" height="104" rx="18" fill="#0d1726" stroke="#2a3d56"/>
+<svg x="45" y="16" width="40" height="40" viewBox="0 0 128 128"><path fill="#EE4C2C" d="M100.1 38.3l-9.2 9.2c15.1 15.1 15.1 39.4 0 54.3-15.1 15.1-39.4 15.1-54.3 0-15.1-15.1-15.1-39.4 0-54.3l24-24 3.4-3.4V2L27.8 38.2C7.7 58.3 7.7 90.8 27.8 111s52.6 20.1 72.4 0c20.1-20.2 20.1-52.5-.1-72.7z"/><circle fill="#EE4C2C" transform="rotate(-88.939 82.069 29.398) scale(.99997)" cx="82.1" cy="29.4" r="6.7"/></svg><text x="65" y="87" fill="#e6edf7" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle">PyTorch</text>
+</svg>

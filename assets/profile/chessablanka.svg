@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="256" viewBox="0 0 460 256" role="img" aria-labelledby="title description">
+<title id="title">Chessablanka</title><desc id="description">Read a physical chessboard from a photo, rebuild its position, and connect to Stockfish. YOLOv8 · OpenCV · Stockfish. 98.57%: Detection accuracy across 500+ test images.</desc>
+<rect x="1" y="1" width="458" height="254" rx="18" fill="#0d1726" stroke="#2a3d56"/>
+<text x="24" y="37" fill="#64ffda" font-family="DejaVu Sans Mono, monospace" font-size="13" font-weight="400" text-anchor="start">COMPUTER VISION</text><text x="24" y="76" fill="#e6edf7" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="700" text-anchor="start">Chessablanka</text>
+    <text x="24" y="112" fill="#a6b5ca" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Read a physical chessboard from a photo,</text><text x="24" y="136" fill="#a6b5ca" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">rebuild its position, and connect to Stockfish.</text>
+    <text x="24" y="169" fill="#b69cff" font-family="DejaVu Sans Mono, monospace" font-size="13" font-weight="400" text-anchor="start">YOLOv8 · OpenCV · Stockfish</text><path d="M24 185L436 185" stroke="#2a3d56"/>
+    <text x="24" y="218" fill="#64ffda" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="700" text-anchor="start">98.57%</text>
+    <text x="24" y="241" fill="#a6b5ca" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="400" text-anchor="start">Detection accuracy across 500+ test images</text>
+</svg>

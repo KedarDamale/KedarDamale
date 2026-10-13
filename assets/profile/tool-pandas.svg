@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="106" viewBox="0 0 130 106" role="img" aria-labelledby="title description">
+<title id="title">pandas</title><desc id="description">pandas — part of Kedar Damale&apos;s engineering stack.</desc>
+<rect x="1" y="1" width="128" height="104" rx="18" fill="#0d1726" stroke="#2a3d56"/>
+<svg x="45" y="16" width="40" height="40" viewBox="0 0 128 128"><path fill="#b69cff" d="M46.236 7.567h13.99v29.047h-13.99Zm0 59.668h13.99V96.28h-13.99Z"/><path fill="#ffca00" d="M46.236 45.092h13.99v13.705h-13.99Z"/><path fill="#b69cff" d="M23.763 31.446h13.989V128h-13.99ZM68.245 91.2h13.99v29.046h-13.99Zm0-59.72h13.99v29.047h-13.99Z"/><path fill="#e70488" d="M68.245 69.011h13.99v13.705h-13.99Z"/><path fill="#b69cff" d="M90.248 0h13.99v96.554h-13.99Z"/></svg><text x="65" y="87" fill="#e6edf7" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle">pandas</text>
+</svg>

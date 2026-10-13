@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="340" viewBox="0 0 960 340" role="img" aria-labelledby="title description">
+<title id="title">Kedar Damale — Applied Data Scientist and ML &amp; GenAI Engineer</title><desc id="description">I turn complex data into useful systems: machine learning, analytical agents, and financial automation.</desc>
+<rect x="1" y="1" width="958" height="338" rx="18" fill="#0d1726" stroke="#2a3d56"/>
+<text x="36" y="47" fill="#64ffda" font-family="DejaVu Sans Mono, monospace" font-size="13" font-weight="400" text-anchor="start">DATA SCIENCE / MACHINE LEARNING / GENAI</text>
+  <text x="34" y="121" fill="#e6edf7" font-family="DejaVu Sans, Arial, sans-serif" font-size="58" font-weight="700" text-anchor="start">Kedar Damale.</text>
+  <text x="36" y="173" fill="#64ffda" font-family="DejaVu Sans, Arial, sans-serif" font-size="28" font-weight="400" text-anchor="start">Complex data. Useful systems.</text>
+  <text x="36" y="216" fill="#a6b5ca" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" text-anchor="start">Building analytical agents, machine learning,</text>
+  <text x="36" y="246" fill="#a6b5ca" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" text-anchor="start">and automation for real business workflows.</text>
+  <path d="M36 275L630 275" stroke="#2a3d56"/><text x="36" y="307" fill="#a6b5ca" font-family="DejaVu Sans Mono, monospace" font-size="14" font-weight="400" text-anchor="start">RESEARCH  →  ENGINEERING  →  IMPACT</text><g transform="translate(790 166)" fill="none">
+  <circle r="99" stroke="#2a3d56"/><circle r="66" stroke="#2a3d56" stroke-dasharray="4 8"/>
+  <path d="M-88 -44L-42 51L30 4L76 -62M-42 51L70 64M30 4L-5 -84" stroke="#64ffda" stroke-width="2" opacity=".65"/>
+  <circle cx="-88" cy="-44" r="7" fill="#64ffda"/><circle cx="-42" cy="51" r="8" fill="#64ffda"/>
+  <circle cx="30" cy="4" r="12" fill="#64ffda"/><circle cx="76" cy="-62" r="7" fill="#b69cff"/>
+  <circle cx="70" cy="64" r="6" fill="#b69cff"/><circle cx="-5" cy="-84" r="6" fill="#ffd57a"/>
+</g>
+</svg>
