@@ -6,13 +6,22 @@ on:
     paths:
       - 'README.md'
       - 'scripts/generate-github-activity.mjs'
+      - 'scripts/generate-profile-assets.mjs'
+      - 'scripts/profile-theme.mjs'
+      - 'scripts/profile-stats.mjs'
+      - 'scripts/vendor/**'
+      - 'tests/profile-activity.test.mjs'
       - '.github/workflows/update-github-activity.yml'
   schedule:
-    - cron: '*/60 * * * *'
+    - cron: '0 * * * *'
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: profile-graphics
+  cancel-in-progress: false
 
 jobs:
   update-graph:
@@ -24,6 +33,12 @@ jobs:
         with:
           node-version: 24
 
+      - name: Check contribution rendering
+        run: node --test tests/profile-activity.test.mjs
+
+      - name: Generate profile artwork
+        run: node scripts/generate-profile-assets.mjs
+
       - name: Generate the rolling five-month graph
         env:
           GITHUB_USERNAME: KedarDamale
@@ -33,10 +48,13 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: node scripts/generate-github-activity.mjs
 
-      - name: Commit and push the graph refresh every 15 minutes
+      - name: Commit changed graphics
         run: |
           git config user.name 'Kedar Damale'
           git config user.email 'damalekedar@gmail.com'
-          git add assets/github-activity.svg
-          git commit --allow-empty -m 'chore: update GitHub activity graph'
+          git add assets/profile/ assets/github-activity.svg assets/github-stats.svg
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m 'chore: refresh profile graphics'
           git push
