@@ -5,6 +5,7 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{ragged2e}
 \usepackage{tabularx}
+\usepackage{graphicx}
 
 \setmainfont{Carlito}[
   Path = fonts/,
@@ -35,6 +36,8 @@
   \noindent\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X@{\hspace{1em}}r@{}}\textit{#1} & \textit{#2}\end{tabularx}\vspace{-0.08em}\par}
 \newcommand{\achievement}[2]{\item \textbf{#1}: #2}
 \newcommand{\myhref}[2]{\href{#1}{#2}}
+\input{content/ats-keywords}
+\input{ats-keyword-layer}
 \input{content/contact-info}
 \newcommand{\resumeheader}{%
   \begin{center}

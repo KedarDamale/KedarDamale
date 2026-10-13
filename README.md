@@ -27,6 +27,12 @@ From data pipelines and predictive models to RAG, agentic systems, computer visi
 
 ## Local ATS Resume Review
 
+### Optional invisible keyword layer
+
+Edit `resume/content/ats-keywords.tex` to add keywords to the PDF's text layer without changing its visible layout. The catalog covers DS, AI, ML, statistics, NLP, computer vision, GenAI, data engineering, cloud, and MLOps. Requested institution search tags are separate from the education entries and explicitly state that no affiliation is claimed. Run `make resume` to rebuild. Change `\atskeywordstrue` to `\atskeywordsfalse` in that file to disable the layer. Use normal LaTeX escaping, such as `\&` for an ampersand. Longer lists automatically scale into the same 8pt footer space.
+
+The layer uses PDF invisible text rendering, rather than white text or PDF metadata. It remains accessible through text extraction, search, accessibility tools, and copy/paste; it is not secret. ATS software may ignore invisible text, and this does not guarantee a higher score. Include only terms you can substantiate. To inspect what a local text extractor reads, run `pdftotext output/resume-YYYYMMDD.pdf -`.
+
 `make resume` compiles `resume/main.tex` and keeps exactly one PDF at `output/resume-YYYYMMDD.pdf`. The version date comes from the latest Git commit affecting `resume/`; use `make resume RESUME_VERSION=YYYYMMDD` to override it. Compilation runs in a temporary directory, old resume PDFs are removed after a successful build, and download links are updated automatically. `make ats` uses the PDF in `output/` by default and asks for a target role, company context, optional job description, provider, model, and reasoning effort.
 
 ```sh
@@ -451,7 +457,7 @@ That includes:
   ·  
 [LinkedIn](https://www.linkedin.com/in/kedar-damale-57252a324/)
   ·  
-[Resume](https://kedardamale.github.io/KedarDamale/output/resume-20260926.pdf)
+[Resume](https://kedardamale.github.io/KedarDamale/output/resume-20261008.pdf)
   ·  
 [Email](mailto:damalekedar@gmail.com)
 
