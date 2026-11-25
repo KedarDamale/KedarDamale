@@ -1,10 +1,15 @@
-name: Deploy Astro blog to Vercel
+name: Deploy Astro portfolio to Vercel
 
 on:
   push:
     branches: [main]
     paths:
       - 'blogging_website/**'
+      - 'portfolio/assets/**'
+      - 'portfolio/styles/**'
+      - 'portfolio/scripts/modules/**'
+      - 'output/resume-*.pdf'
+      - 'scripts/list-resumes.py'
       - '.github/workflows/deploy-blog.yml'
   workflow_dispatch:
 
@@ -12,7 +17,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: vercel-blog
+  group: vercel-portfolio
   cancel-in-progress: true
 
 jobs:
@@ -23,15 +28,9 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 24
-
-      - name: Install dependencies
-        working-directory: blogging_website
-        run: npm ci
-
-      - name: Build Astro site
-        working-directory: blogging_website
-        run: npm run build
+          node-version: 22
+          cache: npm
+          cache-dependency-path: blogging_website/package-lock.json
 
       - name: Install Vercel CLI
         run: npm install --global vercel@latest

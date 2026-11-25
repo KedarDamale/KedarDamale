@@ -1,0 +1,40 @@
+---
+import FeaturedProject from './FeaturedProject.astro';
+---
+<section id="projects" class="projects-section" aria-labelledby="projects-heading">
+  <h2 id="projects-heading" class="numbered-heading" data-reveal><span class="section-number">03.</span> Some Things I’ve Built</h2>
+  <ul class="featured-projects">
+    <FeaturedProject
+      name="Chessablanka"
+      repository="Chessablanka"
+      technologies={['YOLOv8', 'Roboflow', 'OpenCV', 'Stockfish']}
+      art="art-chess"
+      artLabel="Chessboard illustration"
+    >
+      An end-to-end computer-vision pipeline that reads a physical chessboard from a photo, reconstructs its position, and connects it to Stockfish. Achieved <strong>98.57% detection accuracy</strong> across 500+ test images.
+    </FeaturedProject>
+    <FeaturedProject
+      name="NeuroTRIBE"
+      repository="NeuroTribe"
+      technologies={['Python', 'fMRI', 'TRIBE v2', 'Docker']}
+      art="art-neuro"
+      artLabel="Cortical response waveform illustration"
+    >
+      A reproducible research pipeline for comparing stimulus-evoked cortical responses in participants with ADHD and a matched cohort. Built around <strong>TRIBE v2</strong>, Healthy Brain Network movie-fMRI data, and containerized cohort analysis.
+    </FeaturedProject>
+    <FeaturedProject
+      name="Cattle Monitoring"
+      repository="ESP32-DBSCAN-Cattle-Monitoring-System"
+      technologies={['ESP32', 'DBSCAN', 'Flask', 'MongoDB', 'Next.js']}
+      art="art-cattle"
+      artLabel="Herd monitoring illustration"
+    >
+      A distributed herd-monitoring system combining <strong>GPS and RSSI telemetry</strong> from ESP32 devices. DBSCAN identifies grazing zones, with movement and spatial patterns displayed on a live dashboard.
+    </FeaturedProject>
+  </ul>
+</section>
+<section class="noteworthy-section" aria-labelledby="repository-heading" data-reveal>
+  <h2 id="repository-heading">Other Noteworthy Projects</h2>
+  <div class="repository-grid" data-repo-grid data-repo-limit="6"></div>
+  <button class="outline-button more-button" type="button" data-repo-more aria-expanded="false">Show More</button>
+</section>

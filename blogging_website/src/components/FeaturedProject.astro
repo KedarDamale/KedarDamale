@@ -1,0 +1,31 @@
+---
+interface Props {
+  name: string;
+  repository: string;
+  technologies: string[];
+  art: string;
+  artLabel: string;
+}
+
+const { name, repository, technologies, art, artLabel } = Astro.props;
+const url = `https://github.com/KedarDamale/${repository}`;
+---
+<li class="featured-project" data-reveal>
+  <div class="project-content">
+    <p class="project-overline">Featured Project</p>
+    <h3 class="project-title"><a href={url} target="_blank" rel="noopener noreferrer">{name}</a></h3>
+    <div class="project-description"><p><slot /></p></div>
+    <ul class="project-tech-list">{technologies.map((technology) => <li>{technology}</li>)}</ul>
+    <div class="project-links">
+      <a href={url} target="_blank" rel="noopener noreferrer" aria-label={`${name} source on GitHub`}>
+        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#github" /></svg>
+      </a>
+      <a href={`${url}#readme`} target="_blank" rel="noopener noreferrer" aria-label={`Read about ${name}`}>
+        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#external" /></svg>
+      </a>
+    </div>
+  </div>
+  <a class="project-image" href={url} target="_blank" rel="noopener noreferrer" aria-label={`Explore ${name}`}>
+    <span class:list={['project-art', art]} role="img" aria-label={artLabel}></span>
+  </a>
+</li>
