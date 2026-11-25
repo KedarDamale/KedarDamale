@@ -78,7 +78,7 @@ def tool_definitions() -> list[dict[str, Any]]:
         {
             "name": "ats_review_resume",
             "title": "Send resume and job description to a model",
-            "description": "Score a resume against a target role and optional job description, using resume evidence and substantive public GitHub project READMEs to recommend truthful improvements and estimate score impact. Resume paths are read-only. The default is the latest dated PDF in blogging_website/public/output/.",
+            "description": "Score a resume against a target role and optional job description, using resume evidence and substantive public GitHub project READMEs to recommend truthful improvements and estimate score impact. Resume paths are read-only. The default is the latest dated PDF in portfolio/public/output/.",
             "inputSchema": {
                 "type": "object",
                 "properties": {

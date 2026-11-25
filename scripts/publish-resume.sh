@@ -21,7 +21,7 @@ if [[ ! "$version" =~ ^[0-9]{8}$ ]]; then
 fi
 
 resume_name="resume-${version}.pdf"
-resume_output_dir="blogging_website/public/output"
+resume_output_dir="portfolio/public/output"
 mkdir -p "$project_dir/$resume_output_dir"
 cp -- "$compiled_pdf" "$project_dir/$resume_output_dir/$resume_name"
 echo "Resume: $resume_output_dir/$resume_name"

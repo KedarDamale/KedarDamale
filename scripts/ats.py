@@ -24,7 +24,7 @@ from xml.etree import ElementTree
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_RESUME = next(
-    iter(sorted((ROOT / "blogging_website" / "public" / "output").glob("resume-????????.pdf"), reverse=True)),
+    iter(sorted((ROOT / "portfolio" / "public" / "output").glob("resume-????????.pdf"), reverse=True)),
     ROOT / "resume" / "main.tex",
 )
 PROVIDERS = ("auto", "openrouter", "claude", "codex", "agy", "copilot")

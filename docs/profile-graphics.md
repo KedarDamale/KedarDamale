@@ -42,10 +42,9 @@ only changed assets. It never stages or rewrites the README.
 
 ## Stable résumé link
 
-The Pages staging step runs `scripts/list-resumes.py`. That script writes the
-dated file list and copies the newest PDF to `output/resume.pdf` in the staged
-site. The README uses this stable alias, so résumé builds update portfolio
-fallback links without touching the profile.
+The Astro build publishes the newest dated PDF from `portfolio/public/output/`
+at `/output/resume.pdf`. The README uses this stable URL, so publishing a
+résumé requires no profile edit.
 
 ## Validation
 

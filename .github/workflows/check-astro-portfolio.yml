@@ -4,11 +4,11 @@ on:
   push:
     branches: [main]
     paths:
-      - 'blogging_website/**'
+      - 'portfolio/**'
       - '.github/workflows/check-astro-portfolio.yml'
   pull_request:
     paths:
-      - 'blogging_website/**'
+      - 'portfolio/**'
       - '.github/workflows/check-astro-portfolio.yml'
   workflow_dispatch:
 
@@ -20,13 +20,13 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: blogging_website
+        working-directory: portfolio
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
-          cache-dependency-path: blogging_website/package-lock.json
+          cache-dependency-path: portfolio/package-lock.json
       - run: npm ci
       - run: npm run build
