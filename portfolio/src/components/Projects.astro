@@ -1,8 +1,12 @@
 ---
 import FeaturedProject from './FeaturedProject.astro';
+import RepositoryCard from './RepositoryCard.astro';
+import { repositories } from '../data/repositories';
+
+const initialProjectCount = 6;
 ---
 <section id="projects" class="projects-section" aria-labelledby="projects-heading">
-  <h2 id="projects-heading" class="numbered-heading" data-reveal><span class="section-number">03.</span> Some Things I’ve Built</h2>
+  <h2 id="projects-heading" class="numbered-heading"><span class="section-number">03.</span> Some Things I’ve Built</h2>
   <ul class="featured-projects">
     <FeaturedProject
       name="Chessablanka"
@@ -33,8 +37,20 @@ import FeaturedProject from './FeaturedProject.astro';
     </FeaturedProject>
   </ul>
 </section>
-<section class="noteworthy-section" aria-labelledby="repository-heading" data-reveal>
+<section class="noteworthy-section" aria-labelledby="repository-heading">
   <h2 id="repository-heading">Other Noteworthy Projects</h2>
-  <div class="repository-grid" data-repo-grid data-repo-limit="6"></div>
-  <button class="outline-button more-button" type="button" data-repo-more aria-expanded="false">Show More</button>
+  <div class="repository-grid">
+    {repositories.slice(0, initialProjectCount).map((project) => <RepositoryCard {...project} />)}
+  </div>
+  {repositories.length > initialProjectCount && (
+    <details class="more-projects">
+      <summary class="outline-button more-button">
+        <span class="more-projects-open">Show More</span>
+        <span class="more-projects-close">Show Less</span>
+      </summary>
+      <div class="repository-grid">
+        {repositories.slice(initialProjectCount).map((project) => <RepositoryCard {...project} />)}
+      </div>
+    </details>
+  )}
 </section>

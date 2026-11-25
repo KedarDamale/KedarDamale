@@ -1,12 +1,15 @@
-<section id="experience" class="experience-section" aria-labelledby="experience-heading" data-reveal>
+<section id="experience" class="experience-section" aria-labelledby="experience-heading">
   <h2 id="experience-heading" class="numbered-heading"><span class="section-number">02.</span> Where I’ve Worked</h2>
-  <div class="jobs-inner">
-    <div class="job-tabs" role="tablist" aria-label="Employers" aria-orientation="vertical">
-      <button type="button" class="job-tab" role="tab" id="tab-globalspace" aria-controls="panel-globalspace" aria-selected="true" tabindex="0">Globalspace</button>
-      <button type="button" class="job-tab" role="tab" id="tab-propelligence" aria-controls="panel-propelligence" aria-selected="false" tabindex="-1">Propelligence</button>
+  <fieldset class="jobs-inner">
+    <legend class="sr-only">Employers</legend>
+    <input class="sr-only" type="radio" name="employer" id="job-globalspace" aria-controls="panel-globalspace" checked />
+    <input class="sr-only" type="radio" name="employer" id="job-propelligence" aria-controls="panel-propelligence" />
+    <div class="job-tabs">
+      <label class="job-tab" id="label-globalspace" for="job-globalspace">Globalspace</label>
+      <label class="job-tab" id="label-propelligence" for="job-propelligence">Propelligence</label>
     </div>
     <div class="job-panels">
-      <div class="job-panel" role="tabpanel" id="panel-globalspace" aria-labelledby="tab-globalspace" tabindex="0">
+      <div class="job-panel" role="region" id="panel-globalspace" aria-labelledby="label-globalspace" tabindex="0">
         <h3>ML &amp; GenAI Engineer <span class="company">@ Globalspace Technologies</span></h3>
         <p class="job-range">January 2026 — Present</p>
         <ul class="job-points">
@@ -16,7 +19,7 @@
           <li>Engineer reliable analysis workflows with streamed responses, safe retries, and controlled data releases.</li>
         </ul>
       </div>
-      <div class="job-panel" role="tabpanel" id="panel-propelligence" aria-labelledby="tab-propelligence" tabindex="0" hidden>
+      <div class="job-panel" role="region" id="panel-propelligence" aria-labelledby="label-propelligence" tabindex="0">
         <h3>Freelance Automation Developer <span class="company">@ Propelligence Advisors</span></h3>
         <p class="job-range">May 2025 — January 2026</p>
         <ul class="job-points">
@@ -27,5 +30,5 @@
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </section>

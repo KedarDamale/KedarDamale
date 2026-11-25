@@ -10,7 +10,7 @@ interface Props {
 const { name, repository, technologies, art, artLabel } = Astro.props;
 const url = `https://github.com/KedarDamale/${repository}`;
 ---
-<li class="featured-project" data-reveal>
+<li class="featured-project">
   <div class="project-content">
     <p class="project-overline">Featured Project</p>
     <h3 class="project-title"><a href={url} target="_blank" rel="noopener noreferrer">{name}</a></h3>

@@ -72,19 +72,5 @@
       Skip to content
     </a>
     <slot />
-    <script is:inline type="module">
-      import { initCatalogue } from "./scripts/modules/catalogue.js";
-      import { initJobs } from "./scripts/modules/jobs.js";
-      import { initMotion } from "./scripts/modules/motion.js";
-      import { initNavigation } from "./scripts/modules/navigation.js";
-      import { initResumeLinks } from "./scripts/modules/resume.js";
-
-      void initResumeLinks();
-      initNavigation();
-      initJobs();
-      initCatalogue();
-      initMotion();
-      document.body.classList.add("intro-ready");
-    </script>
   </body>
 </html>

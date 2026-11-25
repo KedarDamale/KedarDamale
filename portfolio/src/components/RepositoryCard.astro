@@ -1,0 +1,22 @@
+---
+interface Props {
+  name: string;
+  title: string;
+  description: string;
+  technologies: string[];
+}
+
+const { name, title, description, technologies } = Astro.props;
+const url = `https://github.com/KedarDamale/${encodeURIComponent(name)}`;
+---
+<article class="repo-card">
+  <div class="repo-card-top">
+    <svg class="icon repo-folder" aria-hidden="true"><use href="assets/icons.svg#folder" /></svg>
+    <a class="repo-card-link" href={url} target="_blank" rel="noopener noreferrer" aria-label={`Open ${title} source on GitHub`}>
+      <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#github" /></svg>
+    </a>
+  </div>
+  <h3><a class="repo-title-link" href={url} target="_blank" rel="noopener noreferrer">{title}</a></h3>
+  <p>{description}</p>
+  <div class="repo-card-bottom">{technologies.map((technology) => <span>{technology}</span>)}</div>
+</article>
