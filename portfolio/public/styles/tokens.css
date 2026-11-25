@@ -13,6 +13,6 @@
   --green: #64ffda; --green-tint: rgba(100,255,218,.1);
   --font-sans: Calibre, Inter, -apple-system, system-ui, sans-serif;
   --font-mono: 'SF Mono', 'Fira Code', monospace;
-  --border-radius: 4px; --nav-height: 100px; --nav-scroll-height: 70px;
+  --border-radius: 4px; --nav-height: 100px;
   --transition: all .25s cubic-bezier(.645,.045,.355,1);
 }

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kedar-damale.vercel.app/sitemap.xml
