@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ReadingList from '../components/ReadingList.jsx';
+
+const posts = [
+  {
+    title: 'A small corner of the internet, built for ideas',
+    date: 'COMING SOON',
+    description: 'A place to collect notes on software, experiments, and lessons that are worth sharing. The first proper article is on its way.',
+    tag: 'NOTES',
+  },
+];
+---
+<BaseLayout>
+  <main>
+    <section class="intro">
+      <div>
+        <div class="eyebrow">A PERSONAL JOURNAL · EST. 2025</div>
+        <h1>Ideas, made<br />a little clearer.</h1>
+        <p class="intro-copy">I’m Kedar. I build things with software and write down what I learn along the way. This is a home for practical notes, curious rabbit holes, and ideas still taking shape.</p>
+      </div>
+      <div class="intro-note"><strong>A work in progress</strong>This space will grow one thoughtful post at a time. Pull up a chair and check back soon.</div>
+    </section>
+
+    <section class="content" aria-label="Writing and about">
+      <div>
+        <div class="section-head"><h2>Recent writing</h2><span class="count">01 / 01</span></div>
+        {posts.map((post) => (
+          <article class="post">
+            <div>
+              <div class="meta">{post.date}</div>
+              <h3><a href="#about">{post.title}</a></h3>
+              <p>{post.description}</p>
+              <span class="tag">{post.tag}</span>
+            </div>
+            <time class="post-date">—</time>
+          </article>
+        ))}
+      </div>
+
+      <aside>
+        <section class="side-card" id="about">
+          <div class="label">THE WRITER</div>
+          <p>Engineer, builder, and lifelong learner. I use this space to make sense of what I’m exploring and share the useful parts.</p>
+          <a class="side-link" href="https://github.com/KedarDamale">More about my work ↗</a>
+        </section>
+        <section class="side-card">
+          <div class="label">A LITTLE INTERACTION</div>
+          <p>Astro keeps pages quick; this tiny reading-list control is a React island, hydrated only where it’s needed.</p>
+          <ReadingList client:visible />
+        </section>
+      </aside>
+    </section>
+  </main>
+</BaseLayout>
