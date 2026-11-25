@@ -43,9 +43,11 @@
     import { initMotion } from './scripts/modules/motion.js';
     import { initCatalogue } from './scripts/modules/catalogue.js';
     import { initResumeLinks } from './scripts/modules/resume.js';
+    import { initJobs } from './scripts/modules/jobs.js';
 
     void initResumeLinks();
     initNavigation();
+    initJobs();
     initCatalogue();
     initMotion();
     document.body.classList.add('intro-ready');

@@ -1,8 +1,9 @@
 # Astro portfolio
 
 The Vercel portfolio lives in `blogging_website/`. The homepage combines a
-shared layout and Astro components for each section. The experience tabs are a
-React island. The GitHub Pages portfolio uses the HTML in `portfolio/`.
+shared layout and Astro components for each section. The GitHub Pages portfolio
+uses the HTML in `portfolio/`. Both use the same browser modules for the
+experience tabs and other interactions.
 
 Astro stages the existing styles, assets, browser modules, and résumé PDFs at
 startup and build time. Both deployments provide the dated résumés and a
@@ -36,11 +37,5 @@ repository secrets.
 - `VERCEL_ORG_ID`: the team or account ID that owns the project
 - `VERCEL_PROJECT_ID`: the project ID for `kedar-damale`
 
-For a manual production deployment, run these commands from `blogging_website/`
-with a signed-in Vercel CLI linked to `kedar-damale`.
-
-```sh
-vercel pull --yes --environment=production
-vercel build --prod
-vercel deploy --prebuilt --prod
-```
+To redeploy from GitHub, open the workflow under **Actions** and select
+**Run workflow** on `main`.
