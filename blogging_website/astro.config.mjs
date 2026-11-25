@@ -1,9 +1,8 @@
 import { defineConfig } from 'astro/config';
 import vercel from '@astrojs/vercel';
-import { portfolioPublicAssets } from './scripts/portfolio-public-assets.mjs';
+import { resumeDownloads } from './scripts/resume-downloads.mjs';
 
 export default defineConfig({
-  publicDir: './.portfolio-public',
   adapter: vercel(),
-  integrations: [portfolioPublicAssets()],
+  integrations: [resumeDownloads()],
 });

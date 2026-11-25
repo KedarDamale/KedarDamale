@@ -1,9 +1,9 @@
-[![Kedar Damale — Applied Data Scientist and ML & GenAI Engineer. Complex data. Useful systems.](./assets/profile/header.svg)](https://kedardamale.github.io/KedarDamale/)
+[![Kedar Damale — Applied Data Scientist and ML & GenAI Engineer. Complex data. Useful systems.](./assets/profile/header.svg)](https://kedar-damale.vercel.app/)
 
 <p align="center">
-  <a href="https://kedardamale.github.io/KedarDamale/"><b>Portfolio</b></a> &nbsp; · &nbsp;
+  <a href="https://kedar-damale.vercel.app/"><b>Portfolio</b></a> &nbsp; · &nbsp;
   <a href="https://www.linkedin.com/in/kedar-damale-57252a324/"><b>LinkedIn</b></a> &nbsp; · &nbsp;
-  <a href="https://kedardamale.github.io/KedarDamale/output/resume.pdf"><b>Résumé</b></a> &nbsp; · &nbsp;
+  <a href="https://kedar-damale.vercel.app/output/resume.pdf"><b>Résumé</b></a> &nbsp; · &nbsp;
   <a href="mailto:damalekedar@gmail.com"><b>Email</b></a>
 </p>
 

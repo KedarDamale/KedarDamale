@@ -1,3 +1,5 @@
 .vercel
 .env*
 .portfolio-public/
+/public/output/resume.pdf
+/public/output/resumes.json

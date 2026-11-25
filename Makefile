@@ -8,7 +8,7 @@ ATS_EFFORT ?=
 ATS_ROLE ?=
 ATS_COMPANY_CONTEXT ?=
 ATS_INTERACTIVE ?= 1
-ATS_RESUME ?= $(or $(lastword $(sort $(wildcard output/resume-????????.pdf))),resume/main.tex)
+ATS_RESUME ?= $(or $(lastword $(sort $(wildcard blogging_website/public/output/resume-????????.pdf))),resume/main.tex)
 ATS_JOB ?=
 # Shared console and MCP settings. Edit here or override on the make command.
 JOBS_PROVIDER ?= codex
