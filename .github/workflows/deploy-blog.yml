@@ -9,7 +9,6 @@ on:
       - 'portfolio/styles/**'
       - 'portfolio/scripts/modules/**'
       - 'output/resume-*.pdf'
-      - 'scripts/list-resumes.py'
       - '.github/workflows/deploy-blog.yml'
   workflow_dispatch:
 

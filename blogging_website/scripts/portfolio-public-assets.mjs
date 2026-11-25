@@ -1,6 +1,4 @@
-import { execFileSync } from 'node:child_process';
-import { copyFile, cp, mkdir, readdir, rm } from 'node:fs/promises';
-import { fileURLToPath } from 'node:url';
+import { copyFile, cp, mkdir, readdir, rm, writeFile } from 'node:fs/promises';
 
 const repo = new URL('../../', import.meta.url);
 
@@ -16,8 +14,10 @@ export function portfolioPublicAssets() {
         await rm(publicDir, { recursive: true, force: true });
         await mkdir(resumeDir, { recursive: true });
 
-        const resumeNames = (await readdir(new URL('output/', repo)))
-          .filter((name) => /^resume-\d{8}\.pdf$/.test(name));
+        const resumeNames = (await readdir(new URL('output/', repo), { withFileTypes: true }))
+          .filter((entry) => entry.isFile() && /^resume-\d{8}\.pdf$/.test(entry.name))
+          .map((entry) => entry.name)
+          .sort();
 
         await Promise.all([
           ...['assets', 'styles', 'scripts/modules'].map((directory) => cp(
@@ -31,10 +31,11 @@ export function portfolioPublicAssets() {
           )),
         ]);
 
-        execFileSync('python3', [
-          fileURLToPath(new URL('scripts/list-resumes.py', repo)),
-          fileURLToPath(resumeDir),
-        ]);
+        await writeFile(new URL('resumes.json', resumeDir), `${JSON.stringify(resumeNames)}\n`);
+        const latestResume = resumeNames.at(-1);
+        if (latestResume) {
+          await copyFile(new URL(latestResume, resumeDir), new URL('resume.pdf', resumeDir));
+        }
       },
     },
   };

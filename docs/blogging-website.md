@@ -5,13 +5,14 @@ shared layout and Astro components for each section. The experience tabs are a
 React island. The GitHub Pages portfolio uses the HTML in `portfolio/`.
 
 Astro stages the existing styles, assets, browser modules, and résumé PDFs at
-startup and build time. Both deployments use the same résumé listing script.
+startup and build time. Both deployments provide the dated résumés and a
+`resume.pdf` alias for the latest file.
 For editorial changes, update the relevant Astro component and its corresponding
 GitHub Pages HTML partial.
 
 ## Local development
 
-Use Node.js 22 and Python 3.
+Use Node.js 22.
 
 ```sh
 cd blogging_website
